@@ -1,5 +1,7 @@
 <?php namespace Application\Controllers;
 
+use System\Core\View;
+
 /**
  * Class Admin
  * @package Application\Controllers
@@ -19,7 +21,9 @@ class Admin extends Internal
      */
     public function action_index()
     {
-        $this->response('0', array('value' => 'ok'));
+        View::render('header');
+        View::render('admin');
+        View::render('footer');
     }
 
 }
