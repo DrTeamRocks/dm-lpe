@@ -16,7 +16,7 @@ class Sections extends Model
      */
     public function getSection($id)
     {
-        return $this->db->query("
+        return $this->db->select("
             SELECT *
             FROM sections
             WHERE
@@ -32,7 +32,7 @@ class Sections extends Model
      */
     public function getSections()
     {
-        return $this->db->query("
+        return $this->db->select("
             SELECT *
             FROM sections
             WHERE
