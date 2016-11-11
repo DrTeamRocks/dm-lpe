@@ -16,7 +16,32 @@ class Sections extends Model
      */
     public function getSection($id)
     {
-        return $this->db->query("SELECT * FROM sections WHERE id='$id'");
+        return $this->db->query("
+            SELECT *
+            FROM sections
+            WHERE
+                deleted = FALSE
+                AND id = '$id'
+        ");
+    }
+
+    /**
+     * Get all section for view
+     *
+     * @return mixed
+     */
+    public function getSections()
+    {
+        return $this->db->query("
+            SELECT *
+            FROM sections
+            WHERE
+                deleted = FALSE
+                AND enabled = TRUE
+                AND draft = FALSE
+            ORDER BY
+                ordering
+        ");
     }
 
     /**
