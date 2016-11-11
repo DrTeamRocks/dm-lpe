@@ -3,9 +3,6 @@
 use System\Core\Helpers;
 use System\Core\Password;
 
-use Application\Models\Users as Model_Users;
-use Application\Models\Tokens as Model_Tokens;
-
 /**
  * Class Auth
  * @package Application\Controllers
@@ -14,16 +11,10 @@ class Auth extends External
 {
     // For error
     public $_error;
-    // Models
-    public $_users;
-    public $_tokens;
 
     public function __construct()
     {
         parent::__construct();
-
-        $this->_users = new Model_Users();
-        $this->_tokens = new Model_Tokens();
     }
 
     function generateRandomString($chars = 32)

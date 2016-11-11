@@ -1,6 +1,9 @@
 <?php namespace Application\Controllers;
 
 use System\Core\Controller;
+use Application\Models\Sections as Model_Sections;
+use Application\Models\Users as Model_Users;
+use Application\Models\Tokens as Model_Tokens;
 
 /**
  * Class Main
@@ -8,6 +11,12 @@ use System\Core\Controller;
  */
 class External extends Controller
 {
+    /**
+     * @var Model_Sections
+     */
+    public $_sections;
+    public $_users;
+    public $_tokens;
 
     /**
      * Main constructor
@@ -15,11 +24,14 @@ class External extends Controller
     public function __construct()
     {
         parent::__construct();
+        $this->_sections = new Model_Sections();
+        $this->_users = new Model_Users();
+        $this->_tokens = new Model_Tokens();
     }
 
     function get_description($code)
     {
-        switch($code) {
+        switch ($code) {
             case '0':
                 $return['status'] = 'success';
                 $return['description'] = 'ok';
