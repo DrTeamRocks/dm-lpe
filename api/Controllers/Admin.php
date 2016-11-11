@@ -1,12 +1,10 @@
 <?php namespace Application\Controllers;
 
-use System\Core\View;
-
 /**
- * Class Index
+ * Class Admin
  * @package Application\Controllers
  */
-class Index extends External
+class Admin extends Internal
 {
     /**
      * Index constructor
@@ -21,9 +19,7 @@ class Index extends External
      */
     public function action_index()
     {
-        View::render('header');
-        View::render('test');
-        View::render('footer');
+        $this->response('0', array('value' => 'ok'));
     }
 
 }
