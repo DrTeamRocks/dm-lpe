@@ -7,3 +7,4 @@ nbproject
 .directory
 composer.lock
 vendor/
+components/
