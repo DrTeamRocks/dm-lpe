@@ -1,7 +1,7 @@
 <?php //defined('SYSPATH') OR die('No direct script access.');
 
 return array(
-	'jabber_openfire' => array(
+	'default' => array(
 		// Database type
 		'type'     => 'pdo',
 		// Database default PDO driver [pgsql/mysql/oci8/odbc]

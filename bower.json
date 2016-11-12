@@ -1,0 +1,9 @@
+{
+  "name": "dm-lpe",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "angular2#^1.5.8",
+    "angular-bootstrap": "^2.2.0",
+    "angular-ui": "^0.4.0"
+  }
+}

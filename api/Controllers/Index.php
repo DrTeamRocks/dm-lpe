@@ -21,11 +21,8 @@ class Index extends External
      */
     public function action_index()
     {
-        $data['sections'] = $this->_sections->getSections();
-
-        View::render('header');
-        View::render('sections', $data);
-        View::render('footer');
+        // $data['sections'] = $this->_sections->getSections();
+        echo '/api/';
     }
 
 }

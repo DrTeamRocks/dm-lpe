@@ -1,4 +1,7 @@
 {
+    "config": {
+        "vendor-dir": "api/vendor"
+    },
     "require": {
         "drteam/drmvc-framework": "v1.3.6.6"
     }

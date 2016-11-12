@@ -2,7 +2,7 @@
 // Set the full path to the docroot
 define('DOCROOT', realpath(dirname(__FILE__)) . '/vendor/drteam/drmvc-framework/' . DIRECTORY_SEPARATOR);
 
-$application = '../../../api'; // Applcations specifed directory.
+$application = './'; // Applcations specifed directory.
 $modules = 'Modules'; // Modules location.
 $system = 'System'; // System base classes location.
 

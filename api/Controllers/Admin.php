@@ -21,9 +21,7 @@ class Admin extends Internal
      */
     public function action_index()
     {
-        View::render('header');
-        View::render('admin');
-        View::render('footer');
+        echo '/api/admin/';
     }
 
 }
