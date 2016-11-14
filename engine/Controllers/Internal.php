@@ -47,9 +47,9 @@ class Internal extends External
         );
         // Site scripts
         $this->scripts = array(
-            'sb-admin-2.js',
-            'active_url.js',
-            'footer_fix.js',
+            //'active_url.js',
+            //'footer_fix.js',
+            'scripts.js',
         );
     }
 
