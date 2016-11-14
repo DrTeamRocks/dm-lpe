@@ -69,7 +69,7 @@ function section_delete(obj) {
         },
         success: function (html) {
             console.log(html);
-            //window.location.reload();
+            window.location.reload();
         },
         complete: function () {
             obj.button('reset');

@@ -30,15 +30,13 @@
                     <h3 class="panel-title">Please Sign In</h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+                    <div role="form">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Username" name="username" type="text"
-                                       autofocus>
+                                <input class="form-control" placeholder="Username" id="username" type="text" autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password" type="password"
-                                       value="">
+                                <input class="form-control" placeholder="Password" id="password" type="password">
                             </div>
                             <div class="checkbox">
                                 <label>
@@ -46,13 +44,21 @@
                                 </label>
                             </div>
                             <!-- Change this to a button or input when using this as a form -->
-                            <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
+                            <button class="btn btn-lg btn-success btn-block" id="login" data-loading-text="In progress...">
+                                Login
+                            </button>
                         </fieldset>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- JS -->
+<script src='/files/vendor/jquery/dist/jquery.min.js'></script>
+<script src='/files/vendor/bootstrap/dist/js/bootstrap.min.js'></script>
+<script src='/files/admin/js/login.js'></script>
+
 </body>
+</html>

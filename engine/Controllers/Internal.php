@@ -1,9 +1,8 @@
 <?php namespace Application\Controllers;
 
 use System\Core\Controller;
-use Application\Models\Authors as Model_Authors;
-use Application\Models\Books as Model_Books;
-use Application\Models\Chapters as Model_Chapters;
+use System\Core\Session;
+use System\Core\Url;
 
 /**
  * Class Main
@@ -18,7 +17,10 @@ class Internal extends External
     public $scripts_vendor;
     public $scripts;
 
-    // Other
+    /**
+     * User details
+     * @var
+     */
     public $userinfo;
 
     /**
@@ -52,6 +54,10 @@ class Internal extends External
             //'footer_fix.js',
             'scripts.js',
         );
+
+        $id_user = Session::get('id_user');
+        $this->userinfo = $this->_users->getUser($id_user);
+        if (empty($this->userinfo)) Url::redirect('auth/login');
     }
 
 }

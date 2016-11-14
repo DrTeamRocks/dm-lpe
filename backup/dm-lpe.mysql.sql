@@ -14,6 +14,8 @@ CREATE TABLE `dm`.`users` (
   `deleted`        BOOL NOT NULL DEFAULT FALSE,
   PRIMARY KEY (`id`)
 );
+INSERT INTO `dm`.`users` (`email`, `username`, `password`, `lastlogin_time`) VALUES
+  ('admin@email.com', 'admin', '$2y$10$d1L.A2yoEAfCnx8IbAND0u34h148bXJAFOtSZX9Ifloo4h4koF9N.', '2016-11-15 00:22:00');
 
 CREATE TABLE `dm`.`settings` (
   `id`    INT  NOT NULL AUTO_INCREMENT,

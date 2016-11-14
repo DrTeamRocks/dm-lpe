@@ -23,11 +23,10 @@ class Admin extends Internal
     public function action_index()
     {
         if (!empty($_POST['submit'])) {
-            sleep(1);
-
             $mode = Helpers::cleaner($_POST['mode']);
             switch ($mode) {
                 case 'update':
+                    sleep(1);
                     $id = Helpers::cleaner($_POST['id'], 'num');
                     $section_id = Helpers::cleaner($_POST['section_id']);
                     $section_class = Helpers::cleaner($_POST['section_class']);
@@ -47,7 +46,7 @@ class Admin extends Internal
                     echo $this->_sections->update($data, $where);
                     break;
                 case 'delete':
-                    print_r($_POST);die();
+                    sleep(1);
                     $id = Helpers::cleaner($_POST['id'], 'num');
                     // What need update
                     $data = array('deleted' => true);
@@ -65,6 +64,7 @@ class Admin extends Internal
                     echo $this->_sections->update($data, $where);
                     break;
                 case 'new':
+                    sleep(1);
                     // Array should be not empty
                     $data = array('content' => null);
                     echo $this->_sections->insert($data);

@@ -33,23 +33,25 @@ class Auth extends External
     public function action_login()
     {
         // Redirect to index if not empty
-        if (!empty($this->userinfo))
-            Url::redirect();
+        if (!empty(Session::get('id_user'))) Url::redirect('admin');
 
         if (isset($_POST['submit'])) {
-            $email = Helpers::cleaner($_POST['email']);
+            sleep(1);
+            $username = Helpers::cleaner($_POST['username']);
             $password = Helpers::cleaner($_POST['password']);
 
             // User in base check
-            $userinfo = $this->_users->getUser($email, 'email');
-            if ($userinfo->email != $email) {
+            $userinfo = $this->_users->getUser($username, 'username');
+            if (empty($userinfo->username)) {
                 $this->_error[] = $this->language->get('email_wrong1');
             }
 
             // Password verification
-            if (Password::verify($password, $this->_users->getHash($email)) == false) {
+            if (Password::verify($password, $this->_users->getHash($username)) == false) {
                 $this->_error[] = $this->language->get('email_wrong2');
             }
+
+            //print_r($this->_error);
 
             // If all is ok
             if (empty($this->_error)) {
@@ -59,11 +61,12 @@ class Auth extends External
                 // If user found
                 if (!empty($id_user)) {
                     // Set native session params
-                    Session::set('loggedin', true);
                     Session::set('id_user', $id_user);
 
+                    //error_log(print_r($this->userinfo,true));
+
                     // Params for update
-                    $values = array('time_lastlogin' => date('Y-m-d H:i:s'));
+                    $values = array('lastlogin_time' => date('Y-m-d H:i:s'));
                     $where = array('id' => $id_user);
 
                     // Update last login
@@ -71,6 +74,7 @@ class Auth extends External
                     die();
                 }
             }
+            die();
         }
 
         $data['title'] = $this->language->get('login');
@@ -84,9 +88,7 @@ class Auth extends External
         $data['scripts_vendor'] = $this->scripts_vendor;
         $data['scripts'] = $this->scripts;
 
-        View::render('admin/header_empty', $data);
-        View::render('admin/login', $data);
-        View::render('admin/footer', $data);
+        View::render('login', $data);
     }
 
 //    public function action_register()

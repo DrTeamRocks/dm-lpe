@@ -55,7 +55,7 @@
                     Admin <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="/admin/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                    <li><a href="/auth/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                 </ul>
                 <!-- /.dropdown-user -->
             </li>

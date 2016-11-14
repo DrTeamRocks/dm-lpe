@@ -19,7 +19,7 @@ $sections = $data['sections'];
                     <?php echo $sections[$i]->title ?>
                 </div>
             </div>
-            <div data-id="<?php echo $sections[$i]->id ?>" class="section_id">
+            <div data-id="<?php echo $sections[$i]->id ?>" class="section_id" style="<?php if ($i != 0) echo 'display: none;'; ?>">
                 <div class="panel-body">
                     <div class="row dm_input_list">
                         <div class="col-sm-3">
@@ -61,7 +61,8 @@ $sections = $data['sections'];
                         </div>
                     </div>
                 </div>
-                <button class="panel-footer btn btn-info btn-lg btn-block section_save" data-loading-text="In progress...">
+                <button class="panel-footer btn btn-info btn-lg btn-block section_save"
+                        data-loading-text="In progress...">
                     Save
                 </button>
             </div>

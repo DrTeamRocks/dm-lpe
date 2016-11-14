@@ -8,27 +8,80 @@ use Modules\Database\Core\Model;
  */
 class Users extends Model
 {
-    public function getUser($value, $mode) {
-        switch($mode) {
-            case 'email':
-                $return = true;
+    /**
+     * Get user by id
+     *
+     * @param $value
+     * @param $type
+     * @return array
+     */
+    public function getUser($value, $type = null)
+    {
+        switch (true) {
+            // Default mode
+            case ($type == null):
+                $where = "AND `id` = '$value'";
                 break;
-            default:
-                $return = false;
+            // If need get user by email
+            case ($type == 'email'):
+                $where = "AND `email` = '$value'";
+                break;
+            // If need get user by username
+            case ($type == 'username'):
+                $where = "AND `username` = '$value'";
                 break;
         }
-        return $return;
+
+        $result = $this->db->select("
+            SELECT *
+            FROM users
+            WHERE
+                `deleted` = FALSE
+                $where
+        ");
+
+        return $result['0'];
     }
 
-    public function getHash($value) {
-        return false;
+    /**
+     * Get user hash by username
+     *
+     * @param $username
+     * @return array
+     */
+    public function getHash($username)
+    {
+        $result = $this->db->select("
+            SELECT password
+            FROM users
+            WHERE
+                `username` = '$username'
+                AND `deleted` = FALSE
+        ");
+
+        return $result['0']->password;
     }
 
-    public function update($data, $where) {
-        return false;
+    /**
+     * Update data in table
+     *
+     * @param $data
+     * @param $where
+     * @return mixed
+     */
+    function update($data, $where)
+    {
+        return $this->db->update("users", $data, $where);
     }
 
-    public function insert($data) {
-        return false;
+    /**
+     * Insert data in table
+     *
+     * @param $data
+     * @return mixed
+     */
+    function insert($data)
+    {
+        return $this->db->insert("users", $data);
     }
 }
