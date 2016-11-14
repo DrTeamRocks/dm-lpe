@@ -30,15 +30,13 @@ class Sections extends Model
      *
      * @return mixed
      */
-    public function getSections()
+    public function getAll($draft)
     {
         return $this->db->select("
             SELECT *
             FROM sections
             WHERE
                 deleted = FALSE
-                AND enabled = TRUE
-                AND draft = FALSE
             ORDER BY
                 ordering
         ");

@@ -23,6 +23,7 @@ class Index extends External
     {
         // Receive all settings from database
         $data['settings'] = $this->_settings->getAll();
+        $data['sections'] = $this->_sections->getAll();
 
         View::render('index', $data);
     }

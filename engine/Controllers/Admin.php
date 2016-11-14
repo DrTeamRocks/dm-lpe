@@ -22,10 +22,49 @@ class Admin extends Internal
      */
     public function action_index()
     {
+        if (!empty($_POST['submit'])) {
+
+            sleep(1);
+            print_r($_POST);
+
+            $mode = Helpers::cleaner($_POST['mode']);
+            switch ($mode) {
+                case 'update':
+                    $id = Helpers::cleaner($_POST['id'], 'num');
+                    $section_id = Helpers::cleaner($_POST['section_id']);
+                    $section_class = Helpers::cleaner($_POST['section_class']);
+                    $title = Helpers::cleaner($_POST['title']);
+                    $content = Helpers::cleaner($_POST['content']);
+                    // What need update
+                    $data = array(
+                        'title' => $title,
+                        'section_id' => $section_id,
+                        'section_class' => $section_class,
+                        'content' => $content,
+                    );
+                    // Selector
+                    $where = array(
+                        'id' => $id
+                    );
+                    echo $this->_sections->update($data, $where);
+                    break;
+                case 'new':
+                    // Array should be not empty
+                    $data = array('content' => null);
+                    echo $this->_sections->insert($data);
+                    break;
+            }
+
+            die();
+        }
+
         $data['styles_vendor'] = $this->styles_vendor;
         $data['scripts_vendor'] = $this->scripts_vendor;
         $data['styles'] = $this->styles;
         $data['scripts'] = $this->scripts;
+
+        // Receive all settings from database
+        $data['sections'] = $this->_sections->getAll();
 
         View::render('admin/header', $data);
         View::render('admin/dashboard', $data);

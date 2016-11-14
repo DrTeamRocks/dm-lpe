@@ -1,5 +1,6 @@
 <?php
 $settings = $data['settings'];
+$sections = $data['sections'];
 
 $styles = preg_split("/\r\n|\n|\r/", $settings['styles']);
 $scripts = preg_split("/\r\n|\n|\r/", $settings['scripts']);
@@ -22,20 +23,16 @@ $scripts = preg_split("/\r\n|\n|\r/", $settings['scripts']);
     <?php foreach ($styles as $style)
         echo "<link href='$style' rel='stylesheet'>\n"; ?>
 
-    <!-- JS -->
-    <?php foreach ($scripts as $script)
-        echo "<script src='$script'></script>\n"; ?>
-
 </head>
-<body id="body">
+<body id="page-top">
 
 <?php echo htmlspecialchars_decode($settings['top']); ?>
 
 <?php
-foreach ($sections as $section) {
-    $id = $section['id'];
-    $class = $section['class'];
-    $html = $section['html'];
+foreach ($sections as $key => $value) {
+    $id = $value->section_id;
+    $class = $value->section_class;
+    $html = htmlspecialchars_decode($value->content);
     ?>
     <section class='<?php echo $class; ?>' id='<?php echo $id; ?>'>
         <?php echo $html; ?>
@@ -45,6 +42,10 @@ foreach ($sections as $section) {
 ?>
 
 <?php echo htmlspecialchars_decode($settings['bottom']); ?>
+
+<!-- JS -->
+<?php foreach ($scripts as $script)
+    echo "<script src='$script'></script>\n"; ?>
 
 </body>
 </html>

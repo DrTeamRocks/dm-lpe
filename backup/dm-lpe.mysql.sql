@@ -31,13 +31,16 @@ INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('top', 'top');
 INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('bottom', 'bottom');
 
 CREATE TABLE `dm`.`sections` (
-  id        INT  NOT NULL AUTO_INCREMENT,
-  add_time  TEXT NOT NULL,
-  content   TEXT,
-  variables TEXT,
-  ordering  INT  NOT NULL,
-  draft     BOOL NOT NULL DEFAULT TRUE,
-  enabled   BOOL NOT NULL DEFAULT TRUE,
-  deleted   BOOL NOT NULL DEFAULT FALSE,
+  id            INT  NOT NULL AUTO_INCREMENT,
+  add_time      TEXT NOT NULL,
+  title         TEXT,
+  section_id    TEXT,
+  section_class TEXT,
+  content       TEXT,
+  variables     TEXT,
+  ordering      INT,
+  draft         BOOL NOT NULL DEFAULT TRUE,
+  enabled       BOOL NOT NULL DEFAULT TRUE,
+  deleted       BOOL NOT NULL DEFAULT FALSE,
   PRIMARY KEY (id)
 );
