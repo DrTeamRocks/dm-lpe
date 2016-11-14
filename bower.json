@@ -1,10 +1,9 @@
 {
   "name": "dm-lpe",
   "dependencies": {
+    "jquery": "^3.1.1",
+    "jquery-ui": "^1.12.1",
     "bootstrap": "^3.3.7",
-    "angular": "angular2#^1.5.8",
-    "angular-bootstrap": "^2.2.0",
-    "angular-ui": "^0.4.0",
-    "angular-animate": "^1.5.8"
+    "ubuntu-fontface": "^0.1.12"
   }
 }

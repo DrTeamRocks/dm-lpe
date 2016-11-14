@@ -8,5 +8,5 @@ nbproject
 composer.lock
 vendor/
 components/
-api/Configs/config.php
-api/Configs/database.php
+engine/Configs/config.php
+engine/Configs/database.php

@@ -22,7 +22,7 @@ class Index extends External
     public function action_index()
     {
         // $data['sections'] = $this->_sections->getSections();
-        echo '/api/';
+        echo '/';
     }
 
 }

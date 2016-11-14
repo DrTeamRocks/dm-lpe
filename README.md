@@ -4,7 +4,7 @@ OpenSource landing page engine/constructor to create landing pages with dynamic 
 
 ## How to install
 
-    git clone git@github.com:DrTeamRocks/dm-lpe.git
+    git clone https://github.com/DrTeamRocks/dm-lpe.git
     cd dm-lpe
     composer update
     bower update
@@ -12,3 +12,4 @@ OpenSource landing page engine/constructor to create landing pages with dynamic 
 ## This project was started under inspiration of
 
 * [Manfies Landing Engine](https://github.com/Manfies/mle)
+* [SB Admin 2](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git)

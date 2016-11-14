@@ -4,7 +4,7 @@ return array(
 	/**
 	 * Site title
 	 */
-	'SITETITLE' => 'D&M LPE',
+	'SITETITLE' => 'D&M Landing Page Engine',
 
 	/**
 	 * Site main URL (optional)
