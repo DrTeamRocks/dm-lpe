@@ -49,6 +49,7 @@
         <!-- /.navbar-header -->
         <ul class="nav navbar-top-links navbar-right">
             <li><a href="/admin/template">Template</a></li>
+            <li><a href="/admin/settings">Settings</a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     Admin <i class="fa fa-caret-down"></i>

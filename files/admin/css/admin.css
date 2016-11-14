@@ -41,3 +41,8 @@ body {
 .panel-heading {
     padding: 6px 12px;
 }
+
+.s_panel h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

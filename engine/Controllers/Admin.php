@@ -33,9 +33,43 @@ class Admin extends Internal
     }
 
     /**
-     * Template page editor
+     * Some template optimization
      */
     public function action_template()
+    {
+        if (!empty($_POST['submit'])) {
+            $top = Helpers::cleaner($_POST['top']);
+            $bottom = Helpers::cleaner($_POST['bottom']);
+
+            $update[] = array('key' => 'top', 'value' => $top);
+            $update[] = array('key' => 'bottom', 'value' => $bottom);
+
+            foreach ($update as $item) {
+                $data = array('value' => $item['value']);
+                $where = array('key' => $item['key']);
+                $this->_settings->update($data, $where);
+            }
+            die();
+        }
+
+        $data['styles_vendor'] = $this->styles_vendor;
+        $data['scripts_vendor'] = $this->scripts_vendor;
+        $data['styles'] = $this->styles;
+        $data['scripts'] = $this->scripts;
+        $data['scripts'][] = 'template.js';
+
+        // Receive all settings from database
+        $data['settings'] = $this->_settings->getAll();
+
+        View::render('admin/header', $data);
+        View::render('admin/template', $data);
+        View::render('admin/footer', $data);
+    }
+
+    /**
+     * Settings of site
+     */
+    public function action_settings()
     {
         if (!empty($_POST['submit'])) {
             $title = Helpers::cleaner($_POST['title']);
@@ -62,13 +96,13 @@ class Admin extends Internal
         $data['scripts_vendor'] = $this->scripts_vendor;
         $data['styles'] = $this->styles;
         $data['scripts'] = $this->scripts;
-        $data['scripts'][] = 'template.js';
+        $data['scripts'][] = 'settings.js';
 
         // Receive all settings from database
         $data['settings'] = $this->_settings->getAll();
 
         View::render('admin/header', $data);
-        View::render('admin/template', $data);
+        View::render('admin/settings', $data);
         View::render('admin/footer', $data);
     }
 

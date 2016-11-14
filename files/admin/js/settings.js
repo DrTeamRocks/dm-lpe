@@ -6,14 +6,22 @@ $(document).ready(function() {
 });
 
 function save_template(){
-    var top = $('#dm_top').val();
-    var bottom = $('#dm_bottom').val();
+    var title = $('#dm_title').val();
+    var styles = $('#dm_styles').val();
+    var scripts = $('#dm_scripts').val();
+    var description = $('#dm_description').val();
+    var keywords = $('#dm_keywords').val();
+    var author = $('#dm_author').val();
     $.ajax({
         type: 'POST',
         data: {
             submit: 'submit',
-            top: top,
-            bottom: bottom
+            title: title,
+            styles: styles,
+            scripts: scripts,
+            description: description,
+            keywords: keywords,
+            author: author
         },
         beforeSend: function() {
             $('#save_template').button('loading');

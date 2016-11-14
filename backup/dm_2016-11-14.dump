@@ -1,0 +1,109 @@
+-- MySQL dump 10.13  Distrib 5.6.30, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: dm
+-- ------------------------------------------------------
+-- Server version	5.6.30-1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `sections`
+--
+
+DROP TABLE IF EXISTS `sections`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sections` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `add_time` text NOT NULL,
+  `content` text,
+  `variables` text,
+  `ordering` int(11) NOT NULL,
+  `draft` tinyint(1) NOT NULL DEFAULT '1',
+  `enabled` tinyint(1) NOT NULL DEFAULT '1',
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `sections`
+--
+
+LOCK TABLES `sections` WRITE;
+/*!40000 ALTER TABLE `sections` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sections` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `settings`
+--
+
+DROP TABLE IF EXISTS `settings`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `settings` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `key` text NOT NULL,
+  `value` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `settings`
+--
+
+LOCK TABLES `settings` WRITE;
+/*!40000 ALTER TABLE `settings` DISABLE KEYS */;
+INSERT INTO `settings` VALUES (1,'title','Creative - Start Bootstrap Theme'),(2,'styles','/files/vendor/bootstrap/dist/css/bootstrap.min.css\n/files/vendor/font-awesome/css/font-awesome.min.css\n/files/vendor/magnific-popup/dist/magnific-popup.css\n/files/css/creative.css'),(3,'scripts','/files/vendor/jquery/jquery.min.js\n/files/vendor/bootstrap/dist/js/bootstrap.min.js\n/files/vendor/scrollreveal/scrollreveal.min.js\n/files/vendor/magnific-popup/dist/jquery.magnific-popup.min.js\n/files/js/creative.js'),(4,'description',''),(5,'keywords',''),(6,'author','author'),(7,'top','    &lt;nav id=&quot;mainNav&quot; class=&quot;navbar navbar-default navbar-fixed-top&quot;&gt;\n        &lt;div class=&quot;container-fluid&quot;&gt;\n            &lt;!-- Brand and toggle get grouped for better mobile display --&gt;\n            &lt;div class=&quot;navbar-header&quot;&gt;\n                &lt;button type=&quot;button&quot; class=&quot;navbar-toggle collapsed&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#bs-example-navbar-collapse-1&quot;&gt;\n                    &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt; Menu &lt;i class=&quot;fa fa-bars&quot;&gt;&lt;/i&gt;\n                &lt;/button&gt;\n                &lt;a class=&quot;navbar-brand page-scroll&quot; href=&quot;#page-top&quot;&gt;Start Bootstrap&lt;/a&gt;\n            &lt;/div&gt;&lt;br/&gt;            &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;\n            &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;bs-example-navbar-collapse-1&quot;&gt;\n                &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;\n                    &lt;li&gt;\n                        &lt;a class=&quot;page-scroll&quot; href=&quot;#about&quot;&gt;About&lt;/a&gt;\n                    &lt;/li&gt;\n                    &lt;li&gt;\n                        &lt;a class=&quot;page-scroll&quot; href=&quot;#services&quot;&gt;Services&lt;/a&gt;\n                    &lt;/li&gt;\n                    &lt;li&gt;\n                        &lt;a class=&quot;page-scroll&quot; href=&quot;#portfolio&quot;&gt;Portfolio&lt;/a&gt;\n                    &lt;/li&gt;\n                    &lt;li&gt;\n                        &lt;a class=&quot;page-scroll&quot; href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;\n                    &lt;/li&gt;\n                &lt;/ul&gt;\n            &lt;/div&gt;\n            &lt;!-- /.navbar-collapse --&gt;\n        &lt;/div&gt;\n        &lt;!-- /.container-fluid --&gt;\n    &lt;/nav&gt;'),(8,'bottom','');
+/*!40000 ALTER TABLE `settings` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` text NOT NULL,
+  `username` text NOT NULL,
+  `password` text NOT NULL,
+  `lastlogin_time` text NOT NULL,
+  `enabled` tinyint(1) NOT NULL DEFAULT '1',
+  `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-11-14 17:48:22

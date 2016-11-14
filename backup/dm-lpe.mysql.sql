@@ -26,6 +26,9 @@ INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('styles', 'styles');
 INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('scripts', 'scripts');
 INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('description', 'description');
 INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('keywords', 'keywords');
+INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('author', 'author');
+INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('top', 'top');
+INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('bottom', 'bottom');
 
 CREATE TABLE `dm`.`sections` (
   id        INT  NOT NULL AUTO_INCREMENT,

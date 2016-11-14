@@ -21,8 +21,10 @@ class Index extends External
      */
     public function action_index()
     {
-        // $data['sections'] = $this->_sections->getSections();
-        echo '/';
+        // Receive all settings from database
+        $data['settings'] = $this->_settings->getAll();
+
+        View::render('index', $data);
     }
 
 }

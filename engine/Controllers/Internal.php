@@ -43,6 +43,7 @@ class Internal extends External
         // Vendor scripts
         $this->scripts_vendor = array(
             'jquery/dist/jquery.min.js',
+            'jquery-ui/jquery-ui.min.js',
             'bootstrap/dist/js/bootstrap.min.js',
         );
         // Site scripts
