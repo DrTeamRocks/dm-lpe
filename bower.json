@@ -6,6 +6,7 @@
     "bootstrap": "^3.3.7",
     "ubuntu-fontface": "^0.1.12",
     "magnific-popup": "^1.1.0",
-    "scrollreveal": "^3.3.2"
+    "scrollreveal": "^3.3.2",
+    "font-awesome": "^4.7.0"
   }
 }

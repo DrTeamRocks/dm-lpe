@@ -19,7 +19,7 @@ $sections = $data['sections'];
                     <?php echo $sections[$i]->title ?>
                 </div>
             </div>
-            <div data-id="<?php echo $sections[$i]->id ?>">
+            <div data-id="<?php echo $sections[$i]->id ?>" class="section_id">
                 <div class="panel-body">
                     <div class="row dm_input_list">
                         <div class="col-sm-3">
@@ -54,11 +54,10 @@ $sections = $data['sections'];
                                     <td>Section Classes</td>
                                     <td>CSS classes of section</td>
                                 </tr>
-                                <tr>
-                                    <td>Section HTML</td>
-                                    <td>Content of section block</td>
-                                </tr>
                             </table>
+                            <button class="btn btn-info btn-block pull-right section_delete">
+                                Delete
+                            </button>
                         </div>
                     </div>
                 </div>

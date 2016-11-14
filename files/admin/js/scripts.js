@@ -7,8 +7,10 @@ $(document).ready(function () {
         })
         .sortable({
             items: '.s_panel',
-            stop: function (event, ui) {
-                console.log('done');
+            update: function (event, ui) {
+                $('.s_panel').each(function(i) {
+                    section_order($(this), i);
+                });
             }
         });
 
@@ -20,7 +22,60 @@ $(document).ready(function () {
         section_save($(this));
     });
 
+    $('.section_delete').on('click', function() {
+        section_delete($(this));
+    });
+
 });
+
+/**
+ * Update order in database
+ */
+function section_order(obj, i) {
+    //console.log(obj);
+    var id = obj.find('.section_id').data('id');
+
+    $.ajax({
+        type: 'POST',
+        data: {
+            submit: 'submit',
+            mode: 'order',
+            id: id,
+            order: i
+        },
+        success: function (html) {
+            console.log(html);
+            //window.location.reload();
+        }
+    });
+}
+
+/**
+ * Remove the section
+ */
+function section_delete(obj) {
+    console.log(obj);
+    var id = obj.parent().parent().parent().parent().data('id');
+
+    $.ajax({
+        type: 'POST',
+        data: {
+            submit: 'submit',
+            mode: 'delete',
+            id: id
+        },
+        beforeSend: function () {
+            obj.button('loading');
+        },
+        success: function (html) {
+            console.log(html);
+            //window.location.reload();
+        },
+        complete: function () {
+            obj.button('reset');
+        }
+    });
+}
 
 /**
  * Update selected section
@@ -28,7 +83,7 @@ $(document).ready(function () {
  * @param obj
  */
 function section_save(obj) {
-    console.log(obj);
+    //console.log(obj);
 
     var id = obj.parent().data('id');
     var title = obj.parent().find('.dm_title').val();

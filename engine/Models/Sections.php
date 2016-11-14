@@ -30,7 +30,7 @@ class Sections extends Model
      *
      * @return mixed
      */
-    public function getAll($draft)
+    public function getAll()
     {
         return $this->db->select("
             SELECT *
