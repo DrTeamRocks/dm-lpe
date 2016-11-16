@@ -1,5 +1,15 @@
 </div>
 
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center text-muted">
+                <i class="fa fa-smile-o"></i> 2016 - Powered by <a rel="nofollow" href="https://github.com/DrTeamRocks/dm-lpe">D&M LPE</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
 <!-- Vendor JS -->
 <?php
 $i = '0';

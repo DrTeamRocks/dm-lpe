@@ -51,13 +51,15 @@ class Internal extends External
         // Site scripts
         $this->scripts = array(
             //'active_url.js',
-            //'footer_fix.js',
+            'footer_fix.js',
             'scripts.js',
         );
 
         $id_user = Session::get('id_user');
         $this->userinfo = $this->_users->getUser($id_user);
         if (empty($this->userinfo)) Url::redirect('auth/login');
+
+        $this->language->load('index');
     }
 
 }

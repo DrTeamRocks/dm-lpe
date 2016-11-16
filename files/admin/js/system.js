@@ -12,6 +12,8 @@ function save_template(){
     var description = $('#dm_description').val();
     var keywords = $('#dm_keywords').val();
     var author = $('#dm_author').val();
+    var top = $('#dm_top').val();
+    var bottom = $('#dm_bottom').val();
     $.ajax({
         type: 'POST',
         data: {
@@ -21,7 +23,9 @@ function save_template(){
             scripts: scripts,
             description: description,
             keywords: keywords,
-            author: author
+            author: author,
+            top: top,
+            bottom: bottom
         },
         beforeSend: function() {
             $('#save_template').button('loading');

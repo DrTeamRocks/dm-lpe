@@ -1,14 +1,10 @@
 $(document).ready(function () {
 
     $('#sections')
-        .accordion({
-            active: false,
-            header: 'div.panel-heading'
-        })
         .sortable({
-            items: '.s_panel',
+            items: '.sortable',
             update: function (event, ui) {
-                $('.s_panel').each(function(i) {
+                $('#sections > .nav-pills li').each(function (i) {
                     section_order($(this), i);
                 });
             }
@@ -22,18 +18,41 @@ $(document).ready(function () {
         section_save($(this));
     });
 
-    $('.section_delete').on('click', function() {
+    $('.section_delete').on('click', function () {
         section_delete($(this));
     });
 
+    $('.dm-item').on('click', function () {
+        show_section($(this));
+    });
+
 });
+
+/**
+ * Show section after click on anc pill
+ *
+ * @param obj
+ */
+function show_section(obj) {
+    var id = obj.data('id');
+
+    $('.dm-item').removeClass('active');
+    $('.dm-content').removeClass('active');
+
+    obj.addClass('active');
+    $('[data-id=' + id + ']').addClass('active');
+}
 
 /**
  * Update order in database
  */
 function section_order(obj, i) {
     //console.log(obj);
+    var num = obj.find('.dm-section-number');
     var id = obj.find('.section_id').data('id');
+
+    //console.log(num);
+    num.html(i + 1);
 
     $.ajax({
         type: 'POST',
@@ -44,7 +63,7 @@ function section_order(obj, i) {
             order: i
         },
         success: function (html) {
-            console.log(html);
+            //console.log(html);
             //window.location.reload();
         }
     });
@@ -83,14 +102,14 @@ function section_delete(obj) {
  * @param obj
  */
 function section_save(obj) {
-    //console.log(obj);
+    console.log(obj);
+    //return;
 
-    var id = obj.parent().data('id');
-    var title = obj.parent().find('.dm_title').val();
-    var panel_title = obj.parent().parent().find('.panel-title');
-    var section_id = obj.parent().find('.dm_id').val();
-    var section_class = obj.parent().find('.dm_class').val();
-    var content = obj.parent().find('.dm_textarea').val();
+    var id = obj.parent().parent().data('id');
+    var title = obj.parent().parent().find('.dm_title').val();
+    var section_id = obj.parent().parent().find('.dm_id').val();
+    var section_class = obj.parent().parent().find('.dm_class').val();
+    var content = obj.parent().parent().find('.dm-textarea').val();
 
     $.ajax({
         type: 'POST',
@@ -108,7 +127,8 @@ function section_save(obj) {
         },
         success: function (html) {
             console.log(html);
-            panel_title.html(title);
+            $('.dm-item[data-id=' + id + '] a').html(title);
+            //panel_title.html(title);
             //window.location.reload();
         },
         complete: function () {

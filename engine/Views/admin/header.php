@@ -48,8 +48,7 @@
         </div>
         <!-- /.navbar-header -->
         <ul class="nav navbar-top-links navbar-right">
-            <li><a href="/admin/template">Template</a></li>
-            <li><a href="/admin/settings">Settings</a></li>
+            <li><a href="/admin/system">System <i class="fa fa-cogs"></i></a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     Admin <i class="fa fa-caret-down"></i>
@@ -65,4 +64,4 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container" id="main-container">

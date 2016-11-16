@@ -16,12 +16,13 @@ $sections = $data['sections'];
         <div class="panel panel-info s_panel">
             <div class="panel-heading">
                 <div class="panel-title">
-                    <?php echo $sections[$i]->title ?>
+                    <span class="dm-section-number badge"><?php echo $i+1; ?></span>
+                    <span class="dm-section-title"><?php echo $sections[$i]->title ?></span>
                 </div>
             </div>
             <div data-id="<?php echo $sections[$i]->id ?>" class="section_id" style="<?php if ($i != 0) echo 'display: none;'; ?>">
                 <div class="panel-body">
-                    <div class="row dm_input_list">
+                    <div class="row dm-input-list">
                         <div class="col-sm-3">
                             <input class="form-control dm_title" type="text" placeholder="Section Title"
                                    value="<?php echo $sections[$i]->title ?>"/>
@@ -37,7 +38,7 @@ $sections = $data['sections'];
                     </div>
                     <div class="row">
                         <div class="col-sm-8">
-                            <textarea class="form-control dm_textarea"
+                            <textarea class="form-control dm-textarea"
                                       placeholder="Section HTML"><?php echo $sections[$i]->content ?></textarea>
                         </div>
                         <div class="col-sm-4">
@@ -55,16 +56,17 @@ $sections = $data['sections'];
                                     <td>CSS classes of section</td>
                                 </tr>
                             </table>
-                            <button class="btn btn-info btn-block pull-right section_delete">
-                                Delete
-                            </button>
                         </div>
                     </div>
                 </div>
-                <button class="panel-footer btn btn-info btn-lg btn-block section_save"
-                        data-loading-text="In progress...">
-                    Save
-                </button>
+                <div class="panel-footer">
+                    <button class="btn btn-info section_save" data-loading-text="In progress...">
+                        Save
+                    </button>
+                    <button class="btn btn-default pull-right section_delete">
+                        Delete
+                    </button>
+                </div>
             </div>
         </div>
         <?php

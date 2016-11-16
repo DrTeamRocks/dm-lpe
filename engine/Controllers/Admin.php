@@ -66,7 +66,7 @@ class Admin extends Internal
                 case 'new':
                     sleep(1);
                     // Array should be not empty
-                    $data = array('content' => null);
+                    $data = array('title' => 'New Section', 'content' => null);
                     echo $this->_sections->insert($data);
                     break;
             }
@@ -83,61 +83,34 @@ class Admin extends Internal
         $data['sections'] = $this->_sections->getAll();
 
         View::render('admin/header', $data);
-        View::render('admin/dashboard', $data);
-        View::render('admin/footer', $data);
-    }
-
-    /**
-     * Some template optimization
-     */
-    public function action_template()
-    {
-        if (!empty($_POST['submit'])) {
-            $top = Helpers::cleaner($_POST['top']);
-            $bottom = Helpers::cleaner($_POST['bottom']);
-
-            $update[] = array('key' => 'top', 'value' => $top);
-            $update[] = array('key' => 'bottom', 'value' => $bottom);
-
-            foreach ($update as $item) {
-                $data = array('value' => $item['value']);
-                $where = array('key' => $item['key']);
-                $this->_settings->update($data, $where);
-            }
-            die();
-        }
-
-        $data['styles_vendor'] = $this->styles_vendor;
-        $data['scripts_vendor'] = $this->scripts_vendor;
-        $data['styles'] = $this->styles;
-        $data['scripts'] = $this->scripts;
-        $data['scripts'][] = 'template.js';
-
-        // Receive all settings from database
-        $data['settings'] = $this->_settings->getAll();
-
-        View::render('admin/header', $data);
-        View::render('admin/template', $data);
+        View::render('admin/dashboard_v2', $data);
         View::render('admin/footer', $data);
     }
 
     /**
      * Settings of site
      */
-    public function action_settings()
+    public function action_system()
     {
         if (!empty($_POST['submit'])) {
+            sleep(1);
             $title = Helpers::cleaner($_POST['title']);
             $styles = Helpers::cleaner($_POST['styles']);
             $scripts = Helpers::cleaner($_POST['scripts']);
             $description = Helpers::cleaner($_POST['description']);
             $keywords = Helpers::cleaner($_POST['keywords']);
+            $top = Helpers::cleaner($_POST['top']);
+            $bottom = Helpers::cleaner($_POST['bottom']);
+            $author = Helpers::cleaner($_POST['author']);
 
+            $update[] = array('key' => 'top', 'value' => $top);
+            $update[] = array('key' => 'bottom', 'value' => $bottom);
             $update[] = array('key' => 'title', 'value' => $title);
             $update[] = array('key' => 'styles', 'value' => $styles);
             $update[] = array('key' => 'scripts', 'value' => $scripts);
             $update[] = array('key' => 'description', 'value' => $description);
             $update[] = array('key' => 'keywords', 'value' => $keywords);
+            $update[] = array('key' => 'author', 'value' => $author);
 
             foreach ($update as $item) {
                 $data = array('value' => $item['value']);
@@ -151,13 +124,13 @@ class Admin extends Internal
         $data['scripts_vendor'] = $this->scripts_vendor;
         $data['styles'] = $this->styles;
         $data['scripts'] = $this->scripts;
-        $data['scripts'][] = 'settings.js';
+        $data['scripts'][] = 'system.js';
 
         // Receive all settings from database
         $data['settings'] = $this->_settings->getAll();
 
         View::render('admin/header', $data);
-        View::render('admin/settings', $data);
+        View::render('admin/system', $data);
         View::render('admin/footer', $data);
     }
 
