@@ -71,10 +71,11 @@ class Auth extends External
 
                     // Update last login
                     $this->_users->update($values, $where);
+                    Url::redirect('admin');
                     die();
                 }
             }
-            die();
+            //die();
         }
 
         $data['title'] = $this->language->get('login');
@@ -84,56 +85,13 @@ class Auth extends External
         $data['userinfo'] = $this->userinfo;
 
         $data['styles_vendor'] = $this->styles_vendor;
-        $data['styles'] = $this->styles;
         $data['scripts_vendor'] = $this->scripts_vendor;
+        $data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
+        $data['styles'] = $this->styles;
         $data['scripts'] = $this->scripts;
 
         View::render('login', $data);
     }
-
-//    public function action_register()
-//    {
-//        // Redirect to index if not empty
-//        if (!empty($this->userinfo))
-//            Url::redirect();
-//
-//        $data['title'] = $this->language->get('register');
-//        $data['error'] = $this->_error;
-//
-//        $data['lng'] = $this->language;
-//        $data['userinfo'] = $this->userinfo;
-//
-//        $data['styles_vendor'] = $this->styles_vendor;
-//        $data['styles'] = $this->styles;
-//        $data['scripts_vendor'] = $this->scripts_vendor;
-//        $data['scripts'] = $this->scripts;
-//
-//        View::render('admin/header', $data);
-//        View::render('auth/register', $data);
-//        View::render('admin/footer', $data);
-//    }
-
-//    public function action_forgot()
-//    {
-//        // Redirect to index if not empty
-//        if (!empty($this->userinfo))
-//            Url::redirect();
-//
-//        $data['title'] = $this->language->get('forgot');
-//        $data['error'] = $this->_error;
-//
-//        $data['lng'] = $this->language;
-//        $data['userinfo'] = $this->userinfo;
-//
-//        $data['styles_vendor'] = $this->styles_vendor;
-//        $data['styles'] = $this->styles;
-//        $data['scripts_vendor'] = $this->scripts_vendor;
-//        $data['scripts'] = $this->scripts;
-//
-//        View::render('admin/header', $data);
-//        View::render('auth/forgot', $data);
-//        View::render('admin/footer', $data);
-//    }
 
     public function action_logout()
     {

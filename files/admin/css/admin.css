@@ -196,3 +196,15 @@ body {
     border-color: #ddd #ddd #ddd transparent;
     *border-left-color: #ffffff;
 }
+
+.margin-top-10 {
+    margin-top: 10%;
+}
+
+.margin-top-25 {
+    margin-top: 25%;
+}
+
+label {
+    font-weight: normal;
+}

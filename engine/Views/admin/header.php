@@ -48,13 +48,13 @@
         </div>
         <!-- /.navbar-header -->
         <ul class="nav navbar-top-links navbar-right">
-            <li><a href="/admin/system">System <i class="fa fa-cogs"></i></a></li>
+            <li><a href="<?php DIR; ?>admin/system">System <i class="fa fa-cogs"></i></a></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     Admin <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
-                    <li><a href="/auth/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+                    <li><a href="<?php DIR; ?>auth/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
                 </ul>
                 <!-- /.dropdown-user -->
             </li>

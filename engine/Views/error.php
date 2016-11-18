@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="404">
     <meta name="keywords" content="">
-    <meta name="author" content="user">
+    <meta name="author" content="">
 
     <title><?php echo $data['title']; ?></title>
 
@@ -42,6 +42,26 @@
         <img src="/files/404/robot.png" style="min-width: 200px; width: 25%;"/>
         <h2>Back to <a href="<?php echo DIR; ?>">Main Page</a></h2>
     </div>
+
+    <!-- Vendor JS -->
+    <?php
+    $i = '0';
+    while ($i < count($data['scripts_vendor'])) {
+        echo '<script type="text/javascript" src="/files/vendor/' . $data['scripts_vendor'][$i] . '"></script>' . "\n";
+        $i++;
+    }
+    unset($i);
+    ?>
+
+    <!-- Site JS -->
+    <?php
+    $i = '0';
+    while ($i < count($data['scripts'])) {
+        echo '<script type="text/javascript" src="/files/admin/js/' . $data['scripts'][$i] . '"></script>' . "\n";
+        $i++;
+    }
+    unset($i);
+    ?>
 
 </body>
 </html>
