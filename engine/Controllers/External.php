@@ -26,12 +26,43 @@ class External extends Controller
      */
     public $_users;
 
+    // Styles and Scripts
+    public $styles_vendor;
+    public $styles;
+    public $scripts_vendor;
+    public $scripts;
+
     /**
      * Main constructor
      */
     public function __construct()
     {
         parent::__construct();
+
+        // Vendor styles
+        $this->styles_vendor = array(
+            'bootstrap/dist/css/bootstrap.min.css',
+            'font-awesome/css/font-awesome.min.css',
+            'ubuntu-fontface/ubuntu.min.css',
+        );
+        // Site styles
+        $this->styles = array(
+            'sb-admin-2.css',
+            'admin.css',
+        );
+
+        // Vendor scripts
+        $this->scripts_vendor = array(
+            'jquery/dist/jquery.min.js',
+            'jquery-ui/jquery-ui.min.js',
+            'bootstrap/dist/js/bootstrap.min.js',
+        );
+        // Site scripts
+        $this->scripts = array(
+            //'active_url.js',
+            'footer_fix.js',
+            'scripts.js',
+        );
 
         $this->_settings = new Model_Settings();
         $this->_sections = new Model_Sections();
