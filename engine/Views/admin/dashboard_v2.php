@@ -3,13 +3,9 @@ $sections = $data['sections'];
 ?>
 <br/>
 
-<button class="btn btn-info" id="section_add">Add section</button>
-
-<br/><br/>
-
 <div class="row">
     <div class="col-xs-12 col-md-6 col-lg-4">
-        <ul id="sections" class="nav nav-pills nav-stacked">
+        <ul id="sections" class="list-group">
             <?php
             $i = 0;
             while ($i < count($sections)) {
@@ -17,10 +13,8 @@ $sections = $data['sections'];
                 if ($i == 0) $active = 'active';
                 ?>
                 <li data-id="<?php echo $sections[$i]->id ?>" role="presentation"
-                    class="dm-item sortable <?php echo $active; ?>">
-                    <a href="#">
+                    class="list-group-item dm-item section_id sortable <?php echo $active; ?>">
                         <?php echo $sections[$i]->title ?>
-                    </a>
                 </li>
                 <?php
                 $i++;
@@ -36,7 +30,7 @@ $sections = $data['sections'];
             if ($i == 0) $active = 'active';
             ?>
             <div data-id="<?php echo $sections[$i]->id ?>"
-                 class="panel panel-default s_panel section_id dm-content <?php echo $active; ?>">
+                 class="panel panel-default s_panel dm-content <?php echo $active; ?>">
                 <div class="panel-body">
                     <div class="row dm-input-list">
                         <div class="col-sm-4">
@@ -58,7 +52,7 @@ $sections = $data['sections'];
                 </div>
                 <div class="panel-footer">
                     <button class="btn btn-info section_save" data-loading-text="In progress...">
-                        Save
+                        Save changes
                     </button>
                     <button class="btn btn-default pull-right section_delete">
                         Delete

@@ -4,7 +4,7 @@ $(document).ready(function () {
         .sortable({
             items: '.sortable',
             update: function (event, ui) {
-                $('#sections > .nav-pills li').each(function (i) {
+                $('#sections li').each(function (i) {
                     section_order($(this), i);
                 });
             }
@@ -48,12 +48,7 @@ function show_section(obj) {
  */
 function section_order(obj, i) {
     //console.log(obj);
-    var num = obj.find('.dm-section-number');
-    var id = obj.find('.section_id').data('id');
-
-    //console.log(num);
-    num.html(i + 1);
-
+    var id = obj.data('id');
     $.ajax({
         type: 'POST',
         data: {
@@ -73,8 +68,8 @@ function section_order(obj, i) {
  * Remove the section
  */
 function section_delete(obj) {
-    console.log(obj);
-    var id = obj.parent().parent().parent().parent().data('id');
+    //console.log(obj);
+    var id = obj.parent().parent().data('id');
 
     $.ajax({
         type: 'POST',
@@ -87,7 +82,7 @@ function section_delete(obj) {
             obj.button('loading');
         },
         success: function (html) {
-            console.log(html);
+            //console.log(html);
             window.location.reload();
         },
         complete: function () {

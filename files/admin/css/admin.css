@@ -205,6 +205,37 @@ body {
     margin-top: 25%;
 }
 
+.margin-right {
+    margin-right: 75px;
+}
+
+.margin-left {
+    margin-left: 75px;
+}
+
+.margin-top-25 {
+    margin-top: 25%;
+}
+
 label {
     font-weight: normal;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    z-index: 1000;
+}
+
+.navbar-toggle {
+    z-index: 1;
+}
+
+.navbar-brand > img {
+    display: inline-block;
 }
