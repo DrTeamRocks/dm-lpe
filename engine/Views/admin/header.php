@@ -45,11 +45,14 @@
         </button>
 
     </div>
+
+    <a class="navbar-brand" href="<?php echo DIR; ?>admin"><img src="//placehold.it/160x80&amp;text=logo"/></a>
+
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
         <div class="row">
-            <div class="col-sm-5">
-                <ul class="nav navbar-nav navbar-right">
+            <div class="col-sm-6">
+                <ul class="nav navbar-nav navbar-right margin-right">
                     <!--id="section_add"-->
                     <li>
                         <a href="#" data-toggle="modal" data-target="#myModal">
@@ -58,11 +61,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-sm-2">
-                <a class="navbar-brand" href="<?php echo DIR; ?>admin"><img src="//placehold.it/160x80&amp;text=logo"/></a>
-            </div>
-            <div class="col-sm-5">
-                <ul class="nav navbar-nav navbar-left">
+            <div class="col-sm-6">
+                <ul class="nav navbar-nav navbar-left margin-left">
                     <li><a href="<?php echo DIR; ?>admin/system">System <i class="fa fa-cogs"></i></a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">

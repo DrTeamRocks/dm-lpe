@@ -230,10 +230,7 @@ label {
     margin: auto;
     padding: 0;
     z-index: 1000;
-}
-
-.navbar-toggle {
-    z-index: 1;
+    height: 0px;
 }
 
 .navbar-brand > img {
