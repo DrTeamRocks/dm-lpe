@@ -70,7 +70,7 @@ class Auth extends External
                     $where = array('id' => $id_user);
 
                     // Update last login
-                    $this->_users->update($values, $where);
+                    if (!DEMO) $this->_users->update($values, $where);
                     Url::redirect('admin');
                     die();
                 }

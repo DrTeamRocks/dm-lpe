@@ -35,4 +35,9 @@ return array(
 	 * Generate sitemap.xml
 	 */
 	'SITEMAP_ENABLED' => true,
+
+	/**
+	 * Demo mode
+	 */
+	'DEMO' => false,
 );
