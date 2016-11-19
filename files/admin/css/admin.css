@@ -206,11 +206,11 @@ body {
 }
 
 .margin-right {
-    margin-right: 75px;
+    margin-right: 50px;
 }
 
 .margin-left {
-    margin-left: 75px;
+    margin-left: 50px;
 }
 
 .margin-top-25 {
@@ -235,4 +235,15 @@ label {
 
 .navbar-brand > img {
     display: inline-block;
+}
+
+.logo-circle {
+    width: 84px;
+    height: 84px;
+    position: relative;
+    left: 50%;
+    margin-left: -40px;
+    background-color: #f8f8f8;
+    border: 2px solid #e7e7e7;
+    border-radius: 40px;
 }

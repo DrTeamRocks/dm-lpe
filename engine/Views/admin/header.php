@@ -46,7 +46,11 @@
 
     </div>
 
-    <a class="navbar-brand" href="<?php echo DIR; ?>admin"><img src="//placehold.it/160x80&amp;text=logo"/></a>
+    <a class="navbar-brand" href="<?php echo DIR; ?>admin">
+        <div class="logo-circle">
+            <img src="/files/admin/img/logo.png" style="max-width: 80px"/>
+        </div>
+    </a>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
