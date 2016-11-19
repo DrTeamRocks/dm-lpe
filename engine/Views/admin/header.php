@@ -57,10 +57,14 @@
         <div class="row">
             <div class="col-sm-6">
                 <ul class="nav navbar-nav navbar-right margin-right">
-                    <!--id="section_add"-->
                     <li>
                         <a href="#" data-toggle="modal" data-target="#myModal">
                             <i class="fa fa-plus"></i> Add section
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?php echo DIR; ?>">
+                            <i class="fa fa-eye"></i> Landing Page
                         </a>
                     </li>
                 </ul>
@@ -70,7 +74,7 @@
                     <li><a href="<?php echo DIR; ?>admin/system">System <i class="fa fa-cogs"></i></a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Admin <i class="fa fa-caret-down"></i>
+                            Administrator <i class="fa fa-caret-down"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-user">
                             <li>
