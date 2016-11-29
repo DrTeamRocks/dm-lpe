@@ -1,8 +1,8 @@
 <?php
 // Set the full path to the docroot
-define('DOCROOT', realpath(dirname(__FILE__)) . '/vendor/drteam/drmvc-framework/' . DIRECTORY_SEPARATOR);
+define('DOCROOT', realpath(dirname(__FILE__)) . '/engine/vendor/drteam/drmvc-framework/' . DIRECTORY_SEPARATOR);
 
-$application = '../../../engine'; // Applcations specifed directory.
+$application = '../../../../engine'; // Applcations specifed directory.
 $modules = 'Modules'; // Modules location.
 $system = 'System'; // System base classes location.
 

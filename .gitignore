@@ -6,7 +6,7 @@ nbproject
 ~
 .directory
 composer.lock
-vendor/
-components/
 engine/Configs/config.php
 engine/Configs/database.php
+engine/vendor/
+engine/files/vendor/

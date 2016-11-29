@@ -1,6 +1,6 @@
 {
     "config": {
-        "vendor-dir": "vendor"
+        "vendor-dir": "engine/vendor"
     },
     "require": {
         "drteam/drmvc-framework": "^v1.3.6.6"

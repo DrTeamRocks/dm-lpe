@@ -1,0 +1,198 @@
+$color-white: #fff;
+
+$color-blue: #78d1ff;
+$color-blue-2: #7c7cf7;
+$color-blue-3: #6acbde;
+$color-purple: #ce7cf7;
+$color-turquoise: #75ffe0;
+$color-green: #9ae96a;
+$color-green-2: #73f886;
+$color-red: #f88e6b;
+$color-pink: #f77c90;
+$color-yellow: #f9f952;
+$color-orange: #f9c95a;
+$color-gray: #666;
+
+.bg-white {
+  background-color: $color-white;
+}
+
+.bg-gray {
+  background-color: $color-gray;
+}
+
+.bg-purple {
+  background-color: $color-purple;
+  &.darken {
+    background-color: darken($color-purple, 30%);
+  }
+  &.dark {
+    background-color: darken($color-purple, 10%);
+  }
+  &.light {
+    background-color: lighten($color-purple, 10%);
+  }
+  &.lighten {
+    background-color: lighten($color-purple, 20%);
+  }
+}
+
+.bg-blue {
+  background-color: $color-blue;
+  &.darken {
+    background-color: darken($color-blue, 30%);
+  }
+  &.dark {
+    background-color: darken($color-blue, 10%);
+  }
+  &.light {
+    background-color: lighten($color-blue, 10%);
+  }
+  &.lighten {
+    background-color: lighten($color-blue, 20%);
+  }
+}
+
+.bg-blue-2 {
+  background-color: $color-blue-2;
+  &.darken {
+    background-color: darken($color-blue-2, 30%);
+  }
+  &.dark {
+    background-color: darken($color-blue-2, 10%);
+  }
+  &.light {
+    background-color: lighten($color-blue-2, 10%);
+  }
+  &.lighten {
+    background-color: lighten($color-blue-2, 20%);
+  }
+}
+
+.bg-blue-3 {
+  background-color: $color-blue-3;
+  &.darken {
+    background-color: darken($color-blue-3, 30%);
+  }
+  &.dark {
+    background-color: darken($color-blue-3, 10%);
+  }
+  &.light {
+    background-color: lighten($color-blue-3, 10%);
+  }
+  &.lighten {
+    background-color: lighten($color-blue-3, 20%);
+  }
+}
+
+.bg-turquoise {
+  background-color: $color-turquoise;
+  &.darken {
+    background-color: darken($color-turquoise, 30%);
+  }
+  &.dark {
+    background-color: darken($color-turquoise, 10%);
+  }
+  &.light {
+    background-color: lighten($color-turquoise, 10%);
+  }
+  &.lighten {
+    background-color: lighten($color-turquoise, 20%);
+  }
+}
+
+.bg-green {
+  background-color: $color-green;
+  &.darken {
+    background-color: darken($color-green, 30%);
+  }
+  &.dark {
+    background-color: darken($color-green, 10%);
+  }
+  &.light {
+    background-color: lighten($color-green, 10%);
+  }
+  &.lighten {
+    background-color: lighten($color-green, 20%);
+  }
+}
+
+.bg-green-2 {
+  background-color: $color-green-2;
+  &.darken {
+    background-color: darken($color-green-2, 30%);
+  }
+  &.dark {
+    background-color: darken($color-green-2, 10%);
+  }
+  &.light {
+    background-color: lighten($color-green-2, 10%);
+  }
+  &.lighten {
+    background-color: lighten($color-green-2, 20%);
+  }
+}
+
+.bg-red {
+  background-color: $color-red;
+  &.darken {
+    background-color: darken($color-red, 30%);
+  }
+  &.dark {
+    background-color: darken($color-red, 10%);
+  }
+  &.light {
+    background-color: lighten($color-red, 10%);
+  }
+  &.lighten {
+    background-color: lighten($color-red, 20%);
+  }
+}
+
+.bg-pink {
+  background-color: $color-pink;
+  &.darken {
+    background-color: darken($color-pink, 30%);
+  }
+  &.dark {
+    background-color: darken($color-pink, 10%);
+  }
+  &.light {
+    background-color: lighten($color-pink, 10%);
+  }
+  &.lighten {
+    background-color: lighten($color-pink, 20%);
+  }
+}
+
+.bg-yellow {
+  background-color: $color-yellow;
+  &.darken {
+    background-color: darken($color-yellow, 30%);
+  }
+  &.dark {
+    background-color: darken($color-yellow, 10%);
+  }
+  &.light {
+    background-color: lighten($color-yellow, 10%);
+  }
+  &.lighten {
+    background-color: lighten($color-yellow, 20%);
+  }
+}
+
+.bg-orange {
+  background-color: $color-orange;
+  &.darken {
+    background-color: darken($color-orange, 30%);
+  }
+  &.dark {
+    background-color: darken($color-orange, 10%);
+  }
+  &.light {
+    background-color: lighten($color-orange, 10%);
+  }
+  &.lighten {
+    background-color: lighten($color-orange, 20%);
+  }
+}

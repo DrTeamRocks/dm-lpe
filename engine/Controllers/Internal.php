@@ -27,8 +27,6 @@ class Internal extends External
         $id_user = Session::get('id_user');
         $this->userinfo = $this->_users->getUser($id_user);
         if (empty($this->userinfo)) Url::redirect('auth/login');
-
-        $this->language->load('index');
     }
 
 }

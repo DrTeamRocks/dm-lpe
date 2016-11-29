@@ -3,75 +3,69 @@ $sections = $data['sections'];
 ?>
 <br/>
 
-<button class="btn btn-info" id="section_add">Add section</button>
-
-<br/><br/>
-
-<div id="sections">
-
-    <?php
-    $i = 0;
-    while ($i < count($sections)) {
-        ?>
-        <div class="panel panel-info s_panel">
-            <div class="panel-heading">
-                <div class="panel-title">
-                    <span class="dm-section-number badge"><?php echo $i+1; ?></span>
-                    <span class="dm-section-title"><?php echo $sections[$i]->title ?></span>
-                </div>
-            </div>
-            <div data-id="<?php echo $sections[$i]->id ?>" class="section_id" style="<?php if ($i != 0) echo 'display: none;'; ?>">
-                <div class="panel-body">
+<div class="row">
+    <div class="col-xs-12 col-md-6 col-lg-3">
+        <ul id="sections" class="list-group">
+            <?php
+            $i = 0;
+            while ($i < count($sections)) {
+                $active = null;
+                if ($i == 0) $active = 'text-white bg-blue';
+                ?>
+                <li data-id="<?php echo $sections[$i]->id ?>" role="presentation"
+                    class="list-group-item cursor-pointer dm-item section_id sortable <?php echo $active; ?>">
+                    <?php echo $sections[$i]->title ?>
+                </li>
+                <?php
+                $i++;
+            }
+            ?>
+        </ul>
+    </div>
+    <div class="col-xs-12 col-md-6 col-lg-9">
+        <?php
+        $i = 0;
+        while ($i < count($sections)) {
+            $active = null;
+            if ($i == 0) $active = 'active';
+            ?>
+            <div data-id="<?php echo $sections[$i]->id ?>"
+                 class="card dm-content <?php echo $active; ?>">
+                <div class="card-block">
                     <div class="row dm-input-list">
-                        <div class="col-sm-3">
-                            <input class="form-control dm_title" type="text" placeholder="Section Title"
+                        <div class="col-sm-4">
+                            <input class="form-control dm_title bg-blue lighten" type="text" placeholder="Section Title"
+                                   data-toggle="tooltip" title="Section Title"
                                    value="<?php echo $sections[$i]->title ?>"/>
                         </div>
-                        <div class="col-sm-3">
-                            <input class="form-control dm_id" type="text" placeholder="Section ID"
+                        <div class="col-sm-4">
+                            <input class="form-control dm_id bg-blue-3 lighten" type="text" placeholder="Section ID"
+                                   data-toggle="tooltip" title="Section ID"
                                    value="<?php echo $sections[$i]->section_id ?>"/>
                         </div>
-                        <div class="col-sm-6">
-                            <input class="form-control dm_class" type="text" placeholder="Section Classes"
+                        <div class="col-sm-4">
+                            <input class="form-control dm_class bg-blue-2 lighten" type="text"
+                                   placeholder="Section Classes"
+                                   data-toggle="tooltip" title="Section Classes"
                                    value="<?php echo $sections[$i]->section_class ?>"/>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <textarea class="form-control dm-textarea"
-                                      placeholder="Section HTML"><?php echo $sections[$i]->content ?></textarea>
-                        </div>
-                        <div class="col-sm-4">
-                            <table class="table table-hover table-bordered">
-                                <tr>
-                                    <td>Section Title</td>
-                                    <td>"In Admin" section name</td>
-                                </tr>
-                                <tr>
-                                    <td>Section ID</td>
-                                    <td>HTML identificator</td>
-                                </tr>
-                                <tr>
-                                    <td>Section Classes</td>
-                                    <td>CSS classes of section</td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
+                    <textarea class="form-control dm-textarea"
+                              placeholder="Section HTML"><?php echo $sections[$i]->content ?></textarea>
                 </div>
-                <div class="panel-footer">
-                    <button class="btn btn-info section_save" data-loading-text="In progress...">
-                        Save
+                <div class="card-footer text-muted bg-blue">
+                    <button class="btn btn-secondary section_save"
+                            data-loading-text="<i class='fa fa-spinner fa-spin '></i> In progress...">
+                        Save changes
                     </button>
-                    <button class="btn btn-default pull-right section_delete">
+                    <button class="btn btn-secondary text-danger pull-right section_delete">
                         Delete
                     </button>
                 </div>
             </div>
-        </div>
-        <?php
-        $i++;
-    }
-    ?>
-
+            <?php
+            $i++;
+        }
+        ?>
+    </div>
 </div>

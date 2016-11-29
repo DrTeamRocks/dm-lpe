@@ -24,7 +24,6 @@ class Auth extends External
     {
         parent::__construct();
         $this->_users = new Model_Users();
-        $this->styles[] = 'admin/auth.css';
     }
 
     /**
@@ -88,6 +87,7 @@ class Auth extends External
         $data['scripts_vendor'] = $this->scripts_vendor;
         $data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
         $data['styles'] = $this->styles;
+        $data['styles'][] = 'auth.css';
         $data['scripts'] = $this->scripts;
 
         View::render('login', $data);

@@ -16,7 +16,7 @@
     <?php
     $i = '0';
     while ($i < count($data['styles_vendor'])) {
-        echo '<link rel="stylesheet" href="/files/vendor/' . $data['styles_vendor'][$i] . '">' . "\n";
+        echo '<link rel="stylesheet" href="/engine/files/vendor/' . $data['styles_vendor'][$i] . '">' . "\n";
         $i++;
     }
     unset($i);
@@ -26,7 +26,7 @@
     <?php
     $i = '0';
     while ($i < count($data['styles'])) {
-        echo '<link rel="stylesheet" href="/files/' . $data['styles'][$i] . '">' . "\n";
+        echo '<link rel="stylesheet" href="/engine/files/css/' . $data['styles'][$i] . '">' . "\n";
         $i++;
     }
     unset($i);
@@ -35,11 +35,11 @@
 </head>
 <body class="dm-404">
 
-    <div class="container text-center">
+    <div class="container text-xs-center">
         <h1>100 000 100</h1>
         <p>Oh, my digitzz!</p>
         <p>Human not found</p>
-        <img src="/files/404/robot.png" style="min-width: 200px; width: 25%;"/>
+        <img src="/engine/files/img/robot.png" style="min-width: 200px; width: 25%;"/>
         <h2>Back to <a href="<?php echo DIR; ?>">Main Page</a></h2>
     </div>
 
@@ -47,7 +47,7 @@
     <?php
     $i = '0';
     while ($i < count($data['scripts_vendor'])) {
-        echo '<script type="text/javascript" src="/files/vendor/' . $data['scripts_vendor'][$i] . '"></script>' . "\n";
+        echo '<script type="text/javascript" src="/engine/files/vendor/' . $data['scripts_vendor'][$i] . '"></script>' . "\n";
         $i++;
     }
     unset($i);
@@ -57,7 +57,7 @@
     <?php
     $i = '0';
     while ($i < count($data['scripts'])) {
-        echo '<script type="text/javascript" src="/files/admin/js/' . $data['scripts'][$i] . '"></script>' . "\n";
+        echo '<script type="text/javascript" src="/engine/files/js/' . $data['scripts'][$i] . '"></script>' . "\n";
         $i++;
     }
     unset($i);

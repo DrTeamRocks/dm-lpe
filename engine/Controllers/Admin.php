@@ -81,9 +81,9 @@ class Admin extends Internal
                     $scripts = Helpers::cleaner($_POST['scripts']);
                     $description = Helpers::cleaner($_POST['description']);
                     $keywords = Helpers::cleaner($_POST['keywords']);
+                    $author = Helpers::cleaner($_POST['author']);
                     $top = Helpers::cleaner($_POST['top']);
                     $bottom = Helpers::cleaner($_POST['bottom']);
-                    $author = Helpers::cleaner($_POST['author']);
 
                     $update[] = array('key' => 'top', 'value' => $top);
                     $update[] = array('key' => 'bottom', 'value' => $bottom);
@@ -122,7 +122,7 @@ class Admin extends Internal
         $data['sections'] = $this->_sections->getAll();
 
         View::render('admin/header', $data);
-        View::render('admin/dashboard_v2', $data);
+        View::render('admin/dashboard', $data);
         View::render('admin/footer', $data);
     }
 
@@ -131,7 +131,6 @@ class Admin extends Internal
      */
     public function action_system()
     {
-
         $data['styles_vendor'] = $this->styles_vendor;
         $data['scripts_vendor'] = $this->scripts_vendor;
         $data['styles'] = $this->styles;

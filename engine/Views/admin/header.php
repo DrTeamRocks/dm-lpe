@@ -7,15 +7,15 @@
 
     <meta name="description" content="<?php echo $data['description']; ?>">
     <meta name="author" content="Paul Rykov <paul@drteam.rocks>">
-    <link rel="icon" href="/files/img/favicon.png">
+    <link rel="icon" href="/engine/files/img/favicon.png">
 
-    <title><?php if (empty($data['title'])) echo SITETITLE; else echo $data['title'] . ' &mdash; ' . SITETITLE; ?></title>
+    <title><?php if (empty($data['title'])) echo SITETITLE; else echo $data['title'] . ' &#8212; ' . SITETITLE; ?></title>
 
     <!-- Vendor CSS -->
     <?php
     $i = '0';
     while ($i < count($data['styles_vendor'])) {
-        echo '<link rel="stylesheet" href="/files/vendor/' . $data['styles_vendor'][$i] . '">' . "\n";
+        echo '<link rel="stylesheet" href="/engine/files/vendor/' . $data['styles_vendor'][$i] . '">' . "\n";
         $i++;
     }
     unset($i);
@@ -25,7 +25,7 @@
     <?php
     $i = '0';
     while ($i < count($data['styles'])) {
-        echo '<link rel="stylesheet" href="/files/admin/css/' . $data['styles'][$i] . '">' . "\n";
+        echo '<link rel="stylesheet" href="/engine/files/css/' . $data['styles'][$i] . '">' . "\n";
         $i++;
     }
     unset($i);
@@ -34,68 +34,50 @@
 
 <body>
 
-<nav class="navbar navbar-default" role="navigation">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-
+<nav class="navbar navbar-dark bg-blue">
+    <div class="container">
+        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+            <a class="navbar-brand" href="<?php echo DIR; ?>admin">
+                D&M
+                <img src="/engine/files/img/logo.png" width="30" height="30" class="d-inline-block align-top"/>
+                Landing Page Engine
+            </a>
+            <ul class="nav navbar-nav navbar-dark pull-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo DIR; ?>">
+                        Landing Page
+                        <i class="fa fa-eye"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">
+                        Add section
+                        <i class="fa fa-plus"></i>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                        Administrator
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
+                        <a class="dropdown-item" href="<?php echo DIR; ?>admin/system">
+                            <i class="fa fa-cog fa-fw"></i> System
+                        </a>
+                        <a class="dropdown-item" href="<?php echo DIR; ?>auth/logout">
+                            <i class="fa fa-sign-out fa-fw"></i> Logout
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
-
-    <a class="navbar-brand" href="<?php echo DIR; ?>admin">
-        <div class="logo-circle">
-            <img src="/files/admin/img/logo.png" style="max-width: 80px"/>
-        </div>
-    </a>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="navbar-collapse-1">
-        <div class="row">
-            <div class="col-sm-6">
-                <ul class="nav navbar-nav navbar-right margin-right">
-                    <li>
-                        <a href="#" data-toggle="modal" data-target="#myModal">
-                            <i class="fa fa-plus"></i> Add section
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo DIR; ?>">
-                            <i class="fa fa-eye"></i> Landing Page
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-sm-6">
-                <ul class="nav navbar-nav navbar-left margin-left">
-                    <li><a href="<?php echo DIR; ?>admin/system">System <i class="fa fa-cogs"></i></a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                            Administrator <i class="fa fa-caret-down"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-user">
-                            <li>
-                                <a href="<?php echo DIR; ?>auth/logout">
-                                    <i class="fa fa-sign-out fa-fw"></i> Logout
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- /.dropdown-user -->
-                    </li>
-                    <!-- /.dropdown -->
-                </ul>
-                <!-- /.navbar-top-links -->
-            </div>
-        </div>
-    </div><!-- /.navbar-collapse -->
 </nav>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
+    <div class="modal-lg modal-dialog" role="document">
         <div class="modal-content">
             <form data-toggle="validator" role="form" method="post" action="<?php echo DIR ?>admin">
                 <input type="hidden" name="mode" value="new"/>
@@ -107,23 +89,23 @@
                 <div class="modal-body">
                     <div class="row dm-input-list">
                         <div class="col-sm-4">
-                            <input class="form-control" name="title" type="text" placeholder="Section Title" value=""
+                            <input class="form-control bg-blue lighten" name="title" type="text" placeholder="Section Title" value=""
                                    required/>
                         </div>
                         <div class="col-sm-4">
-                            <input class="form-control" name="section_id" type="text" placeholder="Section ID"
+                            <input class="form-control bg-blue-3 lighten" name="section_id" type="text" placeholder="Section ID"
                                    value=""/>
                         </div>
                         <div class="col-sm-4">
-                            <input class="form-control" name="section_class" type="text" placeholder="Section Classes"
+                            <input class="form-control bg-blue-2 lighten" name="section_class" type="text" placeholder="Section Classes"
                                    value=""/>
                         </div>
                     </div>
                     <textarea class="form-control dm-textarea" name="content" placeholder="Section HTML"></textarea>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button class="btn btn-info" name="submit" type="submit">Save changes</button>
+                <div class="modal-footer bg-blue">
+                    <button class="btn btn-secondary pull-left" name="submit" type="submit">Save changes</button>
+                    <button class="btn btn-secondary pull-right" type="button" data-dismiss="modal">Close</button>
                 </div>
             </form>
         </div>

@@ -1,0 +1,105 @@
+@import "colors";
+
+$font-family: "Ubuntu", sans-serif;
+$font-weight: 300;
+$font-style: normal;
+$font-size: 17px;
+
+html {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  font-style: $font-style;
+}
+
+body {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: $font-style;
+  font-size: inherit;
+  color: #666;
+  background-color: #fff;
+}
+
+p {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: $font-style;
+  font-size: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.5em;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+label {
+  font-weight: $font-weight;
+}
+
+.footer {
+  background: #f7f7f7;
+  padding: 10px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.stick-to-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.s_panel h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.dm-content {
+  display: none;
+}
+
+.dm-content.active {
+  display: block;
+}
+
+.dm-textarea {
+  min-height: 500px;
+  resize: none;
+}
+
+.dm-input-list {
+  margin-bottom: 15px;
+}
+
+.dm-tab-content {
+  padding-top: 20px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.dm-card.card .card-header {
+  padding: 5px 5px 5px 10px;
+  input.card-block {
+    padding: 5px 5px 5px 10px;
+  }
+  textarea.card-block {
+    padding: 5px 5px 5px 10px;
+  }
+}
+
+.dm-card.card textarea.card-block {
+  padding: 5px 5px 5px 10px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: $color-white;
+  .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+    color: transparentize($color-white, 0.1);
+  }
+}

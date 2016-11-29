@@ -3,8 +3,8 @@
 <footer class="footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-12 text-center text-muted">
-                <i class="fa fa-smile-o"></i> 2016 - Powered by <a rel="nofollow" href="https://github.com/DrTeamRocks/dm-lpe">D&M LPE</a>
+            <div class="col-xs-12 text-xs-center text-muted">
+                2016 <i class="fa fa-smile-o"></i> Powered by <a rel="nofollow" href="https://github.com/DrTeamRocks/dm-lpe">D&M LPE</a>
             </div>
         </div>
     </div>
@@ -14,7 +14,7 @@
 <?php
 $i = '0';
 while ($i < count($data['scripts_vendor'])) {
-    echo '<script type="text/javascript" src="/files/vendor/' . $data['scripts_vendor'][$i] . '"></script>' . "\n";
+    echo '<script type="text/javascript" src="/engine/files/vendor/' . $data['scripts_vendor'][$i] . '"></script>' . "\n";
     $i++;
 }
 unset($i);
@@ -24,7 +24,7 @@ unset($i);
 <?php
 $i = '0';
 while ($i < count($data['scripts'])) {
-    echo '<script type="text/javascript" src="/files/admin/js/' . $data['scripts'][$i] . '"></script>' . "\n";
+    echo '<script type="text/javascript" src="/engine/files/js/' . $data['scripts'][$i] . '"></script>' . "\n";
     $i++;
 }
 unset($i);

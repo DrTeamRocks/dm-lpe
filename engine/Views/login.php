@@ -21,7 +21,7 @@ print_r($data['error']);
     <?php
     $i = '0';
     while ($i < count($data['styles_vendor'])) {
-        echo '<link rel="stylesheet" href="/files/vendor/' . $data['styles_vendor'][$i] . '">' . "\n";
+        echo '<link rel="stylesheet" href="/engine/files/vendor/' . $data['styles_vendor'][$i] . '">' . "\n";
         $i++;
     }
     unset($i);
@@ -31,7 +31,7 @@ print_r($data['error']);
     <?php
     $i = '0';
     while ($i < count($data['styles'])) {
-        echo '<link rel="stylesheet" href="/files/admin/css/' . $data['styles'][$i] . '">' . "\n";
+        echo '<link rel="stylesheet" href="/engine/files/css/' . $data['styles'][$i] . '">' . "\n";
         $i++;
     }
     unset($i);
@@ -41,40 +41,20 @@ print_r($data['error']);
 
 <body>
 
-<div class="container">
-    <div class="row margin-top-10">
-        <div class="col-md-4 col-md-offset-4">
-
-            <div class="text-center">
-                <img src="http://placehold.it/350x150"/>
-            </div>
-
-            <h3 class="text-center">Sign in</h3>
-
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <form role="form" data-toggle="validator" method="post">
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input class="form-control" placeholder="Username" name="username" type="text"
-                                   autofocus required>
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input class="form-control" placeholder="Password" name="password" type="password" required>
-                        </div>
-                        <br/>
-                        <!-- Change this to a button or input when using this as a form -->
-                        <button class="btn btn-lg btn-success btn-block" name="submit" type="submit"
-                                data-loading-text="In progress...">
-                            Login
-                        </button>
-                    </form>
-                </div>
-            </div>
-
+<div class="container padding-top-10">
+    <div class="login-wrapper">
+        <div class="text-xs-center text-white">
+            <img src="<?php echo DIR ?>engine/files/img/logo.png" style="height: 100px;"
+                 class="margin-bottom-xs"/>
+            <h4>Sign in to<br/>D&M Landing Page Engine</h4>
         </div>
-
+        <form action="" method="post" class="login-form">
+            <div class="login-inputs">
+                <input name="username" type="text" class="form-control" placeholder="Username"/>
+                <input name="password" type="password" class="form-control" placeholder="Password"/>
+            </div>
+            <button name="submit" type="submit" class="btn btn-lg btn-default btn-block">Login</button>
+        </form>
     </div>
 </div>
 
@@ -82,7 +62,7 @@ print_r($data['error']);
 <?php
 $i = '0';
 while ($i < count($data['scripts_vendor'])) {
-    echo '<script type="text/javascript" src="/files/vendor/' . $data['scripts_vendor'][$i] . '"></script>' . "\n";
+    echo '<script type="text/javascript" src="/engine/files/vendor/' . $data['scripts_vendor'][$i] . '"></script>' . "\n";
     $i++;
 }
 unset($i);
@@ -92,7 +72,7 @@ unset($i);
 <?php
 $i = '0';
 while ($i < count($data['scripts'])) {
-    echo '<script type="text/javascript" src="/files/admin/js/' . $data['scripts'][$i] . '"></script>' . "\n";
+    echo '<script type="text/javascript" src="/engine/files/js/' . $data['scripts'][$i] . '"></script>' . "\n";
     $i++;
 }
 unset($i);

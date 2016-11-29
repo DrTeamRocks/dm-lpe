@@ -18,10 +18,11 @@ class Error extends External
 
     public function action_index()
     {
-        $data['title'] = $this->language->get('error');
+        $data['title'] = $this->language->get('error') . ' &#8212; ' .SITETITLE;
         $data['styles_vendor'] = $this->styles_vendor;
         $data['scripts_vendor'] = $this->scripts_vendor;
-        $data['styles'] = array('404/404.css');
+        $data['styles'][] ='indent.css';
+        $data['styles'][] ='404.css';
         $data['scripts'] = array();
 
         View::render('error', $data);

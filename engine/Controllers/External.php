@@ -41,25 +41,27 @@ class External extends Controller
 
         // Vendor styles
         $this->styles_vendor = array(
+            'tether/dist/css/tether.min.css',
             'bootstrap/dist/css/bootstrap.min.css',
             'font-awesome/css/font-awesome.min.css',
             'ubuntu-fontface/ubuntu.min.css',
         );
         // Site styles
         $this->styles = array(
-            'sb-admin-2.css',
-            'admin.css',
+            'colors.css',
+            'styles.css',
+            'indents.css'
         );
 
         // Vendor scripts
         $this->scripts_vendor = array(
             'jquery/dist/jquery.min.js',
             'jquery-ui/jquery-ui.min.js',
+            'tether/dist/js/tether.min.js',
             'bootstrap/dist/js/bootstrap.min.js',
         );
         // Site scripts
         $this->scripts = array(
-            //'active_url.js',
             'footer_fix.js',
             'scripts.js',
         );
@@ -67,6 +69,8 @@ class External extends Controller
         $this->_settings = new Model_Settings();
         $this->_sections = new Model_Sections();
         $this->_users = new Model_Users();
+
+        $this->language->load('index');
     }
 
 }
