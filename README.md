@@ -17,9 +17,19 @@ Do not be afraid to break something, the site in read-only mode, so you can try 
     composer update
     bower update
 
-Then you need create the database schema, just follow commands from `backups/dm-lpe.mysql.sql`.
+Then you need create the database schema, just follow commands from `backups/init.mysql.sql`.
 
-Unfortunately the installer is not ready yet, but will soon!
+Or if you have the empty database and you know username and password, you can import the dump with demo settings `backups/demo.mysql.sql`.
+
+Don't forget change the default admin password!
+
+## RoadMap
+
+- [x] Minimalist version with basic functionality
+- [ ] Users separation, something like `expert` and `stupid`
+- [ ] Users management functions for Admins (roles/groups/add/delete etc.)
+- [ ] "Step by step" installer of this project
+- [ ] Virtual hosting (multiple landings via one interface)
 
 ## Some projects and links
 
