@@ -43,8 +43,8 @@ print_r($data['error']);
 
 <div class="container padding-top-10">
     <div class="login-wrapper">
-        <div class="text-xs-center text-white">
-            <img src="<?php echo DIR ?>engine/files/img/logo.png" style="height: 100px;"
+        <div class="text-xs-center">
+            <img src="<?php echo DIR ?>engine/files/img/logo-turquoise.png" style="height: 100px;"
                  class="margin-bottom-xs"/>
             <h4>Sign in to<br/>D&M Landing Page Engine</h4>
         </div>
@@ -53,7 +53,7 @@ print_r($data['error']);
                 <input name="username" type="text" class="form-control" placeholder="Username"/>
                 <input name="password" type="password" class="form-control" placeholder="Password"/>
             </div>
-            <button name="submit" type="submit" class="btn btn-lg btn-default btn-block">Login</button>
+            <button name="submit" type="submit" class="btn btn-lg bg-turquoise btn-block">Login</button>
         </form>
     </div>
 </div>

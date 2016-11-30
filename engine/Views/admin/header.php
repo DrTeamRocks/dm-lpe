@@ -7,7 +7,7 @@
 
     <meta name="description" content="<?php echo $data['description']; ?>">
     <meta name="author" content="Paul Rykov <paul@drteam.rocks>">
-    <link rel="icon" href="/engine/files/img/favicon.png">
+    <link rel="icon" href="/engine/files/img/logo-turquoise-64.png">
 
     <title><?php if (empty($data['title'])) echo SITETITLE; else echo $data['title'] . ' &#8212; ' . SITETITLE; ?></title>
 
@@ -41,7 +41,7 @@
         <div class="collapse navbar-toggleable-md" id="navbarResponsive">
             <a class="navbar-brand" href="<?php echo DIR; ?>admin">
                 D&M
-                <img src="/engine/files/img/logo.png" width="30" height="30" class="d-inline-block align-top"/>
+                <img src="/engine/files/img/logo-turquoise-64.png" width="40" height="40" class="d-inline-block align-top"/>
                 Landing Page Engine
             </a>
             <ul class="nav navbar-nav navbar-dark pull-right">
