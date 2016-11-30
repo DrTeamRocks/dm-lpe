@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="description" content="<?php echo $data['description']; ?>">
-    <meta name="author" content="Paul Rykov <paul@drteam.rocks>">
+    <meta name="author" content="Paul Rock <paul@drteam.rocks>">
     <link rel="icon" href="/engine/files/img/logo-turquoise-64.png">
 
     <title><?php if (empty($data['title'])) echo SITETITLE; else echo $data['title'] . ' &#8212; ' . SITETITLE; ?></title>
@@ -47,13 +47,13 @@
             <ul class="nav navbar-nav navbar-dark pull-right">
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo DIR; ?>">
-                        Landing Page
+                        <?php echo $data['lng']->get('landing_page'); ?>
                         <i class="fa fa-eye"></i>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">
-                        Add section
+                        <?php echo $data['lng']->get('add_section'); ?>
                         <i class="fa fa-plus"></i>
                     </a>
                 </li>
@@ -63,10 +63,13 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
                         <a class="dropdown-item" href="<?php echo DIR; ?>admin/system">
-                            <i class="fa fa-cog fa-fw"></i> System
+                            <i class="fa fa-cog fa-fw"></i>
+                            <?php echo $data['lng']->get('system'); ?>
                         </a>
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?php echo DIR; ?>auth/logout">
-                            <i class="fa fa-sign-out fa-fw"></i> Logout
+                            <i class="fa fa-sign-out fa-fw"></i>
+                            <?php echo $data['lng']->get('logout'); ?>
                         </a>
                     </div>
                 </li>
@@ -84,28 +87,28 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="myModalLabel">Create new section</h4>
+                    <h4 class="modal-title" id="myModalLabel"><?php echo $data['lng']->get('add_section'); ?></h4>
                 </div>
                 <div class="modal-body">
                     <div class="row dm-input-list">
                         <div class="col-sm-4">
-                            <input class="form-control bg-blue lighten" name="title" type="text" placeholder="Section Title" value=""
+                            <input class="form-control bg-blue lighten" name="title" type="text" placeholder="<?php echo $data['lng']->get('section_title'); ?>" value=""
                                    required/>
                         </div>
                         <div class="col-sm-4">
-                            <input class="form-control bg-blue-3 lighten" name="section_id" type="text" placeholder="Section ID"
+                            <input class="form-control bg-blue-3 lighten" name="section_id" type="text" placeholder="<?php echo $data['lng']->get('section_id'); ?>"
                                    value=""/>
                         </div>
                         <div class="col-sm-4">
-                            <input class="form-control bg-blue-2 lighten" name="section_class" type="text" placeholder="Section Classes"
+                            <input class="form-control bg-blue-2 lighten" name="section_class" type="text" placeholder="<?php echo $data['lng']->get('section_classes'); ?>"
                                    value=""/>
                         </div>
                     </div>
-                    <textarea class="form-control dm-textarea" name="content" placeholder="Section HTML"></textarea>
+                    <textarea class="form-control dm-textarea" name="content" placeholder="<?php echo $data['lng']->get('section_html'); ?>"></textarea>
                 </div>
                 <div class="modal-footer bg-blue">
-                    <button class="btn btn-secondary pull-left" name="submit" type="submit">Save changes</button>
-                    <button class="btn btn-secondary pull-right" type="button" data-dismiss="modal">Close</button>
+                    <button class="btn btn-secondary pull-left" name="submit" type="submit"><?php echo $data['lng']->get('submit'); ?></button>
+                    <button class="btn btn-secondary pull-right" type="button" data-dismiss="modal"><?php echo $data['lng']->get('close'); ?></button>
                 </div>
             </form>
         </div>

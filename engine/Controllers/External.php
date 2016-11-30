@@ -48,9 +48,7 @@ class External extends Controller
         );
         // Site styles
         $this->styles = array(
-            'colors.css',
-            'styles.css',
-            'indents.css'
+            'styles.css'
         );
 
         // Vendor scripts

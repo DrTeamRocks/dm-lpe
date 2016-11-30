@@ -46,14 +46,14 @@ print_r($data['error']);
         <div class="text-xs-center">
             <img src="<?php echo DIR ?>engine/files/img/logo-turquoise.png" style="height: 100px;"
                  class="margin-bottom-xs"/>
-            <h4>Sign in to<br/>D&M Landing Page Engine</h4>
+            <h4><?php echo $data['lng']->get('login_title') . ' ' . SITETITLE; ?></h4>
         </div>
         <form action="" method="post" class="login-form">
             <div class="login-inputs">
-                <input name="username" type="text" class="form-control" placeholder="Username"/>
-                <input name="password" type="password" class="form-control" placeholder="Password"/>
+                <input name="username" type="text" class="form-control" placeholder="<?php echo $data['lng']->get('username'); ?>"/>
+                <input name="password" type="password" class="form-control" placeholder="<?php echo $data['lng']->get('password'); ?>"/>
             </div>
-            <button name="submit" type="submit" class="btn btn-lg bg-turquoise btn-block">Login</button>
+            <button name="submit" type="submit" class="btn btn-lg bg-turquoise btn-block"><?php echo $data['lng']->get('login_button'); ?></button>
         </form>
     </div>
 </div>

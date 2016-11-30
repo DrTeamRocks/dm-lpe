@@ -117,6 +117,7 @@ class Admin extends Internal
         $data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
         $data['styles'] = $this->styles;
         $data['scripts'] = $this->scripts;
+        $data['lng'] = $this->language;
 
         // Receive all settings from database
         $data['sections'] = $this->_sections->getAll();
@@ -136,6 +137,7 @@ class Admin extends Internal
         $data['styles'] = $this->styles;
         $data['scripts'] = $this->scripts;
         $data['scripts'][] = 'system.js';
+        $data['lng'] = $this->language;
 
         // Receive all settings from database
         $data['settings'] = $this->_settings->getAll();

@@ -6,15 +6,17 @@ $settings = $data['settings'];
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#settings" role="tab">Settings</a>
+        <a class="nav-link active" data-toggle="tab" href="#settings"
+           role="tab"><?php echo $data['lng']->get('system'); ?></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#template" role="tab">Template</a>
+        <a class="nav-link" data-toggle="tab" href="#template"
+           role="tab"><?php echo $data['lng']->get('template'); ?></a>
     </li>
 </ul>
 
 <button class="btn btn-block btn-lg btn-info margin-horizontal-10px save_template">
-    Save
+    <?php echo $data['lng']->get('save'); ?>
 </button>
 
 <!-- Tab panes -->
@@ -25,13 +27,13 @@ $settings = $data['settings'];
             <div class="col-sm-8">
                 <div class="card dm-card">
                     <div class="card-header">
-                        Section Title
+                        <?php echo $data['lng']->get('system_title'); ?>
                     </div>
                     <input class="card-body form-control" id="dm_title" value="<?php echo $settings['title']; ?>"/>
                 </div>
             </div>
             <div class="col-sm-4 hidden-xs">
-                Text in header title.
+                <?php echo $data['lng']->get('system_title_desc'); ?>
             </div>
         </div>
 
@@ -39,67 +41,74 @@ $settings = $data['settings'];
             <div class="col-sm-8">
                 <div class="card dm-card">
                     <div class="card-header">
-                        Styles
+                        <?php echo $data['lng']->get('system_styles'); ?>
                     </div>
-                        <textarea class="card-body form-control" style="min-height: 150px;"
-                                  id="dm_styles"><?php echo $settings['styles']; ?></textarea>
+                    <textarea class="card-body form-control" style="min-height: 150px;"
+                              id="dm_styles"><?php echo $settings['styles']; ?></textarea>
                 </div>
             </div>
             <div class="col-sm-4 hidden-xs">
-                All required CSS libraries, one per line.
+                <?php echo $data['lng']->get('system_styles_desc'); ?>
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-8">
                 <div class="card dm-card">
-                    <div class="card-header">Scripts</div>
-                        <textarea class="card-body form-control" style="min-height: 150px;"
-                                  id="dm_scripts"><?php echo $settings['scripts']; ?></textarea>
+                    <div class="card-header">
+                        <?php echo $data['lng']->get('system_scripts'); ?>
+                    </div>
+                    <textarea class="card-body form-control" style="min-height: 150px;"
+                              id="dm_scripts"><?php echo $settings['scripts']; ?></textarea>
                 </div>
             </div>
             <div class="col-sm-4 hidden-xs">
-                All required JavaScripts, one per line.
+                <?php echo $data['lng']->get('system_scripts_desc'); ?>
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-8">
                 <div class="card dm-card">
-                    <div class="card-header">Description</div>
-                        <textarea class="card-body form-control" style="min-height: 150px;"
-                                  id="dm_description"><?php echo $settings['description']; ?></textarea>
+                    <div class="card-header">
+                        <?php echo $data['lng']->get('system_description'); ?>
+                    </div>
+                    <textarea class="card-body form-control" style="min-height: 150px;"
+                              id="dm_description"><?php echo $settings['description']; ?></textarea>
                 </div>
             </div>
             <div class="col-sm-4 hidden-xs">
-                Meta description of the site, this description will be displayed on the search engine page (eg
-                Google or other) helpful for SEO.
+                <?php echo $data['lng']->get('system_description_desc'); ?>
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-8">
                 <div class="card dm-card">
-                    <div class="card-header">Keywords</div>
-                        <textarea class="card-body form-control" style="min-height: 150px;"
-                                  id="dm_keywords"><?php echo $settings['keywords']; ?></textarea>
+                    <div class="card-header">
+                        <?php echo $data['lng']->get('system_keywords'); ?>
+                    </div>
+                    <textarea class="card-body form-control" style="min-height: 150px;"
+                              id="dm_keywords"><?php echo $settings['keywords']; ?></textarea>
                 </div>
             </div>
             <div class="col-sm-4 hidden-xs">
-                Meta keywords, these keys are still used by some search engines, it is helpful for SEO
+                <?php echo $data['lng']->get('system_keywords_desc'); ?>
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-8">
                 <div class="card dm-card">
-                    <div class="card-header">Author</div>
+                    <div class="card-header">
+                        <?php echo $data['lng']->get('system_author'); ?>
+                    </div>
                     <input class="card-body form-control" id="dm_author"
                            value="<?php echo $settings['author']; ?>"/>
                 </div>
             </div>
             <div class="col-sm-4 hidden-xs">
-                The text in the author field, optional.
+                <?php echo $data['lng']->get('system_author'); ?>
             </div>
         </div>
     </div>
@@ -107,26 +116,30 @@ $settings = $data['settings'];
         <div class="row">
             <div class="col-sm-8">
                 <div class="card dm-card">
-                    <div class="card-header">Top HTML</div>
-                        <textarea class="card-body form-control" id="dm_top" style="min-height: 350px;"
-                                  style="min-height: 300px;"><?php echo $settings['top']; ?></textarea>
+                    <div class="card-header">
+                        <?php echo $data['lng']->get('system_top'); ?>
+                    </div>
+                    <textarea class="card-body form-control" id="dm_top" style="min-height: 350px;"
+                              style="min-height: 300px;"><?php echo $settings['top']; ?></textarea>
                 </div>
             </div>
             <div class="col-sm-4 hidden-xs">
-                Additional code in the page header.
+                <?php echo $data['lng']->get('system_top_desc'); ?>
             </div>
         </div>
 
         <div class="row">
             <div class="col-sm-8">
                 <div class="card dm-card">
-                    <div class="card-header">Bottom HTML</div>
+                    <div class="card-header">
+                        <?php echo $data['lng']->get('system_bottom'); ?>
+                    </div>
                         <textarea class="card-body form-control" id="dm_bottom" style="min-height: 350px;"
                                   style="min-height: 300px;"><?php echo $settings['bottom']; ?></textarea>
                 </div>
             </div>
             <div class="col-sm-4 hidden-xs">
-                Additional code in the page footer.
+                <?php echo $data['lng']->get('system_bottom_desc'); ?>
             </div>
         </div>
 
@@ -134,5 +147,5 @@ $settings = $data['settings'];
 </div>
 
 <button class="btn btn-block btn-lg btn-info save_template">
-    Save
+    <?php echo $data['lng']->get('save'); ?>
 </button>

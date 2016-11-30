@@ -34,19 +34,19 @@ $sections = $data['sections'];
                 <div class="card-block">
                     <div class="row dm-input-list">
                         <div class="col-sm-4">
-                            <input class="form-control dm_title bg-blue lighten" type="text" placeholder="Section Title"
-                                   data-toggle="tooltip" title="Section Title"
+                            <input class="form-control dm_title bg-blue lighten" type="text" placeholder="<?php echo $data['lng']->get('section_title'); ?>"
+                                   data-toggle="tooltip" title="<?php echo $data['lng']->get('section_title'); ?>"
                                    value="<?php echo $sections[$i]->title ?>"/>
                         </div>
                         <div class="col-sm-4">
-                            <input class="form-control dm_id bg-blue-3 lighten" type="text" placeholder="Section ID"
-                                   data-toggle="tooltip" title="Section ID"
+                            <input class="form-control dm_id bg-blue-3 lighten" type="text" placeholder="<?php echo $data['lng']->get('section_id'); ?>"
+                                   data-toggle="tooltip" title="<?php echo $data['lng']->get('section_id'); ?>"
                                    value="<?php echo $sections[$i]->section_id ?>"/>
                         </div>
                         <div class="col-sm-4">
                             <input class="form-control dm_class bg-blue-2 lighten" type="text"
-                                   placeholder="Section Classes"
-                                   data-toggle="tooltip" title="Section Classes"
+                                   placeholder="<?php echo $data['lng']->get('section_classes'); ?>"
+                                   data-toggle="tooltip" title="<?php echo $data['lng']->get('section_classes'); ?>"
                                    value="<?php echo $sections[$i]->section_class ?>"/>
                         </div>
                     </div>
@@ -54,12 +54,11 @@ $sections = $data['sections'];
                               placeholder="Section HTML"><?php echo $sections[$i]->content ?></textarea>
                 </div>
                 <div class="card-footer text-muted bg-blue">
-                    <button class="btn btn-secondary section_save"
-                            data-loading-text="<i class='fa fa-spinner fa-spin '></i> In progress...">
-                        Save changes
+                    <button class="btn btn-secondary section_save">
+                        <?php echo $data['lng']->get('save'); ?>
                     </button>
                     <button class="btn btn-secondary text-danger pull-right section_delete">
-                        Delete
+                        <?php echo $data['lng']->get('delete'); ?>
                     </button>
                 </div>
             </div>
