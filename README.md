@@ -24,5 +24,4 @@ Unfortunately the installer is not ready yet, but will soon!
 ## Some projects and links
 
 * [Manfies Landing Engine](https://github.com/Manfies/mle)
-* [SB Admin 2](https://github.com/BlackrockDigital/startbootstrap-sb-admin-2.git)
-* [SB Creative](https://github.com/BlackrockDigital/startbootstrap-creative)
+* [SB New Age](https://github.com/BlackrockDigital/startbootstrap-new-age)
