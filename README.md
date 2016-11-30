@@ -4,7 +4,7 @@ OpenSource PHP landing page engine/constructor to create landing pages with dyna
 
 ## I want to see a demo
 
-Yes, of course, follow [this link](http://dm.drteam.rocks) you can see a [SB Creative](https://github.com/BlackrockDigital/startbootstrap-creative) Landing Page.
+Yes, of course, follow [this link](http://dm.drteam.rocks) you can see a [SB New Age](https://github.com/BlackrockDigital/startbootstrap-new-age) based Landing Page.
 
 Follow [this link](http://dm.drteam.rocks/auth/login) if you want to see the administrative interface, username and password are `admin`.
 
