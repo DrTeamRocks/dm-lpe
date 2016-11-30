@@ -1,8 +1,8 @@
-CREATE DATABASE `dm`;
-CREATE USER `dm_user`@`%`
-  IDENTIFIED BY 'dm_pass';
-GRANT ALL PRIVILEGES ON `dm`.* TO 'dm_user'@'%'
-WITH GRANT OPTION;
+#CREATE DATABASE `dm`;
+#CREATE USER `dm_user`@`%`
+#  IDENTIFIED BY 'dm_pass';
+#GRANT ALL PRIVILEGES ON `dm`.* TO 'dm_user'@'%'
+#WITH GRANT OPTION;
 
 CREATE TABLE `dm`.`users` (
   `id`             INT  NOT NULL AUTO_INCREMENT,
