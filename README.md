@@ -16,6 +16,7 @@ Do not be afraid to break something, the site in read-only mode, so you can try 
     cd dm-lpe
     composer update
     bower update
+    make
 
 Then you need create the database schema, just follow commands from `backups/init.mysql.sql`.
 
