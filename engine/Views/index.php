@@ -38,18 +38,20 @@ foreach ($sections as $key => $value) {
     $variables = preg_match_all('/&lt;%(.*)%&gt;/i', $value->content, $matches);
     $variables_db = json_decode(htmlspecialchars_decode($value->variables), true);
 
-    $replace_what = null;
-    $replace_data = null;
-    foreach ($matches[1] as $key => $value) {
-        $replace_what[$key] = '/\<\%' . $value . '\%\>/';
-    }
+    if (!empty($matches[1])) {
+        $replace_what = null;
+        $replace_data = null;
+        foreach ($matches[1] as $key => $value) {
+            $replace_what[$key] = '/\<\%' . $value . '\%\>/';
+        }
 
-    // TODO: Need to fix this bug
-    foreach ($variables_db as $key => $value) {
-        $replace_data[$key] = $value['value'];
-    }
+        // TODO: Need to fix this bug
+        foreach ($variables_db as $key => $value) {
+            $replace_data[$key] = $value['value'];
+        }
 
-    $html = preg_replace($replace_what, $replace_data, $html);
+        $html = preg_replace($replace_what, $replace_data, $html);
+    }
     ?>
     <section class='<?php echo $class; ?>' id='<?php echo $id; ?>'>
         <?php echo $html; ?>
