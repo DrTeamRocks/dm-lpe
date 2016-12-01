@@ -117,6 +117,7 @@ class Admin extends Internal
         $data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
         $data['styles'] = $this->styles;
         $data['scripts'] = $this->scripts;
+        $data['scripts'][] = 'editor.js';
         $data['lng'] = $this->language;
 
         // Receive all settings from database
@@ -124,7 +125,7 @@ class Admin extends Internal
 
         View::render('admin/header', $data);
         View::render('admin/dashboard', $data);
-        View::render('admin/footer', $data);
+        View::render('footer', $data);
     }
 
     /**
@@ -144,7 +145,7 @@ class Admin extends Internal
 
         View::render('admin/header', $data);
         View::render('admin/system', $data);
-        View::render('admin/footer', $data);
+        View::render('footer', $data);
     }
 
 }

@@ -61,7 +61,6 @@ class External extends Controller
         // Site scripts
         $this->scripts = array(
             'footer_fix.js',
-            'scripts.js',
         );
 
         $this->_settings = new Model_Settings();

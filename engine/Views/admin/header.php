@@ -62,10 +62,23 @@
                         Administrator
                     </a>
                     <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
+                        <a class="dropdown-item" href="<?php echo DIR; ?>admin/profile">
+                            <i class="fa fa-user fa-fw"></i>
+                            <?php echo $data['lng']->get('profile'); ?>
+                        </a>
+
+                        <?php // TODO: if admin logic ?>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="<?php echo DIR; ?>admin/users">
+                            <i class="fa fa-users fa-fw"></i>
+                            <?php echo $data['lng']->get('users'); ?>
+                        </a>
                         <a class="dropdown-item" href="<?php echo DIR; ?>admin/system">
                             <i class="fa fa-cog fa-fw"></i>
                             <?php echo $data['lng']->get('system'); ?>
                         </a>
+                        <?php // TODO: END if admin logic ?>
+
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<?php echo DIR; ?>auth/logout">
                             <i class="fa fa-sign-out fa-fw"></i>
@@ -116,3 +129,7 @@
 </div>
 
 <div class="container" id="main-container">
+    <div class="margin-top-30px">
+        <a class="btn btn-info" href="<?php echo DIR ?>admin">Editor</a>
+        <a class="btn btn-info" href="<?php echo DIR ?>client">Client</a>
+    </div>

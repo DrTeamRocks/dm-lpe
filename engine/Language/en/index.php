@@ -24,6 +24,10 @@ return array(
     'system_bottom' => 'Bottom HTML',
     'system_bottom_desc' => 'Additional code in the page footer.',
 
+    'users' => 'Accounts',
+
+    'profile' => 'Your Profile',
+
     'error' => 'Page not found',
     'landing_page' => 'Landing Page',
     'add_section' => 'Add section',

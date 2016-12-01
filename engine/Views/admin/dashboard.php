@@ -33,6 +33,9 @@ $sections = $data['sections'];
                  class="card dm-content <?php echo $active; ?>">
                 <div class="card-block">
                     <div class="row dm-input-list">
+                        <div class="col-xs-12">
+                            <h5 class="text-xs-center">You can use variables like <code><%text%></code>, but dont forget fill this via client interface!</h5>
+                        </div>
                         <div class="col-sm-4">
                             <input class="form-control dm_title bg-blue lighten" type="text" placeholder="<?php echo $data['lng']->get('section_title'); ?>"
                                    data-toggle="tooltip" title="<?php echo $data['lng']->get('section_title'); ?>"
