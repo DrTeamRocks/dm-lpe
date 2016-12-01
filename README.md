@@ -27,7 +27,7 @@ Don't forget change the default admin password!
 ## RoadMap
 
 - [x] Minimalist version with basic functionality
-- [ ] Users separation, something like `expert` and `stupid`
+- [x] Users separation, something like `expert` and `stupid`
 - [ ] Users management functions for Admins (roles/groups/add/delete etc.)
 - [ ] "Step by step" installer of this project
 - [ ] Virtual hosting (multiple landings via one interface)
