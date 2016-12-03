@@ -16,7 +16,15 @@ class Settings extends Model
      */
     public function getByKey($key)
     {
-        return $this->db->select("SELECT * FROM settings WHERE `key` = '$key'");
+        return $this->db->select("
+            SELECT *
+            FROM settings
+            WHERE key = :key
+        ",
+            array(
+                ':key' => $key
+            )
+        );
     }
 
     /**
@@ -28,11 +36,9 @@ class Settings extends Model
     {
         $return = null;
         $result = $this->db->select("SELECT * FROM settings");
-        //print_r($result);die();
         foreach ($result as $key => $value) {
             $return[$value->key] = $value->value;
         }
-        //print_r($return);
         return $return;
     }
 

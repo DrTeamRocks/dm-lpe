@@ -21,8 +21,12 @@ class Sections extends Model
             FROM sections
             WHERE
                 deleted = FALSE
-                AND id = '$id'
-        ");
+                AND id = :id
+        ",
+            array(
+                ':id' => $id
+            )
+        );
     }
 
     /**

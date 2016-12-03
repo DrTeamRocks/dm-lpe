@@ -20,15 +20,18 @@ class Users extends Model
         switch (true) {
             // Default mode
             case ($type == null):
-                $where = "AND u.id = '$value'";
+                $where = "AND u.id = :id";
+                $where_array = array(':id' => $value);
                 break;
             // If need get user by email
             case ($type == 'email'):
-                $where = "AND u.email = '$value'";
+                $where = "AND u.email = :email";
+                $where_array = array(':email' => $value);
                 break;
             // If need get user by username
             case ($type == 'username'):
-                $where = "AND u.username = '$value'";
+                $where = "AND u.username = :username";
+                $where_array = array(':username' => $value);
                 break;
         }
 
@@ -39,7 +42,7 @@ class Users extends Model
             WHERE
                 u.deleted = FALSE
                 $where
-        ");
+        ", $where_array);
 
         return $result['0'];
     }
@@ -56,9 +59,13 @@ class Users extends Model
             SELECT password
             FROM users
             WHERE
-                `username` = '$username'
-                AND `deleted` = FALSE
-        ");
+                deleted = FALSE
+                AND username = :username
+        ",
+            array(
+                ':username' => $username
+            )
+        );
 
         return $result['0']->password;
     }

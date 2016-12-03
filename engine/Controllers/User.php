@@ -26,9 +26,7 @@ class User extends Internal
                     $id = Helpers::cleaner($_POST['id'], 'num');
                     $json = Helpers::cleaner($_POST['json'], 'json');
                     // What need update
-                    $data = array(
-                        'variables' => $json,
-                    );
+                    $data = array('variables' => $json);
                     // Selector
                     $where = array('id' => $id);
                     echo $this->_sections->update($data, $where);
@@ -43,7 +41,7 @@ class User extends Internal
                     echo $this->_sections->update($data, $where);
                     break;
             }
-
+            die();
         }
     }
 

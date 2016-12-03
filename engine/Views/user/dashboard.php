@@ -36,7 +36,7 @@ $sections = $data['sections'];
             if ($i == 0) $active = 'active';
 
             // Parse the html
-            $variables = preg_match_all('/&lt;%(.*)%&gt;/i', $sections[$i]->content, $matches);
+            $variables = preg_match_all('/&lt;\%(.*)\%&gt;/i', $sections[$i]->content, $matches);
             $variables_db = json_decode(htmlspecialchars_decode($sections[$i]->variables), true);
             ?>
             <div data-id="<?php echo $sections[$i]->id ?>"
@@ -67,9 +67,7 @@ $sections = $data['sections'];
                                 <?php echo $variable_name; ?>
                             </label>
                             <div class="col-xs-10">
-                                <input class="form-control dm-variable" type="text"
-                                       data-name="<?php echo $variable_name; ?>"
-                                       value="<?php echo $variable_value; ?>"/>
+                                <textarea class="form-control dm-variable" data-name="<?php echo $variable_name; ?>"><?php echo $variable_value; ?></textarea>
                             </div>
                         </div>
                         <?php
