@@ -70,7 +70,11 @@ class Auth extends External
 
                     // Update last login
                     if (!DEMO) $this->_users->update($values, $where);
-                    Url::redirect('admin');
+
+                    // Chose user role
+                    if ($userinfo->is_admin) Url::redirect('admin');
+                    if ($userinfo->is_editor) Url::redirect('editor');
+                    if ($userinfo->is_user) Url::redirect('user');
                     die();
                 }
             }

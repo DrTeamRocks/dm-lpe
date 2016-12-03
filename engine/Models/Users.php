@@ -20,23 +20,24 @@ class Users extends Model
         switch (true) {
             // Default mode
             case ($type == null):
-                $where = "AND `id` = '$value'";
+                $where = "AND u.id = '$value'";
                 break;
             // If need get user by email
             case ($type == 'email'):
-                $where = "AND `email` = '$value'";
+                $where = "AND u.email = '$value'";
                 break;
             // If need get user by username
             case ($type == 'username'):
-                $where = "AND `username` = '$value'";
+                $where = "AND u.username = '$value'";
                 break;
         }
 
         $result = $this->db->select("
-            SELECT *
-            FROM users
+            SELECT u.*, r.*
+            FROM users AS u
+            LEFT JOIN roles AS r ON (r.id = u.id_role)
             WHERE
-                `deleted` = FALSE
+                u.deleted = FALSE
                 $where
         ");
 

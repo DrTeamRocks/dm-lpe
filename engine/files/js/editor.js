@@ -146,7 +146,7 @@ function section_add() {
         },
         success: function (html) {
             console.log(html);
-            window.location.reload();
+            //window.location.reload();
         },
         complete: function () {
             $('#section_add').button('reset');
