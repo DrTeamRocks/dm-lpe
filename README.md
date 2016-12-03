@@ -29,8 +29,9 @@ Don't forget change the default admin password!
 - [x] Minimalist version with basic functionality
 - [x] Users separation, something like `expert` and `stupid`
 - [ ] Users management functions for Admins (roles/groups/add/delete etc.)
-- [ ] "Step by step" installer of this project
+- [ ] Extend the supported databases list (now only mysql, but should be at least: my, pg and lite)
 - [ ] Virtual hosting (multiple landings via one interface)
+- [ ] "Step by step" installer of this project
 
 ## Some projects and links
 
