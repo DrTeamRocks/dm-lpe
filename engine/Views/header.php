@@ -46,13 +46,7 @@
                 Landing Page Engine
             </a>
             <ul class="nav navbar-nav navbar-dark pull-right">
-                <li class="nav-item">
-                    <a class="nav-link" href="<?php echo DIR; ?>">
-                        <?php echo $data['lng']->get('landing_page'); ?>
-                        <i class="fa fa-eye"></i>
-                    </a>
-                </li>
-                <?php if ($data['userinfo']->is_admin || $data['userinfo']->is_editor) { ?>
+                <?php if ($data['add_section']) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">
                             <?php echo $data['lng']->get('add_section'); ?>
@@ -60,6 +54,26 @@
                         </a>
                     </li>
                 <?php } ?>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                        Mode
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
+                        <a class="dropdown-item" href="<?php echo DIR; ?>user">
+                            User
+                        </a>
+                        <?php if ($data['userinfo']->is_editor) { ?>
+                            <a class="dropdown-item" href="<?php echo DIR; ?>editor">
+                                Editor
+                            </a>
+                        <?php } ?>
+                        <?php if ($data['userinfo']->is_admin) { ?>
+                            <a class="dropdown-item" href="<?php echo DIR; ?>admin">
+                                Admin
+                            </a>
+                        <?php } ?>
+                    </div>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                         <?php echo $data['userinfo']->username; ?>
@@ -139,8 +153,3 @@
 <?php } ?>
 
 <div class="container" id="main-container">
-    <div class="margin-top-30px">
-        <a class="btn btn-info" href="<?php echo DIR ?>admin">Admin</a>
-        <a class="btn btn-info" href="<?php echo DIR ?>editor">Editor</a>
-        <a class="btn btn-info" href="<?php echo DIR ?>user">User</a>
-    </div>

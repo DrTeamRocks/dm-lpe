@@ -42,4 +42,24 @@ class Admin extends Internal
         View::render('footer', $data);
     }
 
+    public function action_users()
+    {
+        $data['userinfo'] = $this->userinfo;
+        $data['styles_vendor'] = $this->styles_vendor;
+        $data['scripts_vendor'] = $this->scripts_vendor;
+        $data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
+        $data['styles'] = $this->styles;
+        $data['scripts'] = $this->scripts;
+        $data['scripts'][] = 'admin.js';
+        $data['lng'] = $this->language;
+
+        // Receive all users
+        $data['users'] = $this->_users->getAll();
+        $data['roles'] = $this->_roles->getAll();
+
+        View::render('header', $data);
+        View::render('admin/users', $data);
+        View::render('footer', $data);
+    }
+
 }

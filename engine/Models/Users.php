@@ -48,6 +48,24 @@ class Users extends Model
     }
 
     /**
+     * Get all users from database
+     *
+     * @return mixed
+     */
+    public function getAll()
+    {
+        $result = $this->db->select("
+            SELECT u.*, r.*
+            FROM users AS u
+            LEFT JOIN roles AS r ON (r.id = u.id_role)
+            WHERE
+                u.deleted = FALSE
+        ");
+
+        return $result;
+    }
+
+    /**
      * Get user hash by username
      *
      * @param $username
