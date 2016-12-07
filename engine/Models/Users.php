@@ -55,7 +55,7 @@ class Users extends Model
     public function getAll()
     {
         $result = $this->db->select("
-            SELECT u.*, r.*
+            SELECT u.*, r.is_admin, r.is_editor, r.is_user
             FROM users AS u
             LEFT JOIN roles AS r ON (r.id = u.id_role)
             WHERE

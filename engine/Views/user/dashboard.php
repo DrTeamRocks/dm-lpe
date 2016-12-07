@@ -1,9 +1,7 @@
 <?php
 $sections = $data['sections'];
 ?>
-<br/>
-
-<div class="row">
+<div class="row margin-top-20px">
     <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
         <ul id="sections" class="list-group">
             <?php

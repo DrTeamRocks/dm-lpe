@@ -18,6 +18,46 @@ class Admin extends Internal
     {
         parent::__construct();
         if ($this->userinfo->is_admin != 1) Url::redirect('editor');
+
+        if (isset($_POST['submit'])) {
+            $mode = Helpers::cleaner($_POST['mode']);
+
+            print_r($_POST);
+
+            switch ($mode) {
+                case 'update':
+                    sleep(1);
+                    $id = Helpers::cleaner($_POST['id']);
+                    $field = Helpers::cleaner($_POST['field']);
+                    $value = Helpers::cleaner($_POST['value']);
+                    $data = null;
+                    $where = null;
+
+                    switch ($field) {
+                        case 'id_role':
+                        case 'username':
+                        case 'email':
+
+                            echo "$id $field $value\n";
+                            //die();
+
+                            // What need update
+                            $data = array($field => $value);
+
+                            if (!empty($id)) {
+                                // Selector
+                                $where = array('id' => $id);
+                                echo $this->_users->update($data, $where);
+                            } else {
+                                echo 'empty id';
+                            }
+                            break;
+                    }
+
+                    break;
+            }
+            die();
+        }
     }
 
     /**

@@ -1,81 +1,74 @@
-<div class="margin-top-20px">
+<?php
+$sections = $data['sections'];
+?>
+<div class="row margin-top-20px">
 
-    <div class="row">
-        <div class="col-sm-6 col-md-6 col-lg-4">
-            <div class="card">
-                <div class="card-header text-xs-center">
-                    <h4>
-                        <a href="">site.example.com</a>
-                    </h4>
-                    <ul class="nav nav-tabs card-header-tabs" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#statistics" role="tab">Statistics</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#templates" role="tab">Templates</a>
-                        </li>
-                    </ul>
+    <div class="col-xs-12 col-md-6 col-lg-3">
+        <ul id="sections" class="list-group">
+            <?php
+            $i = 0;
+            while ($i < count($sections)) {
+                $active = null;
+                if ($i == 0) $active = 'text-white bg-blue';
+                ?>
+                <li data-id="<?php echo $sections[$i]->id ?>" role="presentation"
+                    class="list-group-item cursor-pointer dm-item section_id sortable <?php echo $active; ?>">
+                    <?php echo $sections[$i]->title ?>
+                </li>
+                <?php
+                $i++;
+            }
+            ?>
+        </ul>
+    </div>
+
+    <div class="col-xs-12 col-md-6 col-lg-9">
+        <?php
+        $i = 0;
+        while ($i < count($sections)) {
+            $active = null;
+            if ($i == 0) $active = 'active';
+            ?>
+            <div data-id="<?php echo $sections[$i]->id ?>"
+                 class="card dm-content <?php echo $active; ?>">
+                <div class="card-block">
+                    <div class="row dm-input-list">
+                        <div class="col-xs-12">
+                            <h5 class="text-xs-center">You can use variables like <code><%text%></code>, but dont forget fill this via client interface!</h5>
+                        </div>
+                        <div class="col-sm-4">
+                            <input class="form-control dm_title bg-blue lighten" type="text" placeholder="<?php echo $data['lng']->get('section_title'); ?>"
+                                   data-toggle="tooltip" title="<?php echo $data['lng']->get('section_title'); ?>"
+                                   value="<?php echo $sections[$i]->title ?>"/>
+                        </div>
+                        <div class="col-sm-4">
+                            <input class="form-control dm_id bg-blue-3 lighten" type="text" placeholder="<?php echo $data['lng']->get('section_id'); ?>"
+                                   data-toggle="tooltip" title="<?php echo $data['lng']->get('section_id'); ?>"
+                                   value="<?php echo $sections[$i]->section_id ?>"/>
+                        </div>
+                        <div class="col-sm-4">
+                            <input class="form-control dm_class bg-blue-2 lighten" type="text"
+                                   placeholder="<?php echo $data['lng']->get('section_classes'); ?>"
+                                   data-toggle="tooltip" title="<?php echo $data['lng']->get('section_classes'); ?>"
+                                   value="<?php echo $sections[$i]->section_class ?>"/>
+                        </div>
+                    </div>
+                    <textarea class="form-control dm-textarea"
+                              placeholder="Section HTML"><?php echo $sections[$i]->content ?></textarea>
                 </div>
-                <div class="tab-content" style="padding-bottom: 0px;">
-                    <div class="tab-pane active" id="statistics" role="tabpanel">
-                        <div class="list-group list-group-flush">
-                            <div class="list-group-item" style="border-top: 0px;">
-                                Views <sup>today</sup>
-                                <label class="pull-right">123</label>
-                            </div>
-                            <div class="list-group-item">
-                                Template
-                                <label class="pull-right">
-                                    <select class="form-control" style="padding: 0px; margin-top: -8px;">
-                                        <option>Template 1</option>
-                                    </select>
-                                </label>
-                            </div>
-                            <div class="list-group-item">
-                                Variables
-                                <label class="pull-right">5</label>
-                            </div>
-                            <div class="list-group-item" style="border-bottom: 0px;">
-                                Sections
-                                <label class="pull-right">4</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane" id="templates" role="tabpanel">
-                        <div class="list-group list-group-flush">
-                            <div class="list-group-item" style="border-top: 0px;">
-                                Template 1
-                                <div class="btn-group pull-right">
-                                    <a href="/editor/show/1" class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a>
-                                    <a href="/editor/edit/1" class="btn btn-sm btn-secondary"><i class="fa fa-cogs"></i></a>
-                                </div>
-                            </div>
-                            <div class="list-group-item">
-                                Template 2
-                                <div class="btn-group pull-right">
-                                    <a class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-sm btn-secondary"><i class="fa fa-cogs"></i></a>
-                                </div>
-                            </div>
-                            <div class="list-group-item">
-                                Template 3
-                                <div class="btn-group pull-right">
-                                    <a class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-sm btn-secondary"><i class="fa fa-cogs"></i></a>
-                                </div>
-                            </div>
-                            <div class="list-group-item" style="border-bottom: 0px;">
-                                Template 4
-                                <div class="btn-group pull-right">
-                                    <a class="btn btn-sm btn-secondary"><i class="fa fa-eye"></i></a>
-                                    <a class="btn btn-sm btn-secondary"><i class="fa fa-cogs"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card-footer text-muted bg-blue">
+                    <button class="btn btn-secondary section_save">
+                        <?php echo $data['lng']->get('save'); ?>
+                    </button>
+                    <button class="btn btn-secondary text-danger pull-right section_delete">
+                        <?php echo $data['lng']->get('delete'); ?>
+                    </button>
                 </div>
             </div>
-        </div>
+            <?php
+            $i++;
+        }
+        ?>
     </div>
 
 </div>
