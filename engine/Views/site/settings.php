@@ -111,6 +111,15 @@ $site = $data['site'];
     </div>
 </div>
 
-<button class="btn btn-block btn-lg btn-info save_settings">
-    <?php echo $data['lng']->get('save'); ?>
-</button>
+<div class="row margin-top-20px">
+    <div class="col-sm-10">
+        <button class="btn btn-block btn-lg btn-info save_settings">
+            <?php echo $data['lng']->get('save'); ?>
+        </button>
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-block btn-lg btn-danger delete_site">
+            <?php echo $data['lng']->get('delete_site'); ?>
+        </button>
+    </div>
+</div>

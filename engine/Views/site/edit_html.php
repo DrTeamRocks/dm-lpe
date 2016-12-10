@@ -73,6 +73,10 @@ $site = $data['site'];
         </button>
     </div>
 <?php } else { ?>
+    <div class="alert alert-success text-xs-center margin-top-20px" role="alert">
+        You can use variables like <code><%text%></code>, but don't forget fill this via <i class="fa fa-pencil-square-o"></i> interface!
+    </div>
+
     <div class="row margin-top-20px">
 
         <div class="col-xs-12 col-md-6 col-lg-3">
@@ -105,10 +109,6 @@ $site = $data['site'];
                      class="card dm-content <?php echo $active; ?>">
                     <div class="card-block">
                         <div class="row dm-input-list">
-                            <div class="col-xs-12">
-                                <h5 class="text-xs-center">You can use variables like <code><%text%></code>, but dont
-                                    forget fill this via "user" interface!</h5>
-                            </div>
                             <div class="col-sm-4">
                                 <input class="form-control dm_title bg-blue lighten" type="text"
                                        placeholder="<?php echo $data['lng']->get('section_title'); ?>"

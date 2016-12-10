@@ -31,6 +31,7 @@ return array(
     'error' => 'Page not found',
     'landing_page' => 'Landing Page',
     'add_section' => 'Add section',
+    'add_site' => 'Add site',
     'template' => 'Template',
 
     'section_title' => 'Section Title',
@@ -41,6 +42,7 @@ return array(
     'close' => 'Close',
     'save' => 'Save changes',
     'delete' => 'Delete',
+    'delete_site' => 'Delete site',
     'submit' => 'Submit',
     'username' => 'Username',
     'password' => 'Password',

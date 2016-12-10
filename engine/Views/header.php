@@ -55,6 +55,15 @@
                     </li>
                 <?php } ?>
 
+                <?php if ($data['add_site'] && $data['userinfo']->is_admin) { ?>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-toggle="modal" data-target="#addSite">
+                            <?php echo $data['lng']->get('add_site'); ?>
+                            <i class="fa fa-globe fa-fw"></i>
+                        </a>
+                    </li>
+                <?php } ?>
+
                 <?php if ($data['userinfo']->is_admin) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo DIR; ?>system/users">

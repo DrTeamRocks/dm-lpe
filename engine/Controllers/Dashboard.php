@@ -32,8 +32,8 @@ class Dashboard extends Internal
         $data['scripts'] = $this->scripts;
         $data['lng'] = $this->language;
 
-        // Receive all settings from database
         $data['sites'] = $this->_sites->getAll();
+        $data['add_site'] = true;
 
         View::render('header', $data);
         View::render('dashboard', $data);
