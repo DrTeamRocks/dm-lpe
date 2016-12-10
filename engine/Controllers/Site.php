@@ -45,6 +45,8 @@ class Site extends Internal
                     $description = Helpers::cleaner($_POST['description']);
                     $keywords = Helpers::cleaner($_POST['keywords']);
                     $author = Helpers::cleaner($_POST['author']);
+                    $url = Helpers::cleaner($_POST['url']);
+                    $alias = Helpers::cleaner($_POST['alias']);
 
                     $update[] = array('key' => 'title', 'value' => $title);
                     $update[] = array('key' => 'styles', 'value' => $styles);
@@ -53,11 +55,18 @@ class Site extends Internal
                     $update[] = array('key' => 'keywords', 'value' => $keywords);
                     $update[] = array('key' => 'author', 'value' => $author);
 
+                    // Site settings loop
                     foreach ($update as $item) {
                         $data = array('value' => $item['value']);
                         $where = array('id_site' => $id_site, 'key' => $item['key']);
                         echo $this->_settings->update($data, $where);
                     }
+
+                    // Site url and alias parameters
+                    $data = array('url' => $url, 'alias' => $alias);
+                    $where = array('id' => $id_site);
+                    echo $this->_sites->update($data, $where);
+
                     break;
             }
             die();

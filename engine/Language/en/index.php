@@ -7,6 +7,10 @@ return array(
     'logout' => 'Sign Out',
 
     'system' => 'System',
+    'system_url' => 'Domain URL',
+    'system_url_desc' => 'Primary website address',
+    'system_alias' => 'Domain alias',
+    'system_alias_desc' => 'Secondary website address',
     'system_title' => 'Website Title',
     'system_title_desc' => 'Text in header title.',
     'system_styles' => 'Styles',

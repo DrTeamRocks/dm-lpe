@@ -26,6 +26,34 @@ $site = $data['site'];
     <div class="col-sm-8">
         <div class="card dm-card">
             <div class="card-header">
+                <?php echo $data['lng']->get('system_url'); ?>
+            </div>
+            <input class="card-body form-control" id="dm_url" value="<?php echo $site->url; ?>"/>
+        </div>
+    </div>
+    <div class="col-sm-4 hidden-xs">
+        <?php echo $data['lng']->get('system_url_desc'); ?>
+    </div>
+</div>
+
+<div class="row margin-top-20px">
+    <div class="col-sm-8">
+        <div class="card dm-card">
+            <div class="card-header">
+                <?php echo $data['lng']->get('system_alias'); ?>
+            </div>
+            <input class="card-body form-control" id="dm_alias" value="<?php echo $site->alias; ?>"/>
+        </div>
+    </div>
+    <div class="col-sm-4 hidden-xs">
+        <?php echo $data['lng']->get('system_alias_desc'); ?>
+    </div>
+</div>
+
+<div class="row margin-top-20px">
+    <div class="col-sm-8">
+        <div class="card dm-card">
+            <div class="card-header">
                 <?php echo $data['lng']->get('system_title'); ?>
             </div>
             <input class="card-body form-control" id="dm_title" value="<?php echo $settings['title']; ?>"/>
@@ -118,7 +146,7 @@ $site = $data['site'];
         </button>
     </div>
     <div class="col-sm-2">
-        <button class="btn btn-block btn-lg btn-danger delete_site">
+        <button class="btn btn-block btn-lg btn-danger delete_site disabled">
             <?php echo $data['lng']->get('delete_site'); ?>
         </button>
     </div>

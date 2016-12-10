@@ -8,7 +8,11 @@ use Modules\Database\Core\Model;
  */
 class Sites extends Model
 {
-
+    /**
+     * Get all sites
+     *
+     * @return mixed
+     */
     public function getAll()
     {
         $result = $this->db->select("SELECT * FROM sites");
@@ -31,6 +35,12 @@ class Sites extends Model
                     array(':id' => $value)
                 );
                 break;
+            case 'domain':
+                $result = $this->db->select(
+                    "SELECT * FROM sites WHERE url = :url OR alias = :url",
+                    array(':url' => $value)
+                );
+                break;
             default:
                 $result = array();
         }
@@ -47,7 +57,7 @@ class Sites extends Model
      */
     function update($data, $where)
     {
-        return $this->db->update("users", $data, $where);
+        return $this->db->update("sites", $data, $where);
     }
 
     /**
@@ -58,6 +68,6 @@ class Sites extends Model
      */
     function insert($data)
     {
-        return $this->db->insert("users", $data);
+        return $this->db->insert("sites", $data);
     }
 }

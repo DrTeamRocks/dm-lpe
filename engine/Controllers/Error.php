@@ -28,4 +28,16 @@ class Error extends External
         View::render('error', $data);
     }
 
+    public function action_default()
+    {
+        $data['title'] = $this->language->get('default') . ' &#8212; ' . SITETITLE;
+        $data['styles_vendor'] = $this->styles_vendor;
+        $data['scripts_vendor'] = $this->scripts_vendor;
+        $data['styles'][] = 'indent.css';
+        $data['styles'][] = '404.css';
+        $data['scripts'] = array();
+
+        View::render('default', $data);
+    }
+
 }

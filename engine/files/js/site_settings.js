@@ -1,19 +1,19 @@
 $(document).ready(function() {
     // Submit changes to database
     $('.save_settings').on('click', function() {
-        save_settings();
+        save_settings($(this));
     });
 });
 
-function save_settings(){
+function save_settings(obj){
     var title = $('#dm_title').val();
     var styles = $('#dm_styles').val();
     var scripts = $('#dm_scripts').val();
     var description = $('#dm_description').val();
     var keywords = $('#dm_keywords').val();
     var author = $('#dm_author').val();
-
-    console.log(author);
+    var url = $('#dm_url').val();
+    var alias = $('#dm_alias').val();
 
     $.ajax({
         type: 'POST',
@@ -25,16 +25,18 @@ function save_settings(){
             scripts: scripts,
             description: description,
             keywords: keywords,
-            author: author
+            author: author,
+            url: url,
+            alias: alias
         },
         beforeSend: function() {
-            $('#save_template').button('loading');
+            obj.attr('disabled', true);
         },
         success: function (html) {
             console.log(html);
         },
         complete: function() {
-            $('#save_template').button('reset');
+            obj.attr('disabled', false);
         }
     });
 }
