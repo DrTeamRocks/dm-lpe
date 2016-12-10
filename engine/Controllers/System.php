@@ -9,7 +9,7 @@ use System\Core\Url;
  * Class Admin
  * @package Application\Controllers
  */
-class Admin extends Internal
+class System extends Internal
 {
     /**
      * Index constructor
@@ -17,13 +17,10 @@ class Admin extends Internal
     public function __construct()
     {
         parent::__construct();
-        if ($this->userinfo->is_admin != 1) Url::redirect('editor');
+        if ($this->userinfo->is_admin != 1) Url::redirect('dashboard');
 
         if (isset($_POST['submit'])) {
             $mode = Helpers::cleaner($_POST['mode']);
-
-            print_r($_POST);
-
             switch ($mode) {
                 case 'update':
                     sleep(1);
@@ -32,18 +29,13 @@ class Admin extends Internal
                     $value = Helpers::cleaner($_POST['value']);
                     $data = null;
                     $where = null;
-
                     switch ($field) {
                         case 'id_role':
                         case 'username':
                         case 'email':
-
                             echo "$id $field $value\n";
-                            //die();
-
                             // What need update
                             $data = array($field => $value);
-
                             if (!empty($id)) {
                                 // Selector
                                 $where = array('id' => $id);
@@ -53,33 +45,9 @@ class Admin extends Internal
                             }
                             break;
                     }
-
                     break;
             }
-            die();
         }
-    }
-
-    /**
-     * Default admin page dashboard
-     */
-    public function action_index()
-    {
-        $data['userinfo'] = $this->userinfo;
-        $data['styles_vendor'] = $this->styles_vendor;
-        $data['scripts_vendor'] = $this->scripts_vendor;
-        $data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
-        $data['styles'] = $this->styles;
-        $data['scripts'] = $this->scripts;
-        $data['scripts'][] = 'admin.js';
-        $data['lng'] = $this->language;
-
-        // Receive all settings from database
-        $data['sections'] = $this->_sections->getAll();
-
-        View::render('header', $data);
-        View::render('admin/dashboard', $data);
-        View::render('footer', $data);
     }
 
     public function action_users()
@@ -90,7 +58,7 @@ class Admin extends Internal
         $data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
         $data['styles'] = $this->styles;
         $data['scripts'] = $this->scripts;
-        $data['scripts'][] = 'admin.js';
+        $data['scripts'][] = 'system.js';
         $data['lng'] = $this->language;
 
         // Receive all users
@@ -98,7 +66,7 @@ class Admin extends Internal
         $data['roles'] = $this->_roles->getAll();
 
         View::render('header', $data);
-        View::render('admin/users', $data);
+        View::render('system/users', $data);
         View::render('footer', $data);
     }
 

@@ -1,6 +1,33 @@
 <?php
 $sections = $data['sections'];
+$site = $data['site'];
 ?>
+
+<div class="margin-top-20px">
+    <div class="card">
+        <h4 class="card-header dm-card-header bg-blue lighten">
+            <a target="_blank" href="http://<?php echo $site->url; ?>"><?php echo $site->url; ?></a>
+            <div class="btn-group pull-right">
+                <a href="<?php echo DIR . 'site/html/' . $site->id ?>" class="btn btn-secondary">
+                    <i class="fa fa-code"></i>
+                </a>
+                <a href="<?php echo DIR . 'site/variables/' . $site->id ?>" class="btn btn-secondary">
+                    <i class="fa fa-pencil-square-o"></i>
+                </a>
+                <a href="<?php echo DIR . 'site/settings/' . $site->id ?>" class="btn btn-secondary">
+                    <i class="fa fa-cogs"></i>
+                </a>
+            </div>
+        </h4>
+    </div>
+</div>
+
+<?php if (empty($sections)) { ?>
+    <div class="margin-top-20px text-xs-center">
+        <h3>We have no editable sections for this website</h3>
+    </div>
+<?php } ?>
+
 <div class="row margin-top-20px">
     <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
         <ul id="sections" class="list-group">

@@ -114,3 +114,7 @@ label {
     color: transparentize($color-white, 0.1);
   }
 }
+
+.dm-card-header {
+  border-bottom: 0;
+}

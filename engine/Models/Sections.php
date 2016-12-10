@@ -32,18 +32,20 @@ class Sections extends Model
     /**
      * Get all section for view
      *
+     * @param $id_site
      * @return mixed
      */
-    public function getAll()
+    public function getSections($id_site)
     {
         return $this->db->select("
             SELECT *
             FROM sections
             WHERE
                 deleted = FALSE
+                AND id_site = :id_site
             ORDER BY
                 ordering
-        ");
+        ", array(':id_site' => $id_site));
     }
 
     /**

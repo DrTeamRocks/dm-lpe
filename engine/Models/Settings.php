@@ -9,36 +9,23 @@ use Modules\Database\Core\Model;
 class Settings extends Model
 {
     /**
-     * Get some parameters by key
+     * Get all settings for specified site
      *
-     * @param $key
-     * @return mixed
+     * @param $id_site
+     * @return null
      */
-    public function getByKey($key)
+    public function getSettings($id_site)
     {
-        return $this->db->select("
-            SELECT *
-            FROM settings
-            WHERE key = :key
-        ",
-            array(
-                ':key' => $key
-            )
+        $result = $this->db->select(
+            "SELECT * FROM settings WHERE id_site = :id_site",
+            array(':id_site' => $id_site)
         );
-    }
 
-    /**
-     * Get all settings
-     *
-     * @return array
-     */
-    public function getAll()
-    {
         $return = null;
-        $result = $this->db->select("SELECT * FROM settings");
         foreach ($result as $key => $value) {
             $return[$value->key] = $value->value;
         }
+
         return $return;
     }
 

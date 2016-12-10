@@ -62,8 +62,6 @@ class Auth extends External
                     // Set native session params
                     Session::set('id_user', $id_user);
 
-                    //error_log(print_r($this->userinfo,true));
-
                     // Params for update
                     $values = array('lastlogin_time' => date('Y-m-d H:i:s'));
                     $where = array('id' => $id_user);
@@ -72,9 +70,7 @@ class Auth extends External
                     if (!DEMO) $this->_users->update($values, $where);
 
                     // Chose user role
-                    if ($userinfo->is_admin) Url::redirect('admin');
-                    if ($userinfo->is_editor) Url::redirect('editor');
-                    if ($userinfo->is_user) Url::redirect('user');
+                    if ($userinfo->is_admin) Url::redirect('dashboard');
                     die();
                 }
             }

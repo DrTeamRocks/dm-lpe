@@ -5,6 +5,7 @@ use Application\Models\Settings as Model_Settings;
 use Application\Models\Sections as Model_Sections;
 use Application\Models\Users as Model_Users;
 use Application\Models\Roles as Model_Roles;
+use Application\Models\Sites as Model_Sites;
 
 /**
  * Class Main
@@ -31,6 +32,11 @@ class External extends Controller
      * @var Model_Roles
      */
     public $_roles;
+
+    /**
+     * @var Model_Sites
+     */
+    public $_sites;
 
     // Styles and Scripts
     public $styles_vendor;
@@ -73,8 +79,16 @@ class External extends Controller
         $this->_sections = new Model_Sections();
         $this->_users = new Model_Users();
         $this->_roles = new Model_Roles();
+        $this->_sites = new Model_Sites();
 
         $this->language->load('index');
+    }
+
+    public function _404()
+    {
+        $error = new Error();
+        $error->action_index();
+        die();
     }
 
 }

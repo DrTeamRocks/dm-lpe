@@ -130,26 +130,3 @@ function section_save(obj) {
         }
     });
 }
-
-/**
- * Add new section
- */
-function section_add() {
-    $.ajax({
-        type: 'POST',
-        data: {
-            submit: 'submit',
-            mode: 'new'
-        },
-        beforeSend: function () {
-            $('#section_add').button('loading');
-        },
-        success: function (html) {
-            console.log(html);
-            //window.location.reload();
-        },
-        complete: function () {
-            $('#section_add').button('reset');
-        }
-    });
-}

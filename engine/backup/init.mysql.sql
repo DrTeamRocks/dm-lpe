@@ -39,25 +39,36 @@ INSERT INTO `dm`.`roles` (`id`, `name`, `is_admin`, `is_editor`, `is_user`) VALU
 INSERT INTO `dm`.`roles` (`id`, `name`, `is_admin`, `is_editor`, `is_user`) VALUES ('2', 'Editor', FALSE, TRUE, TRUE);
 INSERT INTO `dm`.`roles` (`id`, `name`, `is_admin`, `is_editor`, `is_user`) VALUES ('3', 'User', FALSE, FALSE, TRUE);
 
--- Sites settings
-CREATE TABLE `dm`.`settings` (
-  `id`    INT  NOT NULL AUTO_INCREMENT,
-  `key`   TEXT NOT NULL,
-  `value` TEXT NOT NULL,
+-- Sites
+CREATE TABLE `dm`.`sites` (
+  `id`      INT  NOT NULL AUTO_INCREMENT,
+  `url`     TEXT NOT NULL,
+  `alias`   TEXT NOT NULL,
+  `enabled` BOOL NOT NULL DEFAULT TRUE,
+  `deleted` BOOL NOT NULL DEFAULT FALSE,
   PRIMARY KEY (`id`)
 );
-INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('title', 'title');
-INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('styles', 'styles');
-INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('scripts', 'scripts');
-INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('description', 'description');
-INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('keywords', 'keywords');
-INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('author', 'author');
-INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('top', 'top');
-INSERT INTO `dm`.`settings` (`key`, `value`) VALUES ('bottom', 'bottom');
+INSERT INTO `dm`.`sites` (`url`, `alias`) VALUES ('dm.drteam.rocks', 'dm');
+
+-- Sites settings
+CREATE TABLE `dm`.`settings` (
+  `id`      INT  NOT NULL AUTO_INCREMENT,
+  `id_site` INT  NOT NULL,
+  `key`     TEXT NOT NULL,
+  `value`   TEXT NOT NULL,
+  PRIMARY KEY (`id`)
+);
+INSERT INTO `dm`.`settings` (`id_site`, `key`, `value`) VALUES ('1', 'title', 'title');
+INSERT INTO `dm`.`settings` (`id_site`, `key`, `value`) VALUES ('1', 'styles', 'styles');
+INSERT INTO `dm`.`settings` (`id_site`, `key`, `value`) VALUES ('1', 'scripts', 'scripts');
+INSERT INTO `dm`.`settings` (`id_site`, `key`, `value`) VALUES ('1', 'description', 'description');
+INSERT INTO `dm`.`settings` (`id_site`, `key`, `value`) VALUES ('1', 'keywords', 'keywords');
+INSERT INTO `dm`.`settings` (`id_site`, `key`, `value`) VALUES ('1', 'author', 'author');
 
 -- Sites section
 CREATE TABLE `dm`.`sections` (
   id            INT  NOT NULL AUTO_INCREMENT,
+  id_site       INT  NOT NULL,
   add_time      TEXT NOT NULL,
   title         TEXT,
   section_id    TEXT,
