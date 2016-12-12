@@ -26,8 +26,6 @@ $scripts = preg_split("/\r\n|\n|\r/", $settings['scripts']);
 </head>
 <body id="page-top">
 
-<?php echo htmlspecialchars_decode($settings['top']); ?>
-
 <?php
 foreach ($sections as $key => $value) {
     $id = $value->section_id;
@@ -60,11 +58,12 @@ foreach ($sections as $key => $value) {
 }
 ?>
 
-<?php echo htmlspecialchars_decode($settings['bottom']); ?>
-
 <!-- JS -->
 <?php foreach ($scripts as $script)
     echo "<script src='$script'></script>\n"; ?>
+
+<!-- Other scripts -->
+<?php echo htmlspecialchars_decode($settings['footer']); ?>
 
 </body>
 </html>

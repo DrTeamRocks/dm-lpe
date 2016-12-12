@@ -70,7 +70,7 @@ class Auth extends External
                     if (!DEMO) $this->_users->update($values, $where);
 
                     // Chose user role
-                    if ($userinfo->is_admin) Url::redirect('dashboard');
+                    if (!empty($userinfo)) Url::redirect('dashboard');
                     die();
                 }
             }

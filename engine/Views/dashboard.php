@@ -44,15 +44,18 @@ $sites = $data['sites'];
                         <a target="_blank"
                            href="http://<?php echo $sites[$i]->url; ?>"><?php echo $sites[$i]->url; ?></a>
                         <div class="btn-group pull-right">
-                            <a href="<?php echo DIR . 'site/html/' . $sites[$i]->id ?>" class="btn btn-secondary">
-                                <i class="fa fa-code"></i>
-                            </a>
                             <a href="<?php echo DIR . 'site/variables/' . $sites[$i]->id ?>" class="btn btn-secondary">
                                 <i class="fa fa-pencil-square-o"></i>
                             </a>
-                            <a href="<?php echo DIR . 'site/settings/' . $sites[$i]->id ?>" class="btn btn-secondary">
-                                <i class="fa fa-cogs"></i>
-                            </a>
+                            <?php if ($data['userinfo']->is_editor) { ?>
+                                <a href="<?php echo DIR . 'site/html/' . $sites[$i]->id ?>" class="btn btn-secondary">
+                                    <i class="fa fa-code"></i>
+                                </a>
+                                <a href="<?php echo DIR . 'site/settings/' . $sites[$i]->id ?>"
+                                   class="btn btn-secondary">
+                                    <i class="fa fa-cogs"></i>
+                                </a>
+                            <?php } ?>
                         </div>
                     </h4>
                     <p class="card-text">

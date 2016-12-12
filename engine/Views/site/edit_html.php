@@ -7,17 +7,19 @@ $site = $data['site'];
     <div class="card">
         <h4 class="card-header dm-card-header bg-blue lighten">
             <a target="_blank" href="http://<?php echo $site->url; ?>"><?php echo $site->url; ?></a>
-            <div class="btn-group pull-right">
-                <a href="<?php echo DIR . 'site/html/' . $site->id ?>" class="btn btn-secondary">
-                    <i class="fa fa-code"></i>
-                </a>
-                <a href="<?php echo DIR . 'site/variables/' . $site->id ?>" class="btn btn-secondary">
-                    <i class="fa fa-pencil-square-o"></i>
-                </a>
-                <a href="<?php echo DIR . 'site/settings/' . $site->id ?>" class="btn btn-secondary">
-                    <i class="fa fa-cogs"></i>
-                </a>
-            </div>
+            <?php if ($data['userinfo']->is_editor) { ?>
+                <div class="btn-group pull-right">
+                    <a href="<?php echo DIR . 'site/variables/' . $site->id ?>" class="btn btn-secondary">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    <a href="<?php echo DIR . 'site/html/' . $site->id ?>" class="btn btn-secondary">
+                        <i class="fa fa-code"></i>
+                    </a>
+                    <a href="<?php echo DIR . 'site/settings/' . $site->id ?>" class="btn btn-secondary">
+                        <i class="fa fa-cogs"></i>
+                    </a>
+                </div>
+            <?php } ?>
         </h4>
     </div>
 </div>
@@ -74,7 +76,8 @@ $site = $data['site'];
     </div>
 <?php } else { ?>
     <div class="alert alert-success text-xs-center margin-top-20px" role="alert">
-        You can use variables like <code><%text%></code>, but don't forget fill this via <i class="fa fa-pencil-square-o"></i> interface!
+        You can use variables like <code><%text%></code>, but don't forget fill this via <i
+            class="fa fa-pencil-square-o"></i> interface!
     </div>
 
     <div class="row margin-top-20px">

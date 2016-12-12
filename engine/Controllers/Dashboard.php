@@ -16,7 +16,6 @@ class Dashboard extends Internal
     public function __construct()
     {
         parent::__construct();
-        if ($this->userinfo->is_editor != 1) Url::redirect('user');
     }
 
     /**
