@@ -159,6 +159,29 @@ class Site extends Internal
         if (isset($_POST['submit'])) {
             $mode = Helpers::cleaner($_POST['mode']);
             switch ($mode) {
+                case 'type':
+                    sleep(1);
+                    $id = Helpers::cleaner($_POST['id'], 'num');
+                    $section_type = Helpers::cleaner($_POST['section_type'], 'text');
+
+                    switch ($section_type) {
+                        case 'section':
+                        case 'nav':
+                        case 'header':
+                        case 'footer':
+                        case 'div':
+                            // What need update
+                            $data = array(
+                                'section_type' => $section_type,
+                            );
+                            // Selector
+                            $where = array('id_site' => $id_site, 'id' => $id);
+                            echo $this->_sections->update($data, $where);
+                            break;
+                        default:
+                            echo 'err';
+                    }
+                    break;
                 case 'update':
                     sleep(1);
                     $id = Helpers::cleaner($_POST['id'], 'num');

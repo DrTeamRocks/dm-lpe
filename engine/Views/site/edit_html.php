@@ -58,6 +58,20 @@ $site = $data['site'];
                 <div class="modal-footer bg-blue">
                     <button class="btn btn-secondary pull-left" name="submit"
                             type="submit"><?php echo $data['lng']->get('submit'); ?></button>
+                    <div class="btn-group dropup dm-section-type">
+                        <button type="button" class="btn btn-secondary dm-section-type-top" disabled>section</button>
+                        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">&nbsp;</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item">section</a>
+                            <a class="dropdown-item">nav</a>
+                            <a class="dropdown-item">header</a>
+                            <a class="dropdown-item">footer</a>
+                            <a class="dropdown-item">div</a>
+                        </div>
+                    </div>
                     <button class="btn btn-secondary pull-right" type="button"
                             data-dismiss="modal"><?php echo $data['lng']->get('close'); ?></button>
                 </div>
@@ -138,6 +152,20 @@ $site = $data['site'];
                         <button class="btn btn-secondary section_save">
                             <?php echo $data['lng']->get('save'); ?>
                         </button>
+                        <div class="btn-group dropup dm-section-type">
+                            <button type="button" class="btn btn-secondary dm-section-type-top" disabled><?php echo $sections[$i]->section_type ?></button>
+                            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">&nbsp;</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item">section</a>
+                                <a class="dropdown-item">nav</a>
+                                <a class="dropdown-item">header</a>
+                                <a class="dropdown-item">footer</a>
+                                <a class="dropdown-item">div</a>
+                            </div>
+                        </div>
                         <button class="btn btn-secondary text-danger pull-right section_delete">
                             <?php echo $data['lng']->get('delete'); ?>
                         </button>

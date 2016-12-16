@@ -55,6 +55,7 @@ CREATE TABLE `sections` (
   `title` text,
   `section_id` text,
   `section_class` text,
+  `section_type` text,
   `content` text,
   `variables` text,
   `ordering` int(11) DEFAULT NULL,

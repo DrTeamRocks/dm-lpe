@@ -10,10 +10,6 @@ $(document).ready(function () {
             }
         });
 
-    $('#section_add').on('click', function () {
-        section_add();
-    });
-
     $('.section_save').on('click', function () {
         section_save($(this));
     });
@@ -26,9 +22,37 @@ $(document).ready(function () {
         show_section($(this));
     });
 
+    $('.dm-section-type a.dropdown-item').on('click', function () {
+        section_type($(this));
+    });
+
     $('[data-toggle="tooltip"]').tooltip();
 
 });
+
+/**
+ * Section type selector in button
+ * @param obj
+ */
+function section_type(obj) {
+    var section_type = obj.html();
+    var id = obj.parent().parent().parent().parent().data('id');
+    var type_button = obj.parent().parent().find('.dm-section-type-top');
+
+    $.ajax({
+        type: 'POST',
+        data: {
+            submit: 'submit',
+            mode: 'type',
+            section_type: section_type,
+            id: id
+        },
+        success: function (html) {
+            console.log(html);
+            type_button.html(section_type);
+        }
+    });
+}
 
 /**
  * Show section after click on anc pill
