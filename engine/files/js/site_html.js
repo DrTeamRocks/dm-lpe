@@ -81,7 +81,7 @@ function section_order(obj, i) {
             submit: 'submit',
             mode: 'order',
             id: id,
-            order: i
+            order: i+1
         },
         success: function (html) {
             //console.log(html);

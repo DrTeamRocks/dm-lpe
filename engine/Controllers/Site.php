@@ -232,6 +232,7 @@ class Site extends Internal
                         'section_id' => $section_id,
                         'section_class' => $section_class,
                         'content' => $content,
+                        'ordering' => 0
                     );
                     $this->_sections->insert($data);
                     Url::redirect('site/html/' . $id_site);

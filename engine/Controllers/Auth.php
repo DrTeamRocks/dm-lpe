@@ -32,7 +32,7 @@ class Auth extends External
     public function action_login()
     {
         // Redirect to index if not empty
-        if (!empty(Session::get('id_user'))) Url::redirect('admin');
+        if (!empty(Session::get('id_user'))) Url::redirect('dashboard');
 
         if (isset($_POST['submit'])) {
             sleep(1);

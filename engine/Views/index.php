@@ -31,6 +31,7 @@ foreach ($sections as $key => $value) {
     $id = $value->section_id;
     $class = $value->section_class;
     $html = htmlspecialchars_decode($value->content);
+    $type = $value->section_type;
 
     // Parse the html
     $variables = preg_match_all('/&lt;%(.*)%&gt;/i', $value->content, $matches);
@@ -50,11 +51,10 @@ foreach ($sections as $key => $value) {
 
         $html = preg_replace($replace_what, $replace_data, $html);
     }
-    ?>
-    <section class='<?php echo $class; ?>' id='<?php echo $id; ?>'>
-        <?php echo $html; ?>
-    </section>
-    <?php
+
+    echo "<" . $type . " class='" . $class . "' id='" . $id . "'>";
+    echo $html;
+    echo "</" . $type . ">";
 }
 ?>
 
