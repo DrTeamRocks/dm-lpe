@@ -55,6 +55,15 @@
                     </li>
                 <?php } ?>
 
+                <?php if ($data['add_user'] && $data['userinfo']->is_admin) { ?>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-toggle="modal" data-target="#addUser">
+                            <?php echo $data['lng']->get('add_user'); ?>
+                            <i class="fa fa-user fa-fw"></i>
+                        </a>
+                    </li>
+                <?php } ?>
+
                 <?php if ($data['add_site'] && $data['userinfo']->is_admin) { ?>
                     <li class="nav-item">
                         <a href="#" class="nav-link" data-toggle="modal" data-target="#addSite">

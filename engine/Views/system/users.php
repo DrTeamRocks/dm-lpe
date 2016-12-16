@@ -8,26 +8,44 @@ foreach ($roles as $role) {
 ?>
 <div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <input type="text" class="form-control"/>
+        <form data-toggle="validator" role="form" method="post">
+            <input type="hidden" name="mode" value="add"/>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel"><?php echo $data['lng']->get('add_user'); ?></h4>
                 </div>
-                <div class="form-group" style="margin-bottom: 0;">
-                    <input type="text" class="form-control"/>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" required
+                               placeholder="<?php echo $data['lng']->get('username'); ?>"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" required
+                               placeholder="<?php echo $data['lng']->get('email'); ?>"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" required
+                               placeholder="<?php echo $data['lng']->get('password'); ?>"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password_again" required
+                               placeholder="<?php echo $data['lng']->get('password_again'); ?>"/>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" name="submit" class="btn btn-secondary pull-left">
+                        <?php echo $data['lng']->get('submit'); ?>
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                        <?php echo $data['lng']->get('close'); ?>
+                    </button>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 
@@ -54,7 +72,11 @@ foreach ($roles as $role) {
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <button class="btn btn-secondary pull-right" data-toggle="modal" data-target="#addUser"><i class="fa fa-cogs"></i></button>
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-secondary disabled"><!--data-toggle="modal" data-target="#addUser"--><i
+                                class="fa fa-cogs"></i></button>
+                        <button class="btn btn-secondary disabled"><i class="fa fa-trash"></i></button>
+                    </div>
                 </div>
             </div>
         </div>

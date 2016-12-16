@@ -46,6 +46,34 @@ class System extends Internal
                             break;
                     }
                     break;
+                case 'add':
+                    sleep(1);
+                    $username = Helpers::cleaner($_POST['username']);
+                    $email = Helpers::cleaner($_POST['email']);
+                    $password = Helpers::cleaner($_POST['password']);
+                    $password_again = Helpers::cleaner($_POST['password_again']);
+                    $id_role = Helpers::cleaner($_POST['id_role']);
+
+
+                    if (!empty($username) && !empty($email) && !empty($password)) {
+                        if ($password == $password_again) {
+                            // What need insert
+                            $data = array(
+                                'username' => $username,
+                                'email' => $email,
+                                'password' => Password::make($password),
+                                'id_role' => 3,
+                                'create_time' => date('Y-m-d H:i:s')
+
+                            );
+                            echo $this->_users->insert($data);
+                        }
+                    }
+
+                    // Redirect to users list
+                    Url::redirect('system/users');
+
+                    break;
             }
         }
     }
@@ -60,6 +88,9 @@ class System extends Internal
         $data['scripts'] = $this->scripts;
         $data['scripts'][] = 'system.js';
         $data['lng'] = $this->language;
+
+        // Enable the new user button in top nav
+        $data['add_user'] = true;
 
         // Receive all users
         $data['users'] = $this->_users->getAll();

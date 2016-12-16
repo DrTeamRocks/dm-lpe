@@ -36,6 +36,7 @@ return array(
     'landing_page' => 'Landing Page',
     'add_section' => 'Add section',
     'add_site' => 'Add site',
+    'add_user' => 'Add user',
     'template' => 'Template',
 
     'section_title' => 'Section Title',
@@ -49,5 +50,7 @@ return array(
     'delete_site' => 'Delete site',
     'submit' => 'Submit',
     'username' => 'Username',
+    'email' => 'E-Mail',
+    'password_again' => 'Password again',
     'password' => 'Password',
 );

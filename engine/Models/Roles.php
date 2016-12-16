@@ -9,9 +9,8 @@ use Modules\Database\Core\Model;
 class Roles extends Model
 {
     /**
-     * Get user by id
-     *
-     * @return array
+     * @param $asd string text message
+     * @return mixed result
      */
     public function getAll()
     {

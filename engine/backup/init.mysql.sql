@@ -11,6 +11,7 @@ CREATE TABLE `dm`.`users` (
   `email`          TEXT NOT NULL,
   `username`       TEXT NOT NULL,
   `password`       TEXT NOT NULL,
+  `create_time`    TEXT NOT NULL,
   `lastlogin_time` TEXT NOT NULL,
   `enabled`        BOOL NOT NULL DEFAULT TRUE,
   `deleted`        BOOL NOT NULL DEFAULT FALSE,
