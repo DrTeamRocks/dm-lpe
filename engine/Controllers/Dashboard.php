@@ -16,6 +16,33 @@ class Dashboard extends Internal
     public function __construct()
     {
         parent::__construct();
+
+        if (isset($_POST['submit'])) {
+            $mode = Helpers::cleaner($_POST['mode']);
+
+            switch ($mode) {
+                // Create new site mode
+                case 'add':
+                    sleep(1);
+                    $url = Helpers::cleaner($_POST['url']);
+                    $alias = Helpers::cleaner($_POST['alias']);
+
+                    // If cleaned url is not empty
+                    if (!empty($url)) {
+                        $data['url'] = $url;
+                        // We need update array if alias is not empty
+                        if (!empty($alias)) $data['alias'] = $alias;
+                        echo $this->_sites->insert($data);
+                    } else {
+                        echo 'error';
+                    }
+
+                    // Redirect to users list
+                    Url::redirect('dashboard');
+
+                    break;
+            }
+        }
     }
 
     /**

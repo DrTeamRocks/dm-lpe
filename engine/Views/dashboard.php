@@ -5,6 +5,7 @@ $sites = $data['sites'];
 <div class="modal fade" id="addSite" tabindex="-1" role="dialog" aria-labelledby="addSiteLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <form data-toggle="validator" role="form" method="post">
+            <input type="hidden" name="mode" value="add"/>
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -17,7 +18,7 @@ $sites = $data['sites'];
                         <input type="text" class="form-control" name="url" placeholder="Domain URL" required/>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="url" placeholder="Domain Alias"/>
+                        <input type="text" class="form-control" name="alias" placeholder="Domain Alias"/>
                     </div>
                 </div>
                 <div class="modal-footer bg-blue">
@@ -40,7 +41,7 @@ $sites = $data['sites'];
             while ($i < count($sites)) {
                 ?>
                 <div class="list-group-item">
-                    <h4 class="card-title">
+                    <h3 class="card-title">
                         <a target="_blank"
                            href="http://<?php echo $sites[$i]->url; ?>"><?php echo $sites[$i]->url; ?></a>
                         <div class="btn-group pull-right">
@@ -57,7 +58,7 @@ $sites = $data['sites'];
                                 </a>
                             <?php } ?>
                         </div>
-                    </h4>
+                    </h3>
                     <p class="card-text">
                         <a target="_blank" href="http://<?php echo $sites[$i]->alias; ?>">
                             <?php echo $sites[$i]->alias; ?>
