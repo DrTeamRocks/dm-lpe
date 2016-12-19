@@ -53,8 +53,6 @@ class System extends Internal
                     $password = Helpers::cleaner($_POST['password']);
                     $password_again = Helpers::cleaner($_POST['password_again']);
                     $id_role = Helpers::cleaner($_POST['id_role']);
-
-
                     if (!empty($username) && !empty($email) && !empty($password)) {
                         if ($password == $password_again) {
                             // What need insert
@@ -72,7 +70,17 @@ class System extends Internal
 
                     // Redirect to users list
                     Url::redirect('system/users');
+                    break;
+                case 'delete':
+                    sleep(1);
+                    $id = Helpers::cleaner($_POST['id']);
 
+                    // If id is not empty
+                    if (!empty($id)) {
+                        $data = array('deleted' => true);
+                        $where = array('id' => $id);
+                        echo $this->_users->update($data, $where);
+                    }
                     break;
             }
         }

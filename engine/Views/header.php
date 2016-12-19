@@ -58,7 +58,7 @@
                 <?php if ($data['add_user'] && $data['userinfo']->is_admin) { ?>
                     <li class="nav-item">
                         <a href="#" class="nav-link" data-toggle="modal" data-target="#addUser">
-                            <?php echo $data['lng']->get('add_user'); ?>
+                            <?php echo $data['lng']->get('user_add'); ?>
                             <i class="fa fa-user fa-fw"></i>
                         </a>
                     </li>

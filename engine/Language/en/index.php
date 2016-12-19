@@ -29,6 +29,9 @@ return array(
     'system_bottom_desc' => 'Additional code in the page footer.',
 
     'users' => 'Accounts',
+    'user_add' => 'Add user',
+    'user_delete' => 'You are really want to delete user?',
+    'user_change_password' => 'Change user password',
 
     'profile' => 'Your Profile',
 
@@ -36,7 +39,6 @@ return array(
     'landing_page' => 'Landing Page',
     'add_section' => 'Add section',
     'add_site' => 'Add site',
-    'add_user' => 'Add user',
     'template' => 'Template',
 
     'section_title' => 'Section Title',
@@ -45,6 +47,7 @@ return array(
     'section_html' => 'Section HTML',
 
     'close' => 'Close',
+    'chancel' => 'Chancel',
     'save' => 'Save changes',
     'delete' => 'Delete',
     'delete_site' => 'Delete site',

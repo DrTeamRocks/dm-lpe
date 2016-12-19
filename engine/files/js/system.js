@@ -18,14 +18,52 @@ $(document).ready(function () {
         field_change($(this));
     });
 
+    // Change user password modal
+    $('.dm-user-password').on('click', function() {
+        var id = $(this).data('id');
+        $('#user_pass_id').val(id);
+        $('#passUser').modal();
+    });
+
+    // Open delete user modal
+    $('.dm-user-delete').on('click', function() {
+        var id = $(this).data('id');
+        $('#user_id').val(id);
+        $('#deleteUser').modal();
+    });
+
+    // On click to delete button show the modal box
+    $('#delete_user').on('click', function () {
+        var id = $('#user_id').val();
+        delete_user(id);
+    });
 });
+
+/**
+ * Remove the user
+ * @param id
+ */
+function delete_user (id) {
+    $.ajax({
+        type: 'POST',
+        data: {
+            submit: 'submit',
+            mode: 'delete',
+            id: id
+        },
+        success: function (html) {
+            //console.log(html);
+            window.location.reload();
+        }
+    });
+}
 
 /**
  * Change some value
  * @param obj
  */
 function field_change(obj) {
-    var id = obj.parent().parent().parent().parent().parent().data('id');
+    var id = obj.data('id');
     var field = obj.attr('name');
     var value = obj.val();
 
@@ -53,3 +91,4 @@ function roles_init() {
         $(j).val(def);
     });
 }
+
