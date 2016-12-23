@@ -24,7 +24,7 @@ $site = $data['site'];
     </div>
 </div>
 
-<div class="row margin-top-20px">
+<div class="row">
     <div class="col-sm-8">
         <div class="card dm-card">
             <div class="card-header">
@@ -38,7 +38,7 @@ $site = $data['site'];
     </div>
 </div>
 
-<div class="row margin-top-20px">
+<div class="row">
     <div class="col-sm-8">
         <div class="card dm-card">
             <div class="card-header">
@@ -52,7 +52,7 @@ $site = $data['site'];
     </div>
 </div>
 
-<div class="row margin-top-20px">
+<div class="row">
     <div class="col-sm-8">
         <div class="card dm-card">
             <div class="card-header">
@@ -141,7 +141,7 @@ $site = $data['site'];
     </div>
 </div>
 
-<div class="row margin-top-20px">
+<div class="row">
     <div class="col-sm-10">
         <button class="btn btn-block btn-lg btn-info save_settings">
             <?php echo $data['lng']->get('save'); ?>
