@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 text-xs-center text-muted small">
-                2016 <i class="fa fa-smile-o"></i> Powered by <a rel="nofollow" href="https://github.com/DrTeamRocks/dm-lpe">D&M LPE</a>
+                2016 <i class="fa fa-smile-o"></i> Powered by <a target="_blank" rel="nofollow" href="https://github.com/DrTeamRocks/dm-lpe">D&M LPE</a>
             </div>
         </div>
     </div>
