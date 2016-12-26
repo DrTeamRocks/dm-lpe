@@ -1,3 +1,5 @@
+![D&M LPE Logo](http://dm.drteam.rocks/engine/files/img/logo-turquoise-200.png)
+
 # D&M Landing Page Engine
 
 OpenSource PHP landing page engine/constructor to create landing pages with dynamic content.
