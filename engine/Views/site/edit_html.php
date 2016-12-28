@@ -76,11 +76,6 @@ $site = $data['site'];
         </button>
     </div>
 <?php } else { ?>
-    <div class="alert alert-success text-xs-center margin-top-20px" role="alert">
-        You can use variables like <code><%text%></code>, but don't forget fill this via <i
-            class="fa fa-pencil-square-o"></i> interface!
-    </div>
-
     <div class="row margin-top-20px">
 
         <div class="col-xs-12 col-md-6 col-lg-3">
@@ -100,6 +95,10 @@ $site = $data['site'];
                 }
                 ?>
             </ul>
+            <div class="alert alert-success text-xs-center margin-top-20px" role="alert">
+                You can use variables like <code><%text%></code>, but don't forget fill this via <i
+                    class="fa fa-pencil-square-o"></i> interface!
+            </div>
         </div>
 
         <div class="col-xs-12 col-md-6 col-lg-9">
