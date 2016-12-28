@@ -29,19 +29,19 @@ use \System\Core\Url;
 if (file_exists(APPPATH . 'Configs/config.php')) {
     Url::redirect('dashboard');
 } else {
-    include "demo/header.php";
-    include "demo/step_0.php";
-    include "demo/footer.php";
+    include "header.php";
+    include "step_0.php";
+    include "footer.php";
 }
 
 switch ($_GET['step']) {
     // TODO: Step 1 - Configure database
     case '1':
-
+        echo '1';
         break;
     // TODO: Step 2 - Upload demo
     case '2':
-
+        echo '2';
         break;
 }
 
