@@ -41,7 +41,7 @@
         <div class="collapse navbar-toggleable-md" id="navbarResponsive">
             <a class="navbar-brand" href="<?php echo DIR; ?>dashboard">
                 D&M
-                <img src="/engine/files/img/logo-turquoise-64.png" width="40" height="40"
+                <img src="/engine/files/img/logo-turquoise-64.png" style="width: 38px; height: 38px;"
                      class="d-inline-block align-top"/>
                 Landing Page Engine
             </a>
