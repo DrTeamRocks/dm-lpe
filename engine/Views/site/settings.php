@@ -24,7 +24,7 @@ $site = $data['site'];
     </div>
 </div>
 
-<div class="row">
+<div class="row margin-top-20px">
     <div class="col-sm-8">
         <div class="card dm-card">
             <div class="card-header">
