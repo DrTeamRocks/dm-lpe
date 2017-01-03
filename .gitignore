@@ -11,5 +11,6 @@ engine/Configs/database.php
 engine/vendor/
 engine/files/vendor/
 .sass-cache
+files/
 engine/files/css/*.css
 engine/files/css/*.css.map

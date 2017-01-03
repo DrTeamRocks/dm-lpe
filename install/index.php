@@ -1,8 +1,8 @@
 <?php
 // Set the full path to the docroot
-define('DOCROOT', realpath(dirname(__FILE__)) . '/engine/vendor/drteam/drmvc-framework/' . DIRECTORY_SEPARATOR);
+define('DOCROOT', realpath(dirname(__FILE__)) . '/../engine/vendor/drteam/drmvc-framework' . DIRECTORY_SEPARATOR);
 
-$application = '../../../../engine'; // Applcations specifed directory.
+$application = '../../../../install'; // Applcations specifed directory.
 $modules = 'Modules'; // Modules location.
 $system = 'System'; // System base classes location.
 
@@ -18,30 +18,15 @@ define('SYSPATH', realpath($system) . DIRECTORY_SEPARATOR);
 // Clean up the configuration vars
 unset($application, $modules, $system);
 
-$check_config = false;
-
 // Bootstrap the application
 require SYSPATH . 'bootstrap.php';
 
-use \System\Core\Url;
+// Load class
+use System\Core\Request;
+use System\Core\Session;
 
-// TODO: Check if config exist
-if (file_exists(APPPATH . 'Configs/config.php')) {
-    Url::redirect('dashboard');
-} else {
-    include "header.php";
-    include "step_0.php";
-    include "footer.php";
-}
+// Start session
+Session::init();
 
-switch ($_GET['step']) {
-    // TODO: Step 1 - Configure database
-    case '1':
-        echo '1';
-        break;
-    // TODO: Step 2 - Upload demo
-    case '2':
-        echo '2';
-        break;
-}
-
+// Render current page
+Request::factory(true)->execute()->render();
