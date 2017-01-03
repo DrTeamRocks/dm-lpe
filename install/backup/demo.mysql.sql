@@ -99,7 +99,7 @@ CREATE TABLE `settings` (
 
 LOCK TABLES `settings` WRITE;
 /*!40000 ALTER TABLE `settings` DISABLE KEYS */;
-INSERT INTO `settings` VALUES (1,1,'title','D&amp;M Landing Page Engine'),(2,1,'styles','vendor/bootstrap/css/bootstrap.min.css\nhttps://fonts.googleapis.com/css?family=Lato\nhttps://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900\nhttps://fonts.googleapis.com/css?family=Muli\nvendor/font-awesome/css/font-awesome.min.css\nvendor/simple-line-icons/css/simple-line-icons.css\nvendor/device-mockups/device-mockups.min.css\ncss/new-age.css\n'),(3,1,'scripts','vendor/jquery/jquery.min.js\nvendor/bootstrap/js/bootstrap.min.js\nhttps://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js\njs/new-age.min.js'),(4,1,'description',''),(5,1,'keywords',''),(6,1,'author','Dr.Dre');
+INSERT INTO `settings` VALUES (1,1,'title','D&amp;M Landing Page Engine'),(2,1,'styles','files/new-age/vendor/bootstrap/css/bootstrap.min.css\nhttps://fonts.googleapis.com/css?family=Lato\nhttps://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900\nhttps://fonts.googleapis.com/css?family=Muli\nfiles/new-age/vendor/font-awesome/css/font-awesome.min.css\nfiles/new-age/vendor/simple-line-icons/css/simple-line-icons.css\nfiles/new-age/vendor/device-mockups/device-mockups.min.css\nfiles/new-age/css/new-age.css\n'),(3,1,'scripts','files/new-age/vendor/jquery/jquery.min.js\nfiles/new-age/vendor/bootstrap/js/bootstrap.min.js\nhttps://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js\nfiles/new-age/js/new-age.min.js'),(4,1,'description',''),(5,1,'keywords',''),(6,1,'author','Dr.Dre');
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,7 +117,7 @@ CREATE TABLE `sites` (
   `enabled` tinyint(1) NOT NULL DEFAULT '1',
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,7 +126,7 @@ CREATE TABLE `sites` (
 
 LOCK TABLES `sites` WRITE;
 /*!40000 ALTER TABLE `sites` DISABLE KEYS */;
-INSERT INTO `sites` VALUES (1,'dm.drteam.rocks','dm',1,0);
+INSERT INTO `sites` VALUES (1,'dm.drteam.rocks','dm',1,0),(2,'test','',1,0);
 /*!40000 ALTER TABLE `sites` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,7 +157,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,1,'admin@email.com','admin','$2y$10$Fi/TVnQzwsOJe3EoEDpMi.SnP147C4EWM5GLmc8mrhxrGDH2DabuG','2016-12-16 22:35:12',1,0,NULL),(2,2,'editor@email.com','editor','$2y$10$2KRRT7KU9iYISU2qpc47JeEo6xz96CPTcMsEXcTo0p9GxNbLVusQG','2016-12-13 00:44:55',1,0,NULL),(3,3,'user@email.com','user','$2y$10$QHYxT7OScoOr3Az2pqkrueyXK/QDK5XDjVchXlA9.nkgGm8Poe.xe','2016-12-13 00:44:35',1,0,NULL),(4,3,'test@mail.com','test','$2y$10$tW3kswYXPbOBbXpCFUjPNed.B0olfBBmMirqBKTNfw7k5ex5q7JRC','',1,0,'2016-12-17 02:18:33');
+INSERT INTO `users` VALUES (1,1,'admin@email.com','admin','$2y$10$Fi/TVnQzwsOJe3EoEDpMi.SnP147C4EWM5GLmc8mrhxrGDH2DabuG','2017-01-03 12:53:01',1,0,NULL),(2,2,'editor@email.com','editor','$2y$10$2KRRT7KU9iYISU2qpc47JeEo6xz96CPTcMsEXcTo0p9GxNbLVusQG','2016-12-13 00:44:55',1,0,NULL),(3,3,'user@email.com','user','$2y$10$QHYxT7OScoOr3Az2pqkrueyXK/QDK5XDjVchXlA9.nkgGm8Poe.xe','2016-12-13 00:44:35',1,0,NULL),(4,3,'test@mail.com','test','$2y$10$tW3kswYXPbOBbXpCFUjPNed.B0olfBBmMirqBKTNfw7k5ex5q7JRC','',1,0,'2016-12-17 02:18:33');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -170,4 +170,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-12-19 12:07:49
+-- Dump completed on 2017-01-03 12:57:10
