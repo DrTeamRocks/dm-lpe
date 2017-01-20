@@ -32,9 +32,13 @@ Next you need to install the `composer`, `npm`, `bower`, `sass` compiler and `ma
     bower updates
     make
 
-Then you need to create the database schema, just follow commands from `backups/init.mysql.sql`.
+First you need user with password and empty database, next you need change parameters to your in `engine\Configs\database.php` to yours.
+
+Next you should open the `http://<site>/install` page for tables installing.
 
 Or if you have the empty database and you know username and password, you can import the dump with demo settings `backups/demo.mysql.sql`.
+
+You can DDL od database here `backups/init.mysql.sql`.
 
 ## Engine configuration
 
