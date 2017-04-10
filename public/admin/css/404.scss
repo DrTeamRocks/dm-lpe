@@ -1,0 +1,39 @@
+$font-family: "Open Sans", "Ubuntu", sans-serif;
+$font-weight: 300;
+$font-style: normal;
+$font-size: 17px;
+
+html {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  font-style: $font-style;
+}
+
+body {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: $font-style;
+  font-size: inherit;
+
+  color: #666;
+  background-color: #fff;
+}
+
+p {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: $font-style;
+  font-size: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: 1.5em;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+.dm-404 {
+  padding-top: 10%;
+}

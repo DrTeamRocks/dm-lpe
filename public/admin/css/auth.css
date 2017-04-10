@@ -1,0 +1,46 @@
+body {
+  background-color: #636363; }
+
+a:visited, a:hover, a:focus, a:active {
+  color: #666; }
+
+label {
+  font-weight: normal; }
+
+.login-wrapper,
+.register-wrapper {
+  padding: 45px 60px;
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 3px;
+  background-color: #f6f7f8; }
+
+.login-inputs,
+.register-inputs {
+  /*margin: 50px 0 30px 0;*/
+  margin: 30px 0 30px 0; }
+
+.login-inputs input,
+.register-inputs input {
+  padding: 13px 20px;
+  height: 50px;
+  border-radius: 0;
+  border-bottom: 0;
+  line-height: 18px; }
+
+.login-inputs input:first-child,
+.register-inputs input:first-child {
+  border-radius: 3px 3px 0 0; }
+
+.login-inputs input:last-child,
+.register-inputs input:last-child {
+  border-radius: 0 0 3px 3px;
+  border-bottom: 1px solid #cbd3dd; }
+
+.login-form,
+.register-form {
+  margin-bottom: 30px; }
+
+.login-wrapper,
+.register-wrapper {
+  padding: 35px 30px; }

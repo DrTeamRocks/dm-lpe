@@ -1,8 +1,30 @@
 {
-    "config": {
-        "vendor-dir": "engine/vendor"
-    },
-    "require": {
-        "drmvc/framework": "~1.3"
+  "name": "drteam/dm-lpe",
+  "type": "project",
+  "description": "OpenSource PHP landing page engine/constructor to create landing pages with dynamic content",
+  "homepage": "https://drmvc.com/",
+  "license": "MIT",
+  "keywords": [
+    "drmvc",
+    "landing-page",
+    "engine",
+    "constructor"
+  ],
+  "authors": [
+    {
+      "name": "Paul Rock",
+      "email": "paul@drteam.rocks",
+      "homepage": "https://drteam.rocks/",
+      "role": "Developer"
     }
+  ],
+  "require": {
+    "drmvc/framework": "~2.0",
+    "drmvc/database": "~0.1",
+    "drmvc/helpers": "~1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~5.7"
+  },
+  "minimum-stability": "stable"
 }

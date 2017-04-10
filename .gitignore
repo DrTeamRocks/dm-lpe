@@ -5,12 +5,8 @@ nbproject
 .kate-swp
 ~
 .directory
-composer.lock
-engine/Configs/config.php
-engine/Configs/database.php
-engine/vendor/
-engine/files/vendor/
-.sass-cache
-files/
-engine/files/css/*.css
-engine/files/css/*.css.map
+/logs/
+/composer.lock
+/app/Configs/config.php
+/app/Configs/database.php
+/vendor/
