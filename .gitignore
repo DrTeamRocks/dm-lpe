@@ -13,3 +13,4 @@ nbproject
 /vendor/
 /public/admin/css/*.css
 /public/admin/css/*.css.map
+/public/vendor/
