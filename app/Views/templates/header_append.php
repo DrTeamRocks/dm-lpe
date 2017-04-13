@@ -1,15 +1,20 @@
-<nav class="navbar navbar-dark bg-blue">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-blue-2">
     <div class="container">
-        <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
-        <div class="collapse navbar-toggleable-md" id="navbarResponsive">
-            <a class="navbar-brand" href="<?php echo DIR; ?>dashboard">
-                D&M
-                <img src="<?php echo DIR ?>admin/img/logo-turquoise-64.png" style="width: 38px; height: 38px;"
-                     class="d-inline-block align-top"/>
-                Landing Page Engine
-            </a>
-            <ul class="nav navbar-nav navbar-dark pull-xs-right">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="<?php echo DIR; ?>dashboard">
+            D&M
+            <img src="<?php echo DIR ?>admin/img/logo-turquoise-64.png" style="width: 38px; height: 38px;"
+                 class="d-inline-block align-top"/>
+            Landing Page Engine
+        </a>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav navbar-dark mr-auto">
+            </ul>
+            <ul class="navbar-nav navbar-dark">
                 <?php if ($data['add_section']) { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#newSection">
@@ -45,7 +50,6 @@
                         </a>
                     </li>
                 <?php } ?>
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                         <?php echo $data['userinfo']->username; ?>

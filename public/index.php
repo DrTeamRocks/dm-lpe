@@ -1,6 +1,6 @@
 <?php
 // Relative path to your application root folder
-$apppath = __DIR__ . '/../app';
+$apppath = __DIR__ . "/../app";
 
 // Enable autoloader
 include __DIR__ . "/../vendor/autoload.php";

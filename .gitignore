@@ -11,3 +11,5 @@ nbproject
 /app/Configs/config.php
 /app/Configs/database.php
 /vendor/
+/public/admin/css/*.css
+/public/admin/css/*.css.map

@@ -94,7 +94,7 @@ foreach ($roles as $role) {
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" name="submit" class="btn btn-secondary pull-left">
+                    <button type="submit" name="submit" class="btn btn-secondary">
                         <?php echo $data['lng']->get('submit'); ?>
                     </button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -130,7 +130,7 @@ foreach ($roles as $role) {
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <div class="btn-group pull-right">
+                    <div class="btn-group text-right">
                         <button class="btn btn-secondary dm-user-password" data-id="<?php echo $user->id; ?>"><i class="fa fa-cogs"></i></button>
                         <button class="btn btn-secondary dm-user-delete" data-id="<?php echo $user->id; ?>"><i
                                 class="fa fa-trash"></i></button>
