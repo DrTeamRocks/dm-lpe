@@ -2,7 +2,7 @@
 
 use DrMVC\Core\Controller;
 
-use Application\Models\Install as Model_Install;
+use DrMVC\App\Models\Install as Model_Install;
 
 /**
  * Class Install

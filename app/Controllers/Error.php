@@ -16,26 +16,13 @@ class Error extends External
 
     public function action_index()
     {
-        $data['title'] = $this->language->get('error') . ' &#8212; ' . SITETITLE;
-        $data['styles_vendor'] = $this->styles_vendor;
-        $data['scripts_vendor'] = $this->scripts_vendor;
-        $data['styles'][] = 'indent.css';
-        $data['styles'][] = '404.css';
-        $data['scripts'] = array();
+        $this->view->data['title'] = $this->language->get('error') . ' &#8212; ' . SITETITLE;
+        $this->view->data['styles'][] = 'indent.css';
+        $this->view->data['styles'][] = '404.css';
 
-        $this->view->render('error', $data);
-    }
-
-    public function action_default()
-    {
-        $data['title'] = $this->language->get('default') . ' &#8212; ' . SITETITLE;
-        $data['styles_vendor'] = $this->styles_vendor;
-        $data['scripts_vendor'] = $this->scripts_vendor;
-        $data['styles'][] = 'indent.css';
-        $data['styles'][] = '404.css';
-        $data['scripts'] = array();
-
-        $this->view->render('default', $data);
+        $this->view->render('templates/header');
+        $this->view->render('error');
+        $this->view->render('templates/footer');
     }
 
 }

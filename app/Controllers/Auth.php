@@ -6,7 +6,7 @@ use DrMVC\Core\Password;
 
 use DrMVC\Helpers\Cleaner;
 
-use Application\Models\Users as Model_Users;
+use DrMVC\App\Models\Users as Model_Users;
 
 /**
  * Class Auth
@@ -24,6 +24,8 @@ class Auth extends External
     {
         parent::__construct();
         $this->_users = new Model_Users();
+
+        $this->view->data['styles'] = array('auth.css');
     }
 
     /**
@@ -77,20 +79,12 @@ class Auth extends External
             //die();
         }
 
-        $data['title'] = $this->language->get('login');
-        $data['error'] = $this->_error;
+        $this->view->data['title'] = $this->language->get('login');
+        $this->view->data['error'] = $this->_error;
 
-        $data['lng'] = $this->language;
-        $data['userinfo'] = $this->userinfo;
-
-        $data['styles_vendor'] = $this->styles_vendor;
-        $data['scripts_vendor'] = $this->scripts_vendor;
-        $data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
-        $data['styles'] = $this->styles;
-        $data['styles'][] = 'auth.css';
-        $data['scripts'] = $this->scripts;
-
-        $this->view->render('login', $data);
+        $this->view->render('templates/header');
+        $this->view->render('login');
+        $this->view->render('templates/footer');
     }
 
     public function action_logout()

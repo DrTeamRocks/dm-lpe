@@ -70,21 +70,16 @@ class Site extends Internal
             die();
         }
 
-        $data['userinfo'] = $this->userinfo;
-        $data['styles_vendor'] = $this->styles_vendor;
-        $data['scripts_vendor'] = $this->scripts_vendor;
-        $data['styles'] = $this->styles;
-        $data['scripts'] = $this->scripts;
-        $data['scripts'][] = 'site_settings.js';
-        $data['scripts'][] = 'navigation.js';
-        $data['lng'] = $this->language;
+        $this->view->data['scripts'][] = 'site_settings.js';
+        $this->view->data['scripts'][] = 'navigation.js';
+        $this->view->data['site'] = $this->_sites->getSite('id', $id_site);
+        $this->view->data['settings'] = $this->_settings->getSettings($id_site);
 
-        $data['site'] = $this->_sites->getSite('id', $id_site);
-        $data['settings'] = $this->_settings->getSettings($id_site);
-
-        $this->view->render('header', $data);
-        $this->view->render('site/settings', $data);
-        $this->view->render('footer', $data);
+        $this->view->render('header');
+        $this->view->render('header_append');
+        $this->view->render('site/settings');
+        $this->view->render('footer_prepend');
+        $this->view->render('footer');
     }
 
     public function action_variables()
@@ -124,22 +119,16 @@ class Site extends Internal
             }
         }
 
-        $data['userinfo'] = $this->userinfo;
-        $data['styles_vendor'] = $this->styles_vendor;
-        $data['scripts_vendor'] = $this->scripts_vendor;
-        $data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
-        $data['styles'] = $this->styles;
-        $data['scripts'] = $this->scripts;
-        $data['scripts'][] = 'site_variables.js';
-        $data['scripts'][] = 'navigation.js';
-        $data['lng'] = $this->language;
+        $this->view->data['scripts'][] = 'site_variables.js';
+        $this->view->data['scripts'][] = 'navigation.js';
+        $this->view->data['site'] = $this->_sites->getSite('id', $id_site);
+        $this->view->data['sections'] = $this->_sections->getSections($id_site);
 
-        $data['site'] = $this->_sites->getSite('id', $id_site);
-        $data['sections'] = $this->_sections->getSections($id_site);
-
-        $this->view->render('header', $data);
-        $this->view->render('site/edit_variables', $data);
-        $this->view->render('footer', $data);
+        $this->view->render('header');
+        $this->view->render('header_append');
+        $this->view->render('site/edit_variables');
+        $this->view->render('footer_prepend');
+        $this->view->render('footer');
     }
 
     public function action_html()
@@ -239,23 +228,17 @@ class Site extends Internal
             die();
         }
 
-        $data['userinfo'] = $this->userinfo;
-        $data['styles_vendor'] = $this->styles_vendor;
-        $data['scripts_vendor'] = $this->scripts_vendor;
-        $data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
-        $data['styles'] = $this->styles;
-        $data['scripts'] = $this->scripts;
-        $data['scripts'][] = 'site_html.js';
-        $data['scripts'][] = 'navigation.js';
-        $data['lng'] = $this->language;
+        $this->view->data['scripts'][] = 'site_html.js';
+        $this->view->data['scripts'][] = 'navigation.js';
+        $this->view->data['site'] = $this->_sites->getSite('id', $id_site);
+        $this->view->data['sections'] = $this->_sections->getSections($id_site);
+        $this->view->data['add_section'] = true;
 
-        $data['site'] = $this->_sites->getSite('id', $id_site);
-        $data['sections'] = $this->_sections->getSections($id_site);
-        $data['add_section'] = true;
-
-        $this->view->render('header', $data);
-        $this->view->render('site/edit_html', $data);
-        $this->view->render('footer', $data);
+        $this->view->render('header');
+        $this->view->render('header_append');
+        $this->view->render('site/edit_html');
+        $this->view->render('footer_prepend');
+        $this->view->render('footer');
     }
 
 }

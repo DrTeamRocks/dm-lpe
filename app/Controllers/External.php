@@ -52,30 +52,6 @@ class External extends Controller
     {
         parent::__construct();
 
-        // Vendor styles
-        $this->styles_vendor = array(
-            'tether/dist/css/tether.min.css',
-            'bootstrap/dist/css/bootstrap.min.css',
-            'font-awesome/css/font-awesome.min.css',
-            'ubuntu-fontface/ubuntu.min.css',
-        );
-        // Site styles
-        $this->styles = array(
-            'styles.css'
-        );
-
-        // Vendor scripts
-        $this->scripts_vendor = array(
-            'jquery/dist/jquery.min.js',
-            'jquery-ui/jquery-ui.min.js',
-            'tether/dist/js/tether.min.js',
-            'bootstrap/dist/js/bootstrap.min.js',
-        );
-        // Site scripts
-        $this->scripts = array(
-            'footer_fix.js',
-        );
-
         $this->_settings = new Model_Settings();
         $this->_sections = new Model_Sections();
         $this->_users = new Model_Users();
@@ -83,6 +59,33 @@ class External extends Controller
         $this->_sites = new Model_Sites();
 
         $this->language->load('index');
+
+        $this->view->data = array(
+            // Vendor styles
+            'styles_vendor' => array(
+                'tether/dist/css/tether.min.css',
+                'bootstrap/dist/css/bootstrap.min.css',
+                'font-awesome/css/font-awesome.min.css',
+                'ubuntu-fontface/ubuntu.min.css',
+            ),
+            // Vendor scripts
+            'scripts_vendor' => array(
+                'jquery/dist/jquery.min.js',
+                'jquery-ui/jquery-ui.min.js',
+                'tether/dist/js/tether.min.js',
+                'bootstrap/dist/js/bootstrap.min.js',
+                'bootstrap-validator/dist/validator.min.js'
+            ),
+            // System styles
+            'styles' => array(
+                'styles.css'
+            ),
+            // System scripts
+            'scripts' => array(
+                'footer_fix.js'
+            ),
+            'lng' => $this->language
+        );
     }
 
     public function _404()

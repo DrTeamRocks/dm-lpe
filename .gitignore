@@ -5,6 +5,7 @@ nbproject
 .kate-swp
 ~
 .directory
+.sass-cache
 /logs/
 /composer.lock
 /app/Configs/config.php

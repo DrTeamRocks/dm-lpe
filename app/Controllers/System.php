@@ -1,7 +1,6 @@
 <?php namespace DrMVC\App\Controllers;
 
 use DrMVC\Core\Password;
-use DrMVC\Core\View;
 use DrMVC\Helpers\Cleaner;
 use DrMVC\Core\Url;
 
@@ -88,25 +87,16 @@ class System extends Internal
 
     public function action_users()
     {
-        $data['userinfo'] = $this->userinfo;
-        $data['styles_vendor'] = $this->styles_vendor;
-        $data['scripts_vendor'] = $this->scripts_vendor;
-        $data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
-        $data['styles'] = $this->styles;
-        $data['scripts'] = $this->scripts;
-        $data['scripts'][] = 'system.js';
-        $data['lng'] = $this->language;
+        $this->view->data['scripts'][] = 'system.js';
+        $this->view->data['add_user'] = true;
+        $this->view->data['users'] = $this->_users->getAll();
+        $this->view->data['roles'] = $this->_roles->getAll();
 
-        // Enable the new user button in top nav
-        $data['add_user'] = true;
-
-        // Receive all users
-        $data['users'] = $this->_users->getAll();
-        $data['roles'] = $this->_roles->getAll();
-
-        $this->view->render('header', $data);
-        $this->view->render('system/users', $data);
-        $this->view->render('footer', $data);
+        $this->view->render('header');
+        $this->view->render('header_append');
+        $this->view->render('system/users');
+        $this->view->render('footer_prepend');
+        $this->view->render('footer');
     }
 
 }

@@ -44,7 +44,7 @@ $sites = $data['sites'];
                     <h3 class="card-title">
                         <a target="_blank"
                            href="http://<?php echo $sites[$i]->url; ?>"><?php echo $sites[$i]->url; ?></a>
-                        <div class="btn-group pull-right">
+                        <div class="btn-group pull-md-right">
                             <a href="<?php echo DIR . 'site/variables/' . $sites[$i]->id ?>" class="btn btn-secondary">
                                 <i class="fa fa-pencil-square-o"></i>
                             </a>

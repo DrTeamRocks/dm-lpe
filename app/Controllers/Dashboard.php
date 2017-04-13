@@ -43,6 +43,8 @@ class Dashboard extends Internal
                     break;
             }
         }
+
+        $this->view->data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
     }
 
     /**
@@ -50,20 +52,14 @@ class Dashboard extends Internal
      */
     public function action_index()
     {
-        $data['userinfo'] = $this->userinfo;
-        $data['styles_vendor'] = $this->styles_vendor;
-        $data['scripts_vendor'] = $this->scripts_vendor;
-        $data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
-        $data['styles'] = $this->styles;
-        $data['scripts'] = $this->scripts;
-        $data['lng'] = $this->language;
+        $this->view->data['sites'] = $this->_sites->getAll();
+        $this->view->data['add_site'] = true;
 
-        $data['sites'] = $this->_sites->getAll();
-        $data['add_site'] = true;
-
-        $this->view->render('header', $data);
-        $this->view->render('dashboard', $data);
-        $this->view->render('footer', $data);
+        $this->view->render('templates/header');
+        $this->view->render('templates/header_append');
+        $this->view->render('dashboard');
+        $this->view->render('templates/footer_prepend');
+        $this->view->render('templates/footer');
     }
 
 }
