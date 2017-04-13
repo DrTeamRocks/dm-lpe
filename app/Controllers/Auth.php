@@ -25,7 +25,7 @@ class Auth extends External
         parent::__construct();
         $this->_users = new Model_Users();
 
-        $this->view->data['styles'] = array('auth.css');
+        $this->view->data['styles'][] = 'auth.css';
     }
 
     /**

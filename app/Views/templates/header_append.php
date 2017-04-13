@@ -66,4 +66,4 @@
     </div>
 </nav>
 
-<div class="container" id="main-container">
+<section class="container" id="main-container">

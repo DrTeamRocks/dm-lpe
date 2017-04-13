@@ -75,11 +75,11 @@ class Site extends Internal
         $this->view->data['site'] = $this->_sites->getSite('id', $id_site);
         $this->view->data['settings'] = $this->_settings->getSettings($id_site);
 
-        $this->view->render('header');
-        $this->view->render('header_append');
+        $this->view->render('templates/header');
+        $this->view->render('templates/header_append');
         $this->view->render('site/settings');
-        $this->view->render('footer_prepend');
-        $this->view->render('footer');
+        $this->view->render('templates/footer_prepend');
+        $this->view->render('templates/footer');
     }
 
     public function action_variables()
@@ -124,11 +124,11 @@ class Site extends Internal
         $this->view->data['site'] = $this->_sites->getSite('id', $id_site);
         $this->view->data['sections'] = $this->_sections->getSections($id_site);
 
-        $this->view->render('header');
-        $this->view->render('header_append');
+        $this->view->render('templates/header');
+        $this->view->render('templates/header_append');
         $this->view->render('site/edit_variables');
-        $this->view->render('footer_prepend');
-        $this->view->render('footer');
+        $this->view->render('templates/footer_prepend');
+        $this->view->render('templates/footer');
     }
 
     public function action_html()
@@ -234,11 +234,11 @@ class Site extends Internal
         $this->view->data['sections'] = $this->_sections->getSections($id_site);
         $this->view->data['add_section'] = true;
 
-        $this->view->render('header');
-        $this->view->render('header_append');
+        $this->view->render('templates/header');
+        $this->view->render('templates/header_append');
         $this->view->render('site/edit_html');
-        $this->view->render('footer_prepend');
-        $this->view->render('footer');
+        $this->view->render('templates/footer_prepend');
+        $this->view->render('templates/footer');
     }
 
 }

@@ -1,4 +1,4 @@
-</div>
+</section>
 
 <footer class="footer">
     <div class="text-center">

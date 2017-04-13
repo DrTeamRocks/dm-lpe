@@ -92,11 +92,11 @@ class System extends Internal
         $this->view->data['users'] = $this->_users->getAll();
         $this->view->data['roles'] = $this->_roles->getAll();
 
-        $this->view->render('header');
-        $this->view->render('header_append');
+        $this->view->render('templates/header');
+        $this->view->render('templates/header_append');
         $this->view->render('system/users');
-        $this->view->render('footer_prepend');
-        $this->view->render('footer');
+        $this->view->render('templates/footer_prepend');
+        $this->view->render('templates/footer');
     }
 
 }

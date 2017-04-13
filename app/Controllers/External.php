@@ -98,7 +98,7 @@ class External extends Controller
     public function _default()
     {
         $error = new Error();
-        $error->action_default();
+        $error->action_index();
         die();
     }
 
