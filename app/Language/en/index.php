@@ -15,7 +15,7 @@ return array(
     'system_title_desc' => 'Text in header title.',
     'system_styles' => 'Styles',
     'system_styles_desc' => 'All required CSS libraries, one per line.',
-    'system_scripts' => 'Styles',
+    'system_scripts' => 'Scripts',
     'system_scripts_desc' => 'All required JavaScripts, one per line.',
     'system_description' => 'Description',
     'system_description_desc' => 'Meta description of the site, this description will be displayed on the search engine page (eg Google or other) helpful for SEO.',

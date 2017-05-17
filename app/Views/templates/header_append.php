@@ -17,7 +17,7 @@
             <ul class="navbar-nav navbar-dark">
                 <?php if ($data['add_section']) { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-toggle="modal" data-target="#newSection">
+                        <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#newSection">
                             <?php echo $data['lng']->get('add_section'); ?>
                             <i class="fa fa-plus"></i>
                         </a>
@@ -26,7 +26,7 @@
 
                 <?php if ($data['add_user'] && $data['userinfo']->is_admin) { ?>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-toggle="modal" data-target="#addUser">
+                        <a href="#" class="nav-link text-white" data-toggle="modal" data-target="#addUser">
                             <?php echo $data['lng']->get('user_add'); ?>
                             <i class="fa fa-user fa-fw"></i>
                         </a>
@@ -35,7 +35,7 @@
 
                 <?php if ($data['add_site'] && $data['userinfo']->is_admin) { ?>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" data-toggle="modal" data-target="#addSite">
+                        <a href="#" class="nav-link text-white" data-toggle="modal" data-target="#addSite">
                             <?php echo $data['lng']->get('add_site'); ?>
                             <i class="fa fa-globe fa-fw"></i>
                         </a>
@@ -44,14 +44,14 @@
 
                 <?php if ($data['userinfo']->is_admin) { ?>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?php echo DIR; ?>system/users">
+                        <a class="nav-link text-white" href="<?php echo DIR; ?>system/users">
                             <?php echo $data['lng']->get('users'); ?>
                             <i class="fa fa-users fa-fw"></i>
                         </a>
                     </li>
                 <?php } ?>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                    <a class="nav-link text-white dropdown-toggle" href="#" data-toggle="dropdown">
                         <?php echo $data['userinfo']->username; ?>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
