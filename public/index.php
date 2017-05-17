@@ -11,6 +11,9 @@ DrMVC\Core\Config::load('config');
 // Apply routes
 DrMVC\Core\Config::load('routes');
 
+// Some application configs
+DrMVC\Core\Config::load('app');
+
 // Start session
 DrMVC\Core\Session::init();
 
