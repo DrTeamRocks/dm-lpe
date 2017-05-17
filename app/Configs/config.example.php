@@ -1,4 +1,4 @@
-<?php defined('SYSPATH') OR die('No direct script access.');
+<?php defined('APPPATH') OR die('No direct script access.');
 
 /**
  * Site title
@@ -33,9 +33,4 @@ define('THEME', null);
 /**
  * Generate sitemap.xml
  */
-define('SITEMAP_ENABLED', true);
-
-/**
- * Demo mode
- */
-define('DEMO', false);
+define('SITEMAP_ENABLED', false);

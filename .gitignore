@@ -8,6 +8,7 @@ nbproject
 .sass-cache
 /logs/
 /composer.lock
+/app/Configs/app.php
 /app/Configs/config.php
 /app/Configs/database.php
 /vendor/

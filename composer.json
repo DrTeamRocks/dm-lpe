@@ -18,6 +18,11 @@
       "role": "Developer"
     }
   ],
+  "autoload": {
+    "psr-4": {
+      "DrMVC\\App\\": "app/"
+    }
+  },
   "require": {
     "drmvc/framework": "~2.0",
     "drmvc/database": "~0.1",
