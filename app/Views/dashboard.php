@@ -39,7 +39,7 @@ $sites = $data['sites'];
     while ($i < count($sites)) {
         ?>
         <div class="col-sm-12 col-md-6 col-lg-4 margin-bottom-20px">
-            <div class="card">
+            <div class="card" style="height: 100%;">
                 <div class="card-header text-muted text-right">
                     <a href="<?php echo DIR . 'site/variables/' . $sites[$i]->id ?>" class="btn btn-secondary">
                         <i class="fa fa-pencil-square-o"></i>
@@ -56,12 +56,14 @@ $sites = $data['sites'];
                 </div>
                 <div class="card-block">
                     <a target="_blank" class="card-subtitle mb-2" href="http://<?php echo $sites[$i]->url; ?>">
-                        <?php echo $sites[$i]->url; ?>
+                        <i class="fa fa-fw fa-globe"></i> <?php echo $sites[$i]->url; ?>
                     </a>
                     <br/>
-                    <a target="_blank" class="card-subtitle mb-2" href="http://<?php echo $sites[$i]->alias; ?>">
-                        <?php echo $sites[$i]->alias; ?>
-                    </a>
+                    <?php if (!empty($sites[$i]->alias)) { ?>
+                        <a target="_blank" class="card-subtitle mb-2" href="http://<?php echo $sites[$i]->alias; ?>">
+                            <i class="fa fa-fw fa-external-link"></i> <?php echo $sites[$i]->alias; ?>
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
