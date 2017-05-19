@@ -2,36 +2,6 @@
 $sites = $data['sites'];
 ?>
 
-<div class="modal fade" id="addSite" tabindex="-1" role="dialog" aria-labelledby="addSiteLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <form data-toggle="validator" role="form" method="post">
-            <input type="hidden" name="mode" value="add"/>
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title" id="myModalLabel"><?php echo $data['lng']->get('add_site'); ?></h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="url" placeholder="Domain URL" required/>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="alias" placeholder="Domain Alias"/>
-                    </div>
-                </div>
-                <div class="modal-footer bg-blue">
-                    <button class="btn btn-secondary pull-left" name="submit"
-                            type="submit"><?php echo $data['lng']->get('submit'); ?></button>
-                    <button class="btn btn-secondary pull-right" type="button"
-                            data-dismiss="modal"><?php echo $data['lng']->get('close'); ?></button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
 <div class="row padding-top-30px">
 
     <?php

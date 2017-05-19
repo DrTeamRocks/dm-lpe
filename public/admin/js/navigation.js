@@ -14,7 +14,7 @@ function check_url() {
     var url = window.location.pathname;
     var activePage = stripTrailingSlash(url);
 
-    $('.dm-card-header .btn-group a.btn').each(function () {
+    $('.dm-card-header a.btn').each(function () {
         var currentPage = stripTrailingSlash($(this).attr('href'));
         if (activePage == currentPage) $(this).addClass('active');
     });

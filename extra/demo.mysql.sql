@@ -1,13 +1,13 @@
--- MySQL dump 10.13  Distrib 5.6.30, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.16  Distrib 10.1.22-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: dm
 -- ------------------------------------------------------
--- Server version	5.6.30-1
+-- Server version	10.1.22-MariaDB-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -116,6 +116,7 @@ CREATE TABLE `sites` (
   `alias` text NOT NULL,
   `enabled` tinyint(1) NOT NULL DEFAULT '1',
   `deleted` tinyint(1) NOT NULL DEFAULT '0',
+  `favorite` varchar(45) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -126,7 +127,7 @@ CREATE TABLE `sites` (
 
 LOCK TABLES `sites` WRITE;
 /*!40000 ALTER TABLE `sites` DISABLE KEYS */;
-INSERT INTO `sites` VALUES (1,'dm.drteam.rocks','dm',1,0),(2,'test','',1,0);
+INSERT INTO `sites` VALUES (1,'dm.drteam.rocks','dm',1,0,'1'),(2,'test','',1,0,'0');
 /*!40000 ALTER TABLE `sites` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,7 +158,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,1,'admin@email.com','admin','$2y$10$Fi/TVnQzwsOJe3EoEDpMi.SnP147C4EWM5GLmc8mrhxrGDH2DabuG','2016-12-16 22:35:12',1,0,NULL),(2,2,'editor@email.com','editor','$2y$10$2KRRT7KU9iYISU2qpc47JeEo6xz96CPTcMsEXcTo0p9GxNbLVusQG','2016-12-13 00:44:55',1,0,NULL),(3,3,'user@email.com','user','$2y$10$QHYxT7OScoOr3Az2pqkrueyXK/QDK5XDjVchXlA9.nkgGm8Poe.xe','2016-12-13 00:44:35',1,0,NULL),(4,3,'test@mail.com','test','$2y$10$tW3kswYXPbOBbXpCFUjPNed.B0olfBBmMirqBKTNfw7k5ex5q7JRC','',1,0,'2016-12-17 02:18:33');
+INSERT INTO `users` VALUES (1,1,'admin@email.com','admin','$2y$10$Fi/TVnQzwsOJe3EoEDpMi.SnP147C4EWM5GLmc8mrhxrGDH2DabuG','2017-05-19 22:43:45',1,0,NULL),(2,2,'editor@email.com','editor','$2y$10$2KRRT7KU9iYISU2qpc47JeEo6xz96CPTcMsEXcTo0p9GxNbLVusQG','2016-12-13 00:44:55',1,0,NULL),(3,3,'user@email.com','user','$2y$10$QHYxT7OScoOr3Az2pqkrueyXK/QDK5XDjVchXlA9.nkgGm8Poe.xe','2016-12-13 00:44:35',1,0,NULL),(4,3,'test@mail.com','test','$2y$10$tW3kswYXPbOBbXpCFUjPNed.B0olfBBmMirqBKTNfw7k5ex5q7JRC','',1,0,'2016-12-17 02:18:33');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -170,4 +171,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-17 15:08:02
+-- Dump completed on 2017-05-20  0:46:55

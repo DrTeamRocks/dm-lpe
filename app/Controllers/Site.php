@@ -15,6 +15,50 @@ class Site extends Internal
     public function __construct()
     {
         parent::__construct();
+
+        if (isset($_POST['submit'])) {
+            $mode = Cleaner::run($_POST['mode']);
+
+            switch ($mode) {
+                // Create new site mode
+                case 'add':
+                    sleep(1);
+                    $url = Cleaner::run($_POST['url']);
+                    $alias = Cleaner::run($_POST['alias']);
+
+                    // If cleaned url is not empty
+                    if (!empty($url)) {
+                        $data['url'] = $url;
+                        // We need update array if alias is not empty
+                        if (!empty($alias)) $data['alias'] = $alias;
+                        echo $this->_sites->insert($data);
+                    } else {
+                        echo 'error';
+                    }
+
+                    // Redirect to users list
+                    Url::redirect('dashboard');
+
+                    break;
+            }
+        }
+
+        $this->view->data['scripts_vendor'][] = 'bootstrap-validator/dist/validator.min.js';
+    }
+
+    /**
+     * Dashboard page for all users
+     */
+    public function action_index()
+    {
+        $this->view->data['sites'] = $this->_sites->getAll();
+        $this->view->data['add_site'] = true;
+
+        $this->view->render('templates/header');
+        $this->view->render('templates/header_append');
+        $this->view->render('dashboard');
+        $this->view->render('templates/footer_prepend');
+        $this->view->render('templates/footer');
     }
 
     /**
@@ -64,7 +108,20 @@ class Site extends Internal
                     $data = array('url' => $url, 'alias' => $alias);
                     $where = array('id' => $id_site);
                     echo $this->_sites->update($data, $where);
+                    break;
 
+                // Add site to favorites
+                case 'fav':
+                    sleep(1);
+                    $id = Cleaner::run($_POST['id']);
+                    $fav = Cleaner::run($_POST['fav']);
+
+                    // If id is not empty
+                    if (!empty($id)) {
+                        $data = array('favorite' => $fav);
+                        $where = array('id' => $id);
+                        echo $this->_sites->update($data, $where);
+                    }
                     break;
             }
             die();
